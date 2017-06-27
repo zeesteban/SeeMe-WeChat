@@ -1,7 +1,10 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/profile/profile",
+    "pages/nearby/nearby",
+    "pages/meeting/meeting"
   ],
   "window": {
     "navigationBarBackgroundColor": "#5D737E",
