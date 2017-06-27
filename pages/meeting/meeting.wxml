@@ -1,2 +1,18 @@
 <!--meeting.wxml-->
-<text>meeting.wxml</text>
+<view class="wrapper"></view>
+<view class="container-meeting">
+  <view class="meeting-profile"><image src="{{userInfo.avatarUrl}}" class="meeting-img"></image>{{userInfo.nickName}}</view>
+  <view class="meeting-profile"><image src="{{userInfo.avatarUrl}}" class="meeting-img"></image>{{userInfo.nickName}}</view>
+</view>
+
+<view class="align-center padded">
+  <text class="h1">Meeting with <text class="underline">{{userInfo.nickName}}</text></text>
+</view>
+
+<view class="box call">
+You got lucky! {{userInfo.nickName}} also wants to meet up with you. Call her and decide on where you are going to meet up.
+</view>
+
+<view class="box call">
+ <image src="../../images/phone-call.png" class="btn-green" style="width: 80rpx; height: 80rpx;"></image>
+</view>

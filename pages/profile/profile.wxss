@@ -47,13 +47,3 @@
   padding: 15rpx 20rpx;
   margin: 10rpx;
 }
-
-.btn-green {
-  background-color: #4BDDB9;
-  color: #FCFFFD;
-  border-radius: 50rpx;
-  letter-spacing: 0.4px;
-  padding: 30rpx 40rpx;
-  margin: 10rpx;
-  font-size: 40rpx;
-}
