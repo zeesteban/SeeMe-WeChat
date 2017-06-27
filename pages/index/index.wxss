@@ -6,11 +6,10 @@
 }
 
 page {
-  background-color: black;
+  background-color: white;
 }
 
 .userinfo-avatar {
-
   width: 128rpx;
   height: 128rpx;
   margin: 20rpx;
@@ -25,11 +24,6 @@ page {
 
 .usermotto {
   margin-top: 200px;
-}
-
-body {
-  background-color: black;
-  margin: 0;
 }
 
 .radar {
