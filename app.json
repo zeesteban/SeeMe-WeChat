@@ -13,31 +13,5 @@
     "backgroundColor": "#fff",
     "backgroundTextStyle": "light",
     "enablePullDownRefresh": true
-  },
-  "tabBar": {
-    "backgroundColor": "#FCFFFD",
-    "borderStyle": "#000",
-    "selectedColor": "#D03232",
-    "color": "#131313",
-    "list": [
-      {
-        "pagePath": "pages/index/index",
-        "iconPath": "image/form.png",
-        "selectedIconPath": "image/form-hover.png",
-        "text": "Nearby"
-      },
-      {
-        "pagePath": "pages/wagon/wagon",
-        "iconPath": "image/about.png",
-        "selectedIconPath": "image/about-hover.png",
-        "text": "Meetings"
-      },
-      {
-        "pagePath": "pages/wagon/wagon",
-        "iconPath": "image/about.png",
-        "selectedIconPath": "image/about-hover.png",
-        "text": "Profile"
-      }
-    ]
   }
 }
