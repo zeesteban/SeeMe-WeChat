@@ -1,2 +1,33 @@
 <!--profile.wxml-->
-<text>profile.wxml</text>
+<view class="wrapper"></view>
+  <view class="container-profile">
+  <image src="{{userInfo.avatarUrl}}" class="profile-img"></image>
+</view>
+<view class="align-center">
+  <text class="h1">{{userInfo.nickName}}</text>
+</view>
+
+<view class="title-box">
+  About:
+</view>
+<view class="box">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisl orci, dignissim ut euismod maximus, aliquet ut leo. Suspendisse id ligula eget ipsum fermentum imperdiet.
+</view>
+
+<view class="title-box">
+  Hobbies & Interests:
+</view>
+<view class="box">
+ <text class="tags">Reading</text>
+ <text class="tags">Photography</text>
+ <text class="tags">WXML</text>
+ <text class="tags">WXSS</text>
+ <text class="tags">Language learning</text>
+ <text class="tags">Traveling</text>
+</view>
+
+<view class="box">
+  <text class="btn-green">Meet {{userInfo.nickName}}</text>
+</view>
+
+

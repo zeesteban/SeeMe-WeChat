@@ -11,4 +11,17 @@
 
 page {
   background-color: #FCFFFD;
+  font-size: 30rpx;
+  color: #5D737E;
+}
+
+.h1 {
+  font-size: 40rpx;
+  text-align: center;
+  line-height: 60rpx;
+  font-weight: bolder;
+}
+
+.align-center {
+  text-align: center;
 }

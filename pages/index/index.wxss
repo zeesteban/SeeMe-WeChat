@@ -6,7 +6,7 @@
 }
 
 page {
-  background-color: black;
+  background-color: white;
 }
 
 .userinfo-avatar {
@@ -29,6 +29,7 @@ page {
   font-weight: 200;
 }
 
+
 .btn{
   position: absolute;
   background: #4BDDB9; 
@@ -41,7 +42,6 @@ page {
 }
 
 /*CSS for the radar*/
-
 .radar {
   width: 800rpx;
   height: 800rpx;
