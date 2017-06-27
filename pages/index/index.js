@@ -9,7 +9,9 @@ Page({
   //事件处理函数
   bindViewTap: function() {
     wx.navigateTo({
-      url: '../profile/profile'
+
+      url: '../nearby/nearby'
+
     })
   },
   onLoad: function () {

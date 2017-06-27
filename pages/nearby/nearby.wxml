@@ -1,2 +1,77 @@
 <!--nearby.wxml-->
-<text>nearby.wxml</text>
+
+<!--Search bar-->
+<view class="page">
+  <view class="page__bd">
+    <view class="weui-search-bar">
+      <view class="weui-search-bar__form">
+        <view class="weui-search-bar__box">
+          <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+          <input type="text" class="weui-search-bar__input" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+          <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+          </view>
+        </view>
+        <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+          <icon class="weui-icon-search" type="search" size="14"></icon>
+          <view class="weui-search-bar__text">Nearby Connections</view>
+        </label>
+      </view>
+      <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">Search</view>
+    </view>
+    <view class="weui-cells searchbar-result" wx:if="{{inputVal.length > 0}}">
+      <navigator url="" class="weui-cell" hover-class="weui-cell_active">
+        <view class="weui-cell__bd">
+          <view>tag 1</view>
+        </view>
+      </navigator>
+      <navigator url="" class="weui-cell" hover-class="weui-cell_active">
+        <view class="weui-cell__bd">
+          <view>tag 2</view>
+        </view>
+      </navigator>
+      <navigator url="" class="weui-cell" hover-class="weui-cell_active">
+        <view class="weui-cell__bd">
+          <view>tag 3</view>
+        </view>
+      </navigator>
+      <navigator url="" class="weui-cell" hover-class="weui-cell_active">
+        <view class="weui-cell__bd">
+          <view>tag 4</view>
+        </view>
+      </navigator>
+    </view>
+  </view>
+</view>
+
+
+
+<!--User Cards-->
+<view class="wrapper">
+  <view class="card">
+    <image class="userinfo-avatar card-image" src="{{userInfo.avatarUrl}}"></image>
+    <view class="card-name">Nickname</view>
+    <view class="card-sex">F</view>
+    <view class="card-distance">2 Km Away</view>
+    <view class="card-interests">Top 3 Interests:</view>
+    <view class="card-top-interests">Marketa's top 3</view>
+    <view class="btn">Meet</view>
+  </view>
+  <view class="card">
+    <image class="userinfo-avatar card-image" src="{{userInfo.avatarUrl}}"></image>
+    <view class="card-name">Nickname</view>
+    <view class="card-sex">M</view>
+    <view class="card-distance">1 Km Away</view>
+    <view class="card-interests">Top 3 Interests:</view>
+    <view class="card-top-interests">Marketa's top 3</view>
+    <view class="btn">Meet</view>
+  </view>
+    <view class="card">
+    <image class="userinfo-avatar card-image" src="{{userInfo.avatarUrl}}"></image>
+    <view class="card-name">Nickname</view>
+    <view class="card-sex">M</view>
+    <view class="card-distance">1 Km Away</view>
+    <view class="card-interests">Top 3 Interests:</view>
+    <view class="card-top-interests">Marketa's top 3</view>
+    <view class="btn">Meet</view>
+  </view>
+</view>
