@@ -1,15 +1,15 @@
 <!--index.wxml-->
+<view class="container">
+
 <view class="radar">
   <view class="pointer"></view>
   <view class="shadow"></view>
 </view>
+
   <view  bindtap="bindViewTap" class="userinfo">
-    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}"></image>
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
   </view>
-
-  <view class="tagline">
-    <text class="tag-line">Make an Instant Connection</text> 
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
   </view>
-  <view class="btn">Continue</view>
-
-
+</view>
