@@ -6,6 +6,7 @@
   <view  bindtap="bindViewTap" class="userinfo">
     <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}"></image>
   </view>
+
   <view class="tagline">
     <text class="tag-line">Make an Instant Connection</text> 
   </view>
