@@ -1,6 +1,6 @@
 <!--meetings.wxml-->
 <view class="h1 padded">Your current meetings</view>
-<view class="m-card">
+<view class="m-card" bindtap="meetingTap">
   <image src="{{userInfo.avatarUrl}}" class="m-img"></image>
   <view class="m-text">
     <text>Meeting with XXX</text>
@@ -11,7 +11,7 @@
 
 
 <view class="h1 padded">Your past meetings</view>
-<view class="m-card">
+<view class="m-card" bindtap="meetingTap">
   <image src="{{userInfo.avatarUrl}}" class="m-img"></image>
   <view class="m-text">
     <text>Meeting with XXX</text>
@@ -19,7 +19,7 @@
   </view>
   <text class="status accepted"></text>
 </view>
-<view class="m-card">
+<view class="m-card" bindtap="meetingTap">
   <image src="{{userInfo.avatarUrl}}" class="m-img"></image>
   <view class="m-text">
     <text>Meeting with XXX</text>
@@ -27,7 +27,7 @@
   </view>
   <text class="status accepted"></text>
 </view>
-<view class="m-card">
+<view class="m-card" bindtap="meetingTap">
   <image src="{{userInfo.avatarUrl}}" class="m-img"></image>
   <view class="m-text">
     <text>Meeting with XXX</text>
