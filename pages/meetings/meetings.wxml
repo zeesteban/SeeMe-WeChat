@@ -1,0 +1,37 @@
+<!--meetings.wxml-->
+<view class="h1 padded">Your current meetings</view>
+<view class="m-card">
+  <image src="{{userInfo.avatarUrl}}" class="m-img"></image>
+  <view class="m-text">
+    <text>Meeting with XXX</text>
+    <text class="tiny-text">Connection made at XX</text>
+  </view>
+  <text class="status pending"></text>
+</view>
+
+
+<view class="h1 padded">Your past meetings</view>
+<view class="m-card">
+  <image src="{{userInfo.avatarUrl}}" class="m-img"></image>
+  <view class="m-text">
+    <text>Meeting with XXX</text>
+    <text class="tiny-text">Connection made at XX</text>
+  </view>
+  <text class="status accepted"></text>
+</view>
+<view class="m-card">
+  <image src="{{userInfo.avatarUrl}}" class="m-img"></image>
+  <view class="m-text">
+    <text>Meeting with XXX</text>
+    <text class="tiny-text">Connection made at XX</text>
+  </view>
+  <text class="status accepted"></text>
+</view>
+<view class="m-card">
+  <image src="{{userInfo.avatarUrl}}" class="m-img"></image>
+  <view class="m-text">
+    <text>Meeting with XXX</text>
+    <text class="tiny-text">Connection made at XX</text>
+  </view>
+  <text class="status declined"></text>
+</view>

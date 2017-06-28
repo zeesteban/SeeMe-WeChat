@@ -1,0 +1,54 @@
+/* meetings.wxss */
+.m-card {
+  border-radius:80rpx;
+  border:1rpx solid #4BDDB9;
+  padding-left:40rpx;
+  padding-top:20rpx;
+  padding-bottom:20rpx;
+  margin:30rpx 30rpx;
+  display:flex;
+  position:relative;
+  background-color:#FCFFFD;
+  box-shadow:2rpx 3rpx 10rpx lightgrey;
+}
+
+.m-img {
+  width: 50px; 
+  height: 50px;
+  border-radius: 50%;
+  border: 5rpx solid white;
+}
+
+.m-text {
+  display:flex;
+  flex-direction:column;
+  padding:0rpx 20rpx;
+  line-height:1.2em;
+  justify-content:center;
+}
+
+.tiny-text {
+  font-size: 0.8em;
+}
+
+.status {
+  width: 20px; 
+  height: 20px;
+  border-radius: 50%;
+  align-self: center;
+  position: absolute;
+  right: 60rpx;
+  border: 5rpx solid white;
+}
+
+.accepted {
+  background-color: lightgreen;
+}
+
+.pending {
+    background-color: yellow;
+}
+
+.declined {
+  background-color: orangered;
+}

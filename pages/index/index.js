@@ -10,7 +10,7 @@ Page({
   bindViewTap: function() {
     wx.navigateTo({
 
-      url: '../meeting/meeting'
+      url: '../meetings/meetings'
 
     })
   },
