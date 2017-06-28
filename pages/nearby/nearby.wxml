@@ -49,29 +49,47 @@
 <view class="wrapper">
   <view class="card">
     <image class="userinfo-avatar card-image" src="{{userInfo.avatarUrl}}"></image>
-    <view class="card-name">Nickname</view>
-    <view class="card-sex">F</view>
-    <view class="card-distance">2 Km Away</view>
-    <view class="card-interests">Top 3 Interests:</view>
-    <view class="card-top-interests">Marketa's top 3</view>
-    <view class="btn" bindtap="meetViewTap">Meet</view>
+    <view class="card-name">
+      Nickname
+      <image src="../../images/female.png" class="gender"></image>
+    </view>
+    <view class="align-center tiny-text">2 km away</view>
+    <view class="box">
+      <text class="top-tag">Reading</text>
+      <text class="top-tag">WXML</text>
+      <text class="top-tag">Traveling</text>
+    </view>
+    <view class="btn align-center" bindtap="meetViewTap">Meet</view>
   </view>
+
   <view class="card">
     <image class="userinfo-avatar card-image" src="{{userInfo.avatarUrl}}"></image>
-    <view class="card-name">Nickname</view>
-    <view class="card-sex">M</view>
-    <view class="card-distance">1 Km Away</view>
-    <view class="card-interests">Top 3 Interests:</view>
-    <view class="card-top-interests">Marketa's top 3</view>
-    <view class="btn" bindtap="meetViewTap">Meet</view>
+    <view class="card-name">
+      Nickname
+      <image src="../../images/male.png" class="gender"></image>
+    </view>
+    <view class="align-center tiny-text">2 km away</view>
+    <view class="box">
+      <text class="top-tag">Drawing</text>
+      <text class="top-tag">Food</text>
+      <text class="top-tag">Reading</text>
+    </view>
+    <view class="btn align-center" bindtap="meetViewTap">Meet</view>
   </view>
-    <view class="card">
+
+  <view class="card">
     <image class="userinfo-avatar card-image" src="{{userInfo.avatarUrl}}"></image>
-    <view class="card-name">Nickname</view>
-    <view class="card-sex">M</view>
-    <view class="card-distance">1 Km Away</view>
-    <view class="card-interests">Top 3 Interests:</view>
-    <view class="card-top-interests">Marketa's top 3</view>
-    <view class="btn" bindtap="meetViewTap">Meet</view>
+    <view class="card-name">
+      Nickname
+      <image src="../../images/female.png" class="gender"></image>
+    </view>
+    <view class="align-center tiny-text">2 km away</view>
+    <view class="box">
+      <text class="top-tag">Fishing</text>
+      <text class="top-tag">Dancing</text>
+      <text class="top-tag">Food</text>
+    </view>
+    <view class="btn align-center" bindtap="meetViewTap">Meet</view>
   </view>
+
 </view>
