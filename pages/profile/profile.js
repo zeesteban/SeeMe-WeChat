@@ -7,6 +7,13 @@ Page({
   data: {
     userInfo: {}
   },
+  meetTap: function () {
+    wx.navigateTo({
+
+      url: '../meeting/meeting'
+
+    })
+  },
 
   /**
    * 生命周期函数--监听页面加载

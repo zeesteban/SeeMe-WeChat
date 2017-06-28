@@ -27,7 +27,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisl orci, digni
 </view>
 
 <view class="box">
-  <text class="btn-green">Meet {{userInfo.nickName}}</text>
+  <text class="btn-green" bindtap="meetTap">Meet {{userInfo.nickName}}</text>
 </view>
 
 

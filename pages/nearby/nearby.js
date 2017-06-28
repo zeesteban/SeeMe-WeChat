@@ -5,6 +5,13 @@ Page({
     inputShowed: false,
     inputVal: ""
   },
+  meetViewTap: function () {
+    wx.navigateTo({
+
+      url: '../profile/profile'
+
+    })
+  },
   showInput: function () {
     this.setData({
       inputShowed: true

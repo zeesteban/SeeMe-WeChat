@@ -1,6 +1,6 @@
 <!--index.wxml-->
 <view class="container">
-  <text>Meet people instantly</text>
+  <text class="tag-line">Meet people instantly</text>
 <view class="radar">
   <view class="pointer"></view>
   <view class="shadow"></view>
