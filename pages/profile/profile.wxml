@@ -11,7 +11,7 @@
   About:
 </view>
 <view class="box">
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisl orci, dignissim ut euismod maximus, aliquet ut leo. Suspendisse id ligula eget ipsum fermentum imperdiet.
+{{ bio }}
 </view>
 
 <view class="title-box">
