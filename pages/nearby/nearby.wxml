@@ -54,7 +54,7 @@
     <view class="card-distance">2 Km Away</view>
     <view class="card-interests">Top 3 Interests:</view>
     <view class="card-top-interests">Marketa's top 3</view>
-    <view class="btn">Meet</view>
+    <view class="btn" bindtap="meetViewTap">Meet</view>
   </view>
   <view class="card">
     <image class="userinfo-avatar card-image" src="{{userInfo.avatarUrl}}"></image>
@@ -63,7 +63,7 @@
     <view class="card-distance">1 Km Away</view>
     <view class="card-interests">Top 3 Interests:</view>
     <view class="card-top-interests">Marketa's top 3</view>
-    <view class="btn">Meet</view>
+    <view class="btn" bindtap="meetViewTap">Meet</view>
   </view>
     <view class="card">
     <image class="userinfo-avatar card-image" src="{{userInfo.avatarUrl}}"></image>
@@ -72,6 +72,6 @@
     <view class="card-distance">1 Km Away</view>
     <view class="card-interests">Top 3 Interests:</view>
     <view class="card-top-interests">Marketa's top 3</view>
-    <view class="btn">Meet</view>
+    <view class="btn" bindtap="meetViewTap">Meet</view>
   </view>
 </view>
