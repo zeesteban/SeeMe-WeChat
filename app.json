@@ -4,6 +4,7 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/profile/profile",
+    "pages/meetings/meetings",
     "pages/meeting/meeting"
   ],
   "window": {
