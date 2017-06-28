@@ -15,7 +15,7 @@ page {
   height: 128rpx;
   margin: 20rpx;
   border-radius: 100%;
-  margin-top: 200%;
+  margin-top: 250%;
   z-index: 2000;
 }
 
