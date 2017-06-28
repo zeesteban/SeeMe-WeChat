@@ -1,63 +1,70 @@
 /* nearby.wxss */
 
 .wrapper {
-  background-color: lightgrey;
   display: flex;
   flex-wrap: wrap;
-  justify-content: left;
+  justify-content: flex-start;
 }
 
 .card-image{
-width:300rpx;
-height:300rpx;
-border-radius: 50%;
-background-color: slategray;
-display: flex;
-justify-content: space-around;
-margin: 0 auto;
-margin-top: 20rpx;
-
+  width:150rpx;
+  height:150rpx;
+  border-radius: 50%;
+  background-color: lightgray;
+  display: flex;
+  justify-content: space-around;
+  margin: 0 auto;
+  margin-top: 20rpx;
 }
 
 .card{
-  background-color: white;
-  border: 1rpx solid black;
-  width: 45%;
-  height: 30%;
-  position: relative;
-  padding: 5rpx;
+  background-color:white;
+  box-shadow:1rpx 1rpx 10rpx lightgray;
+  border-radius: 10rpx;
+  width:45%;
+  height:30%;
+  position:relative;
+  padding:1%;
+  margin: 1.5%;
 }
 
 .card-name {
-text-align: center;
-top: 20rpx;
+  text-align: center;
+  top: 20rpx;
 }
 
-.card-top-interests{
-  background-color: gray;
-  margin-top: 10%;
-  text-align: center;
+.box {
+  padding: 20rpx;
+  line-height: 1.5em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.card-interests{
-  text-align: center;
-}
-
-.card-sex{
-  text-align: center;
-}
-
-.card-distance{
-  text-align: center;
+.top-tag {
+  border: 1rpx solid #4BDDB9;
+  border-radius: 40rpx;
+  letter-spacing: 0.4px;
+  padding: 5rpx 15rpx;
+  margin: 5rpx;
+  font-size: 0.8em;
 }
 
 .btn{
-  background: #4BDDB9; 
   border: 2rpx solid #4BDDB9; 
-  border-radius: 4rpx;
-  color: white;
   text-align: center;
   margin-top: 10%;
+  background-color: #4BDDB9;
+  color: #FCFFFD;
+  border-radius: 50rpx;
+  letter-spacing: 0.4px;
+  padding: 10rpx 10rpx;
+  margin: 10rpx;
+}
+
+.gender {
+  width: 25rpx; 
+  height: 25rpx;
 }
 
 /*Search bar CSS styling */
