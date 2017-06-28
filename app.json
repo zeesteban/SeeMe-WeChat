@@ -1,9 +1,9 @@
 {
   "pages": [
+    "pages/nearby/nearby",
     "pages/index/index",
     "pages/logs/logs",
     "pages/profile/profile",
-    "pages/nearby/nearby",
     "pages/meeting/meeting"
   ],
   "window": {
@@ -13,5 +13,26 @@
     "backgroundColor": "#fff",
     "backgroundTextStyle": "light",
     "enablePullDownRefresh": true
-  }
+  },
+  "tabBar": {
+    "backgroundColor": "#FFFFFE",
+    "borderStyle": "#D3D3D3",
+    "selectedColor": "#D03232",
+    "color": "#131313",
+    "list": [{
+        "pagePath": "pages/nearby/nearby",
+        "iconPath": "images/radar-gray.png",
+        "selectedIconPath": "images/radar-green.png"
+      },
+      {
+        "pagePath": "pages/meeting/meeting",
+        "iconPath": "images/chat-gray.png",
+        "selectedIconPath": "images/chat-green.png"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "iconPath": "images/profile-gray.png",
+        "selectedIconPath": "images/profile-green.png"
+      }]
+    }
 }
