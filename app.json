@@ -4,7 +4,8 @@
     "pages/logs/logs",
     "pages/profile/profile",
     "pages/nearby/nearby",
-    "pages/meeting/meeting"
+    "pages/meeting/meeting",
+    "pages/meetings/meetings"
   ],
   "window": {
     "navigationBarBackgroundColor": "#5D737E",

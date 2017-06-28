@@ -9,9 +9,10 @@
 } 
 
 page {
-  background-color: #FCFFFD;
+  background-color: #fff;
   font-size: 30rpx;
   color: #5D737E;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .h1 {
