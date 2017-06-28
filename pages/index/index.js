@@ -21,7 +21,7 @@ Page({
       //更新数据
       that.setData({
         userInfo:userInfo
-      })
+      })  
     })
   }
 })
