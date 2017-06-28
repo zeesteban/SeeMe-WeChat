@@ -5,17 +5,20 @@
   align-items: center;
 }
 
+.tag-line{
+  margin-top: 7%;
+}
+
 page {
   background-color: white;
 }
 
 .userinfo-avatar {
-
   width: 128rpx;
   height: 128rpx;
   margin: 20rpx;
   border-radius: 100%;
-  margin-top: 250%;
+  margin-top: 200%;
   z-index: 2000;
 }
 
@@ -24,7 +27,7 @@ page {
 }
 
 .usermotto {
-  margin-top: 200px;
+  margin-top: 420rpx;
 }
 
 body {
@@ -38,7 +41,7 @@ body {
   background-size: 400px 400px;
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 40%;
   margin-left: -200px;
   margin-top: -200px;
 }
