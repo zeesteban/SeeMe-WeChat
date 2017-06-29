@@ -43,9 +43,8 @@
   </view>
 </view>
 
-
-
 <!--Card loop -->
+
 <view class="wrapper">
 <block wx:for="{{users}}" wx:key>
 
@@ -73,3 +72,4 @@
 </view>
 
 
+</view>

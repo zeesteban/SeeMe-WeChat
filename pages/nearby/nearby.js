@@ -10,7 +10,7 @@ Page({
     let page = this;
     // Nearby API request
     wx.request({
-      url: 'http://localhost:3000/api/v1/users',
+      url: 'https://seeme.shanghaiwogeng.com/api/v1/users',
       method: "get",
       // header: {
       //   'content-type': 'application/json'
@@ -22,6 +22,7 @@ Page({
         })
       }
     })
+
   },
 
   // End of API request
@@ -44,18 +45,17 @@ Page({
     })
 
     wx.navigateTo({
-
       url: '../meeting/meeting'
-
     })
   },
+
 
   profileTap: function (e) {
     var userid = e.currentTarget.id
     console.log(userid)
     wx.navigateTo({
       url: '../userProfile/userProfile?id=' + userid
-      
+
     })
   },
 

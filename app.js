@@ -9,13 +9,13 @@ App({
       success: function (res) {
         if (res.code) {
           //发起网络请求
+          console.log(res.code)
+          console.log(app.globalData.userInfo)
           app.getUserInfo(function (userInfo) {
             wx.request({
               success: function (res) {
                 app.globalData.authToken = res.data
-                wx.redirectTo({
-                  url: '../nearby/nearby',
-                })
+                console.log(app.globalData.authToken)
               },
               url: 'http://localhost:3000/api/v1/users',
               method: "post",
@@ -24,7 +24,6 @@ App({
                 userInfo: userInfo
               }
             })
-            console.log(res)
           })
         } else {
           console.log('error' + res.errMsg)
@@ -32,7 +31,6 @@ App({
       }
     });
   },
-
   getUserInfo: function (cb) {
     var that = this
     if (this.globalData.userInfo) {
@@ -40,7 +38,7 @@ App({
     } else {
       //调用登录接口
       wx.getUserInfo({
-        withCredentials: false,
+        // withCredentials: false,
         success: function (res) {
           that.globalData.userInfo = res.userInfo
           typeof cb == "function" && cb(that.globalData.userInfo)
