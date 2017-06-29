@@ -19,14 +19,16 @@ Page({
       })
     })
   },
-  bindFormSubmit: function () {
-    console.log("below is the auth token")
-    console.log(app.globalData.authToken)
+  bindFormSubmit: function (e) {
+    var message = e.detail.value.content
+    console.log(message)
     wx.request({
       url: 'http://localhost:3000/api/v1/meetings/3/messages', //仅为示例，并非真实的接口地址
       method: 'post',
       data: {
-        content: 'hello'
+        meeting: {
+          content: message
+        }
       },
       header: {
         'content-type': 'application/json',
