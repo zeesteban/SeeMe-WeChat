@@ -1,4 +1,3 @@
-//app.js
 App({
   onLaunch: function () {
     //调用API从本地缓存中获取数据
@@ -6,7 +5,6 @@ App({
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
     let app = this;
-
     wx.login({
       success: function (res) {
         if (res.code) {
@@ -23,14 +21,12 @@ App({
                 userInfo: userInfo
               }
             })
-
           })
         } else {
           console.log('error' + res.errMsg)
         }
       }
-    })
-
+    });
   },
 
   getUserInfo: function (cb) {
@@ -48,10 +44,9 @@ App({
       })
     }
   },
-
   globalData: {
     userInfo: null,
     authToken: null
-  },
+  }
 
 })
