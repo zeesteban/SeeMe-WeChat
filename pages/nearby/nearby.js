@@ -20,8 +20,6 @@ Page({
         page.setData({
           users: res.data
         })
-
-        console.log(page.data.users)
       }
     })
   },
@@ -35,13 +33,17 @@ Page({
 
     })
   },
-  profileTap: function () {
+
+  profileTap: function (e) {
+    var userid = e.currentTarget.id
+    console.log(userid)
     wx.navigateTo({
-
-      url: '../profile/profile'
-
+      url: '../userProfile/userProfile?id=' + userid
+      
     })
   },
+
+
 
   showInput: function () {
     this.setData({

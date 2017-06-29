@@ -26,8 +26,6 @@
  <text class="tags">Traveling</text>
 </view>
 
-<view class="box">
-  <text class="btn-green" bindtap="meetTap">Meet {{userInfo.nickName}}</text>
-</view>
+
 
 
