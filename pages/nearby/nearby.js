@@ -9,32 +9,56 @@ Page({
   onLoad: function () {
     let page = this;
     // Nearby API request
-    // wx.request({
-    //   url: 'http://localhost:3000/api/v1/users',
-    //   method: "get",
-    //     header: {
-    //       'content-type': 'application/json'
-    //     },
-    //   success: function (res) {
-    //     page.setData({
-    //       users: res.data
-    //     })
-    //   }
-    // })
+    wx.request({
+      url: 'https://seeme.shanghaiwogeng.com/api/v1/users',
+      method: "get",
+      // header: {
+      //   'content-type': 'application/json'
+      // },
+      success: function (res) {
+        console.log(res.data)
+        page.setData({
+          users: res.data
+        })
+      }
+    })
   },
 
   // End of API request
 
   meetViewTap: function () {
+
+    wx.request({
+      url: 'http://localhost:3000/api/v1/meetings',
+      method: "post",
+      header: {
+        'X-User - Token' : authToken,
+        'content-type': 'application/json'
+      },
+      success: function (res) {
+        console.log(res.data)
+        page.setData({
+          users: res.data
+        })
+      }
+    })
+
     wx.navigateTo({
       url: '../meeting/meeting'
     })
   },
-  profileTap: function () {
+
+
+  profileTap: function (e) {
+    var userid = e.currentTarget.id
+    console.log(userid)
     wx.navigateTo({
-      url: '../profile/profile'
+      url: '../userProfile/userProfile?id=' + userid
+
     })
   },
+
+
 
   showInput: function () {
     this.setData({

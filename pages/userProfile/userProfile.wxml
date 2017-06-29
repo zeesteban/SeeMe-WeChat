@@ -1,0 +1,47 @@
+<!--pages/userProfile/userProfile.wxml-->
+
+<view class="wrapper"></view>
+<view class="container-profile">
+
+  <block wx:for="{{users}}" wx:key="">
+    <block wx:if="{{item.id == id}}">
+
+      <image src="{{item.avatar}}" class="profile-img"></image>
+</block>
+</block>
+</view>
+<view class="align-center">
+  <block wx:for="{{users}}" wx:key="">
+    <block wx:if="{{item.id == id}}">
+  <text class="h1">{{item.nickname}}</text>
+  </block>
+</block>
+</view>
+
+<view class="title-box">
+  About:
+</view>
+<view class="box">
+  {{ bio }}
+</view>
+
+<view class="title-box">
+  Hobbies & Interests:
+</view>
+<view class="box">
+  <text class="tags">Reading</text>
+  <text class="tags">Photography</text>
+  <text class="tags">WXML</text>
+  <text class="tags">WXSS</text>
+  <text class="tags">Language learning</text>
+  <text class="tags">Traveling</text>
+</view>
+
+<view class="box">
+  <block wx:for="{{users}}" wx:key="">
+    <block wx:if="{{item.id == id}}">
+  <text class="btn-green" bindtap="meetTap">Meet {{item.nickname}}</text>
+  </block>
+</block>
+</view>
+
