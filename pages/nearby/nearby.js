@@ -9,21 +9,18 @@ Page({
   onLoad: function () {
     let page = this;
     // Nearby API request
-    wx.request({
-      url: 'http://localhost:3000/api/v1/users',
-      method: "get",
-      // header: {
-      //   'content-type': 'application/json'
-      // },
-      success: function (res) {
-        console.log(res.data)
-        page.setData({
-          users: res.data
-        })
-
-        console.log(page.data.users)
-      }
-    })
+    // wx.request({
+    //   url: 'https://seeme.shanghaiwogeng.com/api/v1/users',
+    //   method: "get",
+    //     header: {
+    //       'content-type': 'application/json'
+    //     },
+    //   success: function (res) {
+    //     page.setData({
+    //       users: res.data
+    //     })
+    //   }
+    // })
   },
 
   // End of API request
