@@ -13,18 +13,14 @@ App({
             wx.request({
               success: function (res) {
                 app.globalData.authToken = res.data
-                wx.redirectTo({
-                  url: '../nearby/nearby',
-                })
               },
-              url: 'http://localhost:3000/api/v1/users',
+              url: 'https://seeme.shanghaiwogeng.com/api/v1/users',
               method: "post",
               data: {
                 code: res.code,
                 userInfo: userInfo
               }
             })
-            console.log(res)
           })
         } else {
           console.log('error' + res.errMsg)
@@ -52,4 +48,5 @@ App({
     userInfo: null,
     authToken: null
   }
+
 })

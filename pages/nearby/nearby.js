@@ -30,16 +30,12 @@ Page({
 
   meetViewTap: function () {
     wx.navigateTo({
-
       url: '../meeting/meeting'
-
     })
   },
   profileTap: function () {
     wx.navigateTo({
-
       url: '../profile/profile'
-
     })
   },
 
