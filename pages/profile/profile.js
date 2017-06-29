@@ -8,6 +8,9 @@ Page({
     userInfo: {},
     bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi condimentum sed felis a ultrices. Donec sit amet enim ac ante fermentum vehicula in et risus"
   },
+
+
+  
   meetTap: function () {
     wx.navigateTo({
 

@@ -45,12 +45,41 @@
 
 
 
-<!--User Cards-->
+
 <view class="wrapper">
-  <view class="card">
-    <image class="userinfo-avatar card-image" src="{{userInfo.avatarUrl}}"></image>
+
+<!--Card loop test-->
+<block wx:for="{{users}}">
+  <view class="card" bindtap="profileTap">
+    <image class="userinfo-avatar card-image" src="{{item.avatar}}"></image>
+  <view class="card-name">
+      {{item.nickname}}
+
+      <block wx:if="{{item.gender == false}}">
+      <image src="../../images/female.png" class="gender"></image>
+      </block>
+      <block wx:elif="{{item.gender == true}}">
+      <image src="../../images/male.png" class="gender"></image>
+      </block>
+      <view class="align-center tiny-text">2 km away</view>
+    <view class="box">
+      <text class="top-tag">Reading</text>
+      <text class="top-tag">WXML</text>
+      <text class="top-tag">Traveling</text>
+    </view>
+    <view class="btn align-center" bindtap="meetViewTap">Meet</view>
+</view>
+
+
+</view>
+</block>
+
+<!--card test-->
+
+  <view class="card" bindtap="profileTap">
+    <image class="userinfo-avatar card-image" src="{{users[0].avatar}}"></image>
     <view class="card-name">
-      Nickname
+      {{users[0].nickname}}
       <image src="../../images/female.png" class="gender"></image>
     </view>
     <view class="align-center tiny-text">2 km away</view>
@@ -62,6 +91,8 @@
     <view class="btn align-center" bindtap="meetViewTap">Meet</view>
   </view>
 
+
+<!--User Cards-->
   <view class="card">
     <image class="userinfo-avatar card-image" src="{{userInfo.avatarUrl}}"></image>
     <view class="card-name">
@@ -73,21 +104,6 @@
       <text class="top-tag">Drawing</text>
       <text class="top-tag">Food</text>
       <text class="top-tag">Reading</text>
-    </view>
-    <view class="btn align-center" bindtap="meetViewTap">Meet</view>
-  </view>
-
-  <view class="card">
-    <image class="userinfo-avatar card-image" src="{{userInfo.avatarUrl}}"></image>
-    <view class="card-name">
-      Nickname
-      <image src="../../images/female.png" class="gender"></image>
-    </view>
-    <view class="align-center tiny-text">2 km away</view>
-    <view class="box">
-      <text class="top-tag">Fishing</text>
-      <text class="top-tag">Dancing</text>
-      <text class="top-tag">Food</text>
     </view>
     <view class="btn align-center" bindtap="meetViewTap">Meet</view>
   </view>

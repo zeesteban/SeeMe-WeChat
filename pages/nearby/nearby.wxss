@@ -26,6 +26,7 @@
   position:relative;
   padding:1%;
   margin: 1.5%;
+  z-index: 2;
 }
 
 .card-name {
@@ -60,6 +61,7 @@
   letter-spacing: 0.4px;
   padding: 10rpx 10rpx;
   margin: 10rpx;
+  z-index: 3;
 }
 
 .gender {
