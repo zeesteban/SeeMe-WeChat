@@ -5,14 +5,21 @@
   <view class="meeting-profile"><image src="{{userInfo.avatarUrl}}" class="meeting-img"></image>{{userInfo.nickName}}</view>
 </view>
 
-<view class="align-center padded">
+<view class="align-center">
   <text class="h1">Meeting with <text class="underline">{{userInfo.nickName}}</text></text>
 </view>
 
-<view class="box call">
+<view class="box">
 You got lucky! {{userInfo.nickName}} also wants to meet up with you. Call her and decide on where you are going to meet up.
 </view>
 
+<form bindsubmit="bindFormSubmit">
+  <input type="text" name="content" placeholder="Your message"/>
+  <button form-type="submit">Send</button>
+</form>
+
+
+<!--
 <view class="box call" bindtap="bindViewTap">
  <image src="../../images/phone-call.png" class="btn-green" style="width: 80rpx; height: 80rpx;"></image>
-</view>
+</view>-->
