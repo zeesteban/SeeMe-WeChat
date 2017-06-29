@@ -7,9 +7,7 @@ Page({
   },
   meetViewTap: function () {
     wx.navigateTo({
-
-      url: '../profile/profile'
-
+      url: '../meeting/meeting'
     })
   },
   showInput: function () {
