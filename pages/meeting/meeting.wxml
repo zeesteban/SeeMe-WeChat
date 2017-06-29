@@ -13,6 +13,6 @@
 You got lucky! {{userInfo.nickName}} also wants to meet up with you. Call her and decide on where you are going to meet up.
 </view>
 
-<view class="box call">
+<view class="box call" bindtap="bindViewTap">
  <image src="../../images/phone-call.png" class="btn-green" style="width: 80rpx; height: 80rpx;"></image>
 </view>
