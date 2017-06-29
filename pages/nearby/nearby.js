@@ -27,6 +27,22 @@ Page({
   // End of API request
 
   meetViewTap: function () {
+
+    wx.request({
+      url: 'http://localhost:3000/api/v1/meetings',
+      method: "post",
+      header: {
+        'X-User - Token' : authToken,
+        'content-type': 'application/json'
+      },
+      success: function (res) {
+        console.log(res.data)
+        page.setData({
+          users: res.data
+        })
+      }
+    })
+
     wx.navigateTo({
 
       url: '../meeting/meeting'
