@@ -26,9 +26,7 @@ Page({
       url: 'http://localhost:3000/api/v1/meetings/3/messages', //仅为示例，并非真实的接口地址
       method: 'post',
       data: {
-        meeting: {
           content: message
-        }
       },
       header: {
         'content-type': 'application/json',

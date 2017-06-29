@@ -22,7 +22,6 @@ Page({
         })
       }
     })
-
   },
 
   // End of API request
