@@ -16,12 +16,9 @@ Page({
       //   'content-type': 'application/json'
       // },
       success: function (res) {
-        console.log(res.data)
         page.setData({
           users: res.data
         })
-
-        console.log(page.data.users)
       }
     })
   },

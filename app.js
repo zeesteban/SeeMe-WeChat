@@ -14,7 +14,7 @@ App({
               success: function (res) {
                 app.globalData.authToken = res.data
               },
-              url: 'https://seeme.shanghaiwogeng.com/api/v1/users',
+              url: 'http://localhost:3000/api/v1/users',
               method: "post",
               data: {
                 code: res.code,

@@ -19,7 +19,7 @@ Page({
       })
     })
   },
-  bindViewTap: function () {
+  bindFormSubmit: function () {
     console.log("below is the auth token")
     console.log(app.globalData.authToken)
     wx.request({
