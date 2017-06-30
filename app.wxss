@@ -9,7 +9,7 @@
 }
 
 page {
-  background-color: #fff;
+  background-color: #fefefe;
   font-size: 30rpx;
   color: #5D737E;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
