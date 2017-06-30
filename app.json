@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/nearby/nearby",
     "pages/index/index",
+    "pages/nearby/nearby",
     "pages/logs/logs",
     "pages/profile/profile",
     "pages/meetings/meetings",

@@ -8,7 +8,7 @@ Page({
   },
   //事件处理函数
   bindViewTap: function() {
-    wx.navigateTo({
+    wx.switchTab({
       url: '../nearby/nearby'
 
     })
@@ -21,7 +21,7 @@ Page({
       //更新数据
       that.setData({
         userInfo:userInfo
-      })  
+      })
     })
   }
 })
