@@ -5,6 +5,7 @@
 </view>
 <view class="align-center">
   <text class="h1">{{userInfo.nickName}}</text>
+  <button bindtap="profileEdit" class="mini-btn" type="primary" size="mini">edit</button>
 </view>
 
 <view class="title-box">

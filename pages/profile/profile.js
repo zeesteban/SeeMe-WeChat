@@ -6,16 +6,20 @@ Page({
    */
   data: {
     userInfo: {},
-    bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi condimentum sed felis a ultrices. Donec sit amet enim ac ante fermentum vehicula in et risus"
+    bio: ""
   },
 
 
-  
+
   meetTap: function () {
     wx.navigateTo({
-
       url: '../meeting/meeting'
+    })
+  },
 
+  profileEdit: function () {
+    wx.navigateTo({
+      url: '../profile_edit/profile_edit'
     })
   },
 
@@ -32,52 +36,69 @@ Page({
     })
   },
 
+
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    console.log('on show ready')
+    var that = this
+    wx.request({
+              url: 'http://localhost:3000/api/v1/profile', //仅为示例，并非真实的接口地址
+              method: 'get',
+              header: {
+                  'Content-Type': 'application/json',
+                  'X-User-Token': 'o1mdRAuDDoy5ef-KSvMm'
+              },
+              success: function(res) {
+                console.log(res.data),
+                that.setData({
+                  bio: res.data.bio
+                })
+                }
+            })
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-  
+
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-  
+
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-  
+
   },
 
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-  
+
   }
 })
