@@ -5,28 +5,56 @@ Page({
    * 页面的初始数据
    */
   data: {
-    userInfo: {}
+    userInfo: {},
+    meetings: [],
+    meeting_id: null,
+    recipients: null,
   },
-  meetingTap: function () {
+  meetingTap: function (e) {
+    console.log("Meeting data")
+    console.log(e.currentTarget.id)
+    let that = this
+    // let meeting_id = e.target.id
+    // var recipient = e.target.dataset.meeting.id
+      that.setData({
+        // recipients: recipient,
+      }),
     wx.navigateTo({
-
-      url: '../meeting/meeting'
+      success: function () {
+        console.log("Moved to meeting")
+      },
+      url: '../meeting/meeting?id=' + e.currentTarget.id
 
     })
+    console.log("num ;eeti")
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function () {
+  onLoad: function (e) {
     console.log('onLoad')
-    var that = this
+    let that = this
     app.getUserInfo(function (userInfo) {
       that.setData({
         userInfo: userInfo
       })
-    })
-  },
+    }),
+    wx.request({
+      url: 'https://seeme.shanghaiwogeng.com/api/v1/meetings/',
+      method: 'get',
+      header: {
+        'X-User-Token': app.globalData.authToken
+      },
+      success: function (res) {
+        console.log("Success on getting meetings")
+        console.log(res.data)
+        that.setData({
+          meetings: res.data
+        })
+        }
+      })
+    },
 
   /**
    * 生命周期函数--监听页面初次渲染完成

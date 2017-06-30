@@ -52,7 +52,7 @@
 }
 
 .btn{
-  border: 2rpx solid #4BDDB9; 
+  border: 2rpx solid #4BDDB9;
   text-align: center;
   margin-top: 10%;
   background-color: #4BDDB9;
@@ -65,7 +65,7 @@
 }
 
 .gender {
-  width: 25rpx; 
+  width: 25rpx;
   height: 25rpx;
 }
 

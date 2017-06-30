@@ -1,5 +1,5 @@
 // // nearby.js
-
+var app = getApp()
 Page({
   data: {
     inputShowed: false,
@@ -16,6 +16,7 @@ Page({
       //   'content-type': 'application/json'
       // },
       success: function (res) {
+        console.log("users")
         console.log(res.data)
         page.setData({
           users: res.data
@@ -26,39 +27,51 @@ Page({
 
   // End of API request
 
-  meetViewTap: function () {
+  meetViewTap: function(e) {
+    console.log(e.target.id)
+      wx.showLoading({
+        title: 'Creating...',
+      })
 
+      setTimeout(function(){
+        wx.hideLoading()
+      },2000),
     wx.request({
-      url: 'http://localhost:3000/api/v1/meetings',
+      url: 'https://seeme.shanghaiwogeng.com/api/v1/meetings/',
       method: "post",
+      data: {
+        meeting: {
+          recipient_id: e.target.id
+        }
+      },
       header: {
-        'X-User - Token' : authToken,
-        'content-type': 'application/json'
+        'X-User-Token': app.globalData.authToken,
+        'Content-Type': 'application/json'
       },
       success: function (res) {
-        console.log(res.data)
-        page.setData({
-          users: res.data
-        })
+        console.log("Sent")
+        console.log(res.data.id)
+        wx.navigateTo({
+           url: '../meeting/meeting?id=' + res.data.id
+        //   success: function() {
+        //   wx.showToast({
+        //     title: 'Success!',
+        //     icon: 'success',
+        //     duration: 2000
+        //   })
+        // },
+      })
       }
-    })
-
-    wx.navigateTo({
-      url: '../meeting/meeting'
     })
   },
 
 
   profileTap: function (e) {
     var userid = e.currentTarget.id
-    console.log(userid)
     wx.navigateTo({
       url: '../userProfile/userProfile?id=' + userid
-
     })
   },
-
-
 
   showInput: function () {
     this.setData({
