@@ -10,16 +10,17 @@
   width:150rpx;
   height:150rpx;
   border-radius: 50%;
-  background-color: lightgray;
+  background-color: #dde0e1;
   display: flex;
   justify-content: space-around;
   margin: 0 auto;
   margin-top: 20rpx;
+  box-shadow:1rpx 1rpx 20rpx #dde0e1;
 }
 
 .card{
   background-color:white;
-  box-shadow:1rpx 1rpx 10rpx lightgray;
+  box-shadow:1rpx 1rpx 30rpx #dde0e1;
   border-radius: 10rpx;
   width:45%;
   height:30%;
@@ -31,11 +32,11 @@
 
 .card-name {
   text-align: center;
-  top: 20rpx;
+  padding-top: 20rpx;
 }
 
 .box {
-  padding: 20rpx;
+  padding: 30rpx;
   line-height: 1.5em;
   display: flex;
   flex-wrap: wrap;
@@ -44,6 +45,7 @@
 
 .top-tag {
   border: 1rpx solid #4BDDB9;
+  box-shadow:1rpx 1rpx 20rpx #c7f6eb;
   border-radius: 40rpx;
   letter-spacing: 0.4px;
   padding: 5rpx 15rpx;
@@ -52,15 +54,17 @@
 }
 
 .btn{
-  border: 2rpx solid #4BDDB9;
+  border: 2rpx solid #4BDDB9; 
+  box-shadow:0rpx 1rpx 20rpx #c7f6eb;
   text-align: center;
-  margin-top: 10%;
   background-color: #4BDDB9;
   color: #FCFFFD;
-  border-radius: 50rpx;
+  border-radius: 10rpx;
   letter-spacing: 0.4px;
   padding: 10rpx 10rpx;
-  margin: 10rpx;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+  margin-bottom: 10rpx;
   z-index: 3;
 }
 
