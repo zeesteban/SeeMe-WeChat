@@ -1,25 +1,52 @@
 <!--meeting.wxml-->
 <view class="wrapper"></view>
-<view class="container-meeting">
-  <view class="meeting-profile"><image src="{{userInfo.avatarUrl}}" class="meeting-img"></image>{{userInfo.nickName}}</view>
-  <view class="meeting-profile"><image src="{{userInfo.avatarUrl}}" class="meeting-img"></image>{{userInfo.nickName}}</view>
-</view>
-
-<view class="align-center">
-  <text class="h1">Meeting with <text class="underline">{{userInfo.nickName}}</text></text>
-</view>
-
-<view class="box">
-You got lucky! {{userInfo.nickName}} also wants to meet up with you. Call her and decide on where you are going to meet up.
-</view>
-
-<form bindsubmit="bindFormSubmit">
-  <input type="text" name="content" placeholder="Your message"/>
+  <view class="container-meeting">
+    <view class="meeting-profile"><image src="{{userInfo.avatarUrl}}" class="meeting-img"></image>{{userInfo.nickName}}</view>
+      <view class="meeting-profile"><image src="{{recipient.avatar}}" class="meeting-img"></image>{{recipient.nickname}}</view>
+    </view>
+    <view class="align-center meeting-title">
+      <text class="h1">Meeting with <text class="underline">{{recipient.nickname}}</text></text>
+        <view>
+        <view> You got lucky! </view>
+        {{recipient.nickname}} also wants to meet up with you. Call them and decide on where you are going to meet up.
+      </view>
+      </view>
+<view class="align-center"><text class="h1 messages underline align-center">Messages</text></view>
+  <view class="messageBox">
+    <view wx:for="{{message}}" wx:for-item="message" wx:key>
+      <view wx:if="{{sender}}">
+        <view class="sender"><text class="message">{{message.content}}</text><image src="{{userInfo.avatarUrl}}" class="profile-image sender"></image></view>
+      </view>
+      <view wx:else>
+        <image class="profile-image recipient" src="{{recipient.avatar}}"></image>
+          <view class="recipient"> <image class="profile-image recipient" src="{{recipient.avatar}}"></image><text class="message">{{message.content}}</text></view>
+      </view>
+    </view>
+  </view>
+  <form bindsubmit="bindFormSubmit" id="{{meeting_id}}" data-recipient="{{recipient.id}}" data-sender="{{sender.id}}"> <!--  this still needs a meeting id-->
+  <input type="text" name="content" class="textBox" placeholder="Your message"/>
   <button form-type="submit">Send</button>
-</form>
+  </form>
+
+<!-- If status has been accepted then show phone -->
+
+<!-- <view wx:if="{{meeting.status == "accepted"}}">
+      <view class="box">
+        <image src="../../images/phone-call.png" class="btn-green" style="width: 80rpx; height: 80rpx;"></image>
+      </view>
+</view> -->
 
 
+<!-- Example -->
+<!-- <view class="wrapper"></view>
+<view class="container-meeting">
+<view class="meeting-profile"><image src="{{userInfo.avatarUrl}}" class="meeting-img"></image>{{userInfo.nickName}}</view>
+<view class="meeting-profile"><image src="{{userInfo.avatarUrl}}" class="meeting-img"></image>{{userInfo.nickName}}</view>
+</view> -->
+<!-- <view class="align-center">
+<text class="h1">Meeting with <text class="underline">{{userInfo.nickName}}</text></text>
+</view> -->
 <!--
 <view class="box call" bindtap="bindViewTap">
- <image src="../../images/phone-call.png" class="btn-green" style="width: 80rpx; height: 80rpx;"></image>
+<image src="../../images/phone-call.png" class="btn-green" style="width: 80rpx; height: 80rpx;"></image>
 </view>-->

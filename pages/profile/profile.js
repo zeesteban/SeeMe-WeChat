@@ -30,14 +30,18 @@ Page({
     console.log('onLoad')
     var that = this
     app.getUserInfo(function (userInfo) {
+      console.log("userinfo below")
+      console.log(userInfo)
       that.setData({
-        userInfo: userInfo
+        userInfo: userInfo,
+        bio: userInfo.bio
+        // At the moment we have no bio.
+        // Before that we need to local cache our userInfo data.
+        // Secondly, update that information to our database via a POST request.
+        // Then GET the user profile data and fill all these fields in.
       })
     })
   },
-
-
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

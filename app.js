@@ -9,15 +9,12 @@ App({
       success: function (res) {
         if (res.code) {
           //发起网络请求
-          console.log(res.code)
-          console.log(app.globalData.userInfo)
           app.getUserInfo(function (userInfo) {
             wx.request({
               success: function (res) {
                 app.globalData.authToken = res.data
-                console.log(app.globalData.authToken)
               },
-              url: 'http://localhost:3000/api/v1/users',
+              url: 'https://seeme.shanghaiwogeng.com/api/v1/users',
               method: "post",
               data: {
                 code: res.code,
@@ -49,6 +46,5 @@ App({
   globalData: {
     userInfo: null,
     authToken: null
-  },
-  
+  }
 })

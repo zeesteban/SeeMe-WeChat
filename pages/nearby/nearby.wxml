@@ -46,17 +46,17 @@
 <!--Card loop -->
 
 <view class="wrapper">
-<block wx:for="{{users}}" wx:key>
+<block wx:for="{{users}}" wx:for-item="user" wx:key>
 
-  <view class="card" id="{{item.id}}" bindtap="profileTap">
+  <view class="card" id="{{user.id}}" bindtap="profileTap">
 
-    <image class="userinfo-avatar card-image" src="{{item.avatar}}"></image>
+    <image class="userinfo-avatar card-image" src="{{user.avatar}}"></image>
   <view class="card-name">
-      {{item.nickname}}
-      <block wx:if="{{item.gender == false}}">
+      {{user.nickname}}
+      <block wx:if="{{user.gender == 2}}">
       <image src="../../images/female.png" class="gender"></image>
       </block>
-      <block wx:elif="{{item.gender == true}}">
+      <block wx:elif="{{user.gender == 1}}">
       <image src="../../images/male.png" class="gender"></image>
       </block>
       </view>
@@ -66,9 +66,7 @@
       <text class="top-tag">WXML</text>
       <text class="top-tag">Traveling</text>
     </view>
-    <view class="btn align-center" bindtap="meetViewTap">Meet</view>
+    <view class="btn align-center" id="{{user.id}}" catchtap="meetViewTap">Meet</view>
 </view>
 </block>
 </view>
-
-
