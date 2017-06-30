@@ -14,7 +14,7 @@ Page({
     let page = this;
     // Nearby API request
     wx.request({
-      url: 'http://localhost:3000/api/v1/users',
+      url: 'https://seeme.shanghaiwogeng.com/api/v1/users',
       method: "get",
       // header: {
       //   'content-type': 'application/json'

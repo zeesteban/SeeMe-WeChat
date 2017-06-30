@@ -23,7 +23,7 @@ Page({
     var message = e.detail.value.content
     console.log(message)
     wx.request({
-      url: 'http://localhost:3000/api/v1/meetings/3/messages', //仅为示例，并非真实的接口地址
+      url: 'https://seeme.shanghaiwogeng.com/api/v1/meetings/3/messages', //仅为示例，并非真实的接口地址
       method: 'post',
       data: {
           content: message
