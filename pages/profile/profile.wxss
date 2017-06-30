@@ -3,7 +3,7 @@
   width: 200px; 
   height: 200px;
   border-radius: 50%;
-  border: 10rpx solid white;
+  box-shadow:1rpx 1rpx 50rpx #dde0e1;
 }
 
 .wrapper {
@@ -42,6 +42,7 @@
 
 .tags {
   border: 1rpx solid #4BDDB9;
+  box-shadow:1rpx 1rpx 20rpx #c7f6eb;
   border-radius: 40rpx;
   letter-spacing: 0.4px;
   padding: 15rpx 20rpx;
