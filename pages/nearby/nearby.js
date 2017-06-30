@@ -29,7 +29,7 @@ Page({
   meetViewTap: function () {
 
     wx.request({
-      url: 'http://localhost:3000/api/v1/meetings',
+      url: 'https://seeme.shanghaiwogeng.com/api/v1/meetings',
       method: "post",
       header: {
         'X-User - Token' : authToken,
@@ -42,9 +42,10 @@ Page({
         })
       }
     })
+    meetingid = this.meeting_id
 
     wx.navigateTo({
-      url: '../meeting/meeting'
+      url: '../meeting/meeting?id=' + meetingid
     })
   },
 

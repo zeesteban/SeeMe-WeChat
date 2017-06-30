@@ -7,11 +7,13 @@ Page({
   data: {
     userInfo: {}
   },
-  meetingTap: function () {
+
+  meetingTap: function (e) {
+
+    var meeting_id = e.currentTarget.id
+    console.log(meeting_id)
     wx.navigateTo({
-
-      url: '../meeting/meeting'
-
+      url: '../meeting/meeting?id=' + meeting_id
     })
   },
 

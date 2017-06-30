@@ -66,10 +66,9 @@
       <text class="top-tag">WXML</text>
       <text class="top-tag">Traveling</text>
     </view>
-    <view class="btn align-center" bindtap="meetViewTap">Meet</view>
+    <view class="btn align-center" id="{{item.id}} "bindtap="meetViewTap">Meet</view>
 </view>
 </block>
 </view>
 
 
-</view>
