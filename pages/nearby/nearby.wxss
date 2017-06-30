@@ -32,7 +32,7 @@
 
 .card-name {
   text-align: center;
-  top: 20rpx;
+  padding-top: 20rpx;
 }
 
 .box {
