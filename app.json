@@ -6,7 +6,8 @@
     "pages/profile/profile",
     "pages/meetings/meetings",
     "pages/meeting/meeting",
-    "pages/userProfile/userProfile"
+    "pages/userProfile/userProfile",
+    "pages/profile_edit/profile_edit"
   ],
   "window": {
     "navigationBarBackgroundColor": "#5D737E",
