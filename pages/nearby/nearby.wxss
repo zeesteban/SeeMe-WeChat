@@ -36,7 +36,7 @@
 }
 
 .box {
-  padding: 20rpx;
+  padding: 30rpx;
   line-height: 1.5em;
   display: flex;
   flex-wrap: wrap;
@@ -57,13 +57,14 @@
   border: 2rpx solid #4BDDB9; 
   box-shadow:0rpx 1rpx 20rpx #c7f6eb;
   text-align: center;
-  margin-top: 10%;
   background-color: #4BDDB9;
   color: #FCFFFD;
-  border-radius: 50rpx;
+  border-radius: 10rpx;
   letter-spacing: 0.4px;
   padding: 10rpx 10rpx;
-  margin: 10rpx;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+  margin-bottom: 10rpx;
   z-index: 3;
 }
 
