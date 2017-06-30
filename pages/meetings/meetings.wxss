@@ -5,11 +5,10 @@
   padding-left:40rpx;
   padding-top:20rpx;
   padding-bottom:20rpx;
-  margin:30rpx 30rpx;
+  margin:40rpx 30rpx;
   display:flex;
   position:relative;
-  background-color:#FCFFFD;
-  box-shadow:2rpx 3rpx 10rpx lightgrey;
+  box-shadow:1rpx 1rpx 30rpx #c7f6eb;
 }
 
 .m-img {
