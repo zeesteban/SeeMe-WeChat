@@ -56,11 +56,11 @@ Page({
     console.log('on show ready')
     var that = this
     wx.request({
-              url: 'http://localhost:3000/api/v1/profile', //仅为示例，并非真实的接口地址
+              url: 'https://seeme.shanghaiwogeng.com/api/v1/profile', //仅为示例，并非真实的接口地址
               method: 'get',
               header: {
                   'Content-Type': 'application/json',
-                  'X-User-Token': 'o1mdRAuDDoy5ef-KSvMm'
+                  'X-User-Token': app.globalData.authToken
               },
               success: function(res) {
                 console.log(res.data),
