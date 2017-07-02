@@ -13,8 +13,10 @@ App({
         if (res.code) {
           //发起网络请求
           app.getUserInfo(function (userInfo) {
+
               try {
                 wx.setStorageSync('userInfo', userInfo)
+                console.log("stored user")
               } catch (e) {
                 console.log("couldn't set storage for avatar")
               }
@@ -61,6 +63,6 @@ App({
     }
   },
   globalData: {
-    userInfo: wx.getStorageSync('userInfo')
+    userInfo: null
   }
 })

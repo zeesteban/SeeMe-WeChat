@@ -4,11 +4,12 @@ Page({
    * 页面的初始数据
    */
   data: {
-    userInfo: app.globalData.userInfo,
+    userInfo: {},
     recipient: null,
     messages: [],
     recipient_meetings: [],
-    meeting_id: null
+    meeting_id: null,
+    current_user: null
   },
 
   /**
@@ -20,8 +21,12 @@ Page({
     // console.log(e.data.recipient)
     var that = this
     var token = wx.getStorageSync('token')
+    var userInfo = wx.getStorageSync('userInfo')
+    var current_user = wx.getStorageSync('currentUserId')
       that.setData({
-        meeting_id: e.id
+        meeting_id: e.id,
+        userInfo: userInfo,
+        current_user: current_user
       }),
      wx.request({
       url: 'https://seeme.shanghaiwogeng.com/api/v1/meetings/' + e.id,
@@ -32,8 +37,7 @@ Page({
       },
       success: function (res) {
         console.log("got user meeting")
-        console.log()
-        console.log(res.data.recipient.id)
+        console.log(res)
         var recipient_id = res.data.recipient.id
         // do a loop here to check id...not in view layer.
         that.setData({
@@ -69,9 +73,11 @@ Page({
     var sender = e.currentTarget.dataset.sender
     var meeting_id = e.currentTarget.id
     var recipient = e.target.dataset.recipient
-    console.log(e)
-    console.log("Sending message...")
-    console.log(message)
+    var token = wx.getStorageSync('token')
+    var current_user = wx.getStorageSync('currentUserId')
+    console.log('current user id')
+    console.log(current_user)
+    console.log(meeting_id)
     // console.log('https://seeme.shanghaiwogeng.com/api/v1/meetings/' + e.currentTarget.id + '/messages')
       wx.request({
         url: 'https://seeme.shanghaiwogeng.com/api/v1/meetings/' + meeting_id + '/messages', //仅为示例，并非真实的接口地址
@@ -79,13 +85,12 @@ Page({
         data: {
           message: {
             content: message,
-            sender_id: sender,
-            recipient_id: recipient
+            sender_id: current_user
           }
         },
         header: {
           'content-type': 'application/json',
-          'X-User-Token': app.globalData.authToken
+          'X-User-Token': token
        },
         success: function(res) {
           console.log(res)
