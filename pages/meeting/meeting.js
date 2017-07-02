@@ -4,9 +4,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    userInfo: {},
-    recipient: [],
-    recipient_id: null,
+    userInfo: app.globalData.userInfo,
+    recipient: null,
     messages: [],
     recipient_meetings: [],
     meeting_id: null
@@ -20,11 +19,7 @@ Page({
     console.log(e.id)
     // console.log(e.data.recipient)
     var that = this
-    app.getUserInfo(function (userInfo) {
-      that.setData({
-        userInfo: userInfo
-      })
-    }),
+    var token = wx.getStorageSync('token')
       that.setData({
         meeting_id: e.id
       }),
@@ -33,7 +28,7 @@ Page({
       method: "get",
       header: {
         'Content-Type': 'application/json',
-        'X-User-Token': app.globalData.authToken
+        'X-User-Token': token
       },
       success: function (res) {
         console.log("got user meeting")
@@ -53,7 +48,7 @@ Page({
       method: "get",
       header: {
         'Content-Type': 'application/json',
-        'X-User-Token': app.globalData.authToken
+        'X-User-Token': token
       },
       success: function (res) {
         console.log("got user meeting")
@@ -64,7 +59,7 @@ Page({
         })
       }
     })
-    }, 2000 )
+    }, 9000 )
   },
 
   bindFormSubmit: function (e) {

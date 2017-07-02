@@ -3,7 +3,7 @@
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  border: 5rpx solid white;
+  border: 0rpx solid white;
 }
 
 .meeting-title {
@@ -11,7 +11,7 @@
 }
 
 .meeting-profile {
-  width: 100px;
+  width: 220rpx;
   text-align: center;
 }
 
@@ -24,7 +24,6 @@
 .container-meeting {
   height: 100%;
   display: flex;
-  align-items: center;
   justify-content: space-around;
   margin-top: -100rpx;
 }
