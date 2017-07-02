@@ -23,47 +23,47 @@ Page({
     var token = wx.getStorageSync('token')
     var userInfo = wx.getStorageSync('userInfo')
     var current_user = wx.getStorageSync('currentUserId')
-    that.setData({
-      meeting_id: e.id,
-      userInfo: userInfo,
-      current_user: current_user
-    }),
-      wx.request({
-        url: 'https://seeme.shanghaiwogeng.com/api/v1/meetings/' + e.id,
-        method: "get",
-        header: {
-          'Content-Type': 'application/json',
-          'X-User-Token': token
-        },
-        success: function (res) {
-          console.log("got user meeting")
-          console.log(res)
-          var recipient_id = res.data.recipient.id
-          // do a loop here to check id...not in view layer.
-          that.setData({
-            recipient: res.data.recipient,
-            sender: res.data.sender
-          })
-        }
-      })
-    setInterval(function () {
-      wx.request({
-        url: 'https://seeme.shanghaiwogeng.com/api/v1/meetings/' + e.id + '/messages',
-        method: "get",
-        header: {
-          'Content-Type': 'application/json',
-          'X-User-Token': token
-        },
-        success: function (res) {
-          console.log("got user meeting")
-          console.log(res.data)
-          // do a loop here to check id...not in view layer.
-          that.setData({
-            message: res.data
-          })
-        }
-      })
-    }, 9000)
+      that.setData({
+        meeting_id: e.id,
+        userInfo: userInfo,
+        current_user: current_user
+      }),
+     wx.request({
+      url: 'https://seeme.shanghaiwogeng.com/api/v1/meetings/' + e.id,
+      method: "get",
+      header: {
+        'Content-Type': 'application/json',
+        'X-User-Token': token
+      },
+      success: function (res) {
+        console.log("got user meeting")
+        console.log(res)
+        var recipient_id = res.data.recipient.id
+        // do a loop here to check id...not in view layer.
+        that.setData({
+          recipient: res.data.recipient,
+          sender: res.data.sender
+        })
+      }
+    })
+     setInterval(function(){
+     wx.request({
+      url: 'https://seeme.shanghaiwogeng.com/api/v1/meetings/' + e.id + '/messages',
+      method: "get",
+      header: {
+        'Content-Type': 'application/json',
+        'X-User-Token': token
+      },
+      success: function (res) {
+        console.log("got user meeting")
+        console.log(res.data)
+        // do a loop here to check id...not in view layer.
+        that.setData({
+          message: res.data
+        })
+      }
+    })
+    }, 9000 )
   },
 
   bindFormSubmit: function (e) {
@@ -79,13 +79,21 @@ Page({
     console.log(current_user)
     console.log(meeting_id)
     // console.log('https://seeme.shanghaiwogeng.com/api/v1/meetings/' + e.currentTarget.id + '/messages')
-    wx.request({
-      url: 'https://seeme.shanghaiwogeng.com/api/v1/meetings/' + meeting_id + '/messages', //仅为示例，并非真实的接口地址
-      method: 'post',
-      data: {
-        message: {
-          content: message,
-          sender_id: current_user
+      wx.request({
+        url: 'https://seeme.shanghaiwogeng.com/api/v1/meetings/' + meeting_id + '/messages', //仅为示例，并非真实的接口地址
+        method: 'post',
+        data: {
+          message: {
+            content: message,
+            sender_id: current_user
+          }
+        },
+        header: {
+          'content-type': 'application/json',
+          'X-User-Token': token
+       },
+        success: function(res) {
+          console.log(res)
         }
       },
       header: {

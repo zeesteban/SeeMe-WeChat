@@ -23,16 +23,15 @@
 <view class="align-center padded"><text class="h1 messages underline">Messages</text></view>
   <view class="messageBox">
     <view wx:for="{{message}}" wx:for-item="message" wx:key>
-      <view wx:if="{{sender}}">
+      <view wx:if="{{message.sender_id == current_user}}">
         <view class="sender"><text class="message">{{message.content}}</text><image src="{{userInfo.avatarUrl}}" class="profile-image sender"></image></view>
       </view>
       <view wx:else>
-        <image class="profile-image recipient" src="{{recipient.avatar}}"></image>
           <view class="recipient"> <image class="profile-image recipient" src="{{recipient.avatar}}"></image><text class="message">{{message.content}}</text></view>
       </view>
     </view>
   </view>
-  <form bindsubmit="bindFormSubmit" id="{{meeting_id}}" data-recipient="{{recipient.id}}" data-sender="{{sender.id}}"> <!--  this still needs a meeting id-->
+  <form bindsubmit="bindFormSubmit" id="{{meeting_id}}" data-recipient="{{recipient.id}}" data-sender="{{current_user}}"> <!--  this still needs a meeting id-->
   <input type="text" name="content" class="textBox" placeholder="Your message"/>
   <button form-type="submit">Send</button>
   </form>
