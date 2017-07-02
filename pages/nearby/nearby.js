@@ -49,7 +49,7 @@ Page({
       success: function (res) {
         console.log("Sent")
         console.log(res.data.id)
-        wx.navigateTo({
+        wx.reLaunch({
            url: '../meeting/meeting?id=' + res.data.id
         //   success: function() {
         //   wx.showToast({
