@@ -2,7 +2,7 @@
 <view class="wrapper"></view>
   <view class="container-meeting">
     <view class="meeting-profile"><image src="{{userInfo.avatarUrl}}" class="meeting-img"></image>{{userInfo.nickName}}</view>
-      <view class="meeting-profile"><image src="{{recipient.avatar}}" class="meeting-img"></image>{{recipient.nickname}}</view>
+      <view class="meeting-profile"><image src="{{recipient.avatar}}" class="meeting-img"></image><text>{{recipient.nickname}}</text></view>
     </view>
     <view class="align-center meeting-title">
       <text class="h1">Meeting with <text class="underline">{{recipient.nickname}}</text></text>

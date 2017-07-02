@@ -12,7 +12,7 @@ page {
   background-color: #fefefe;
   font-size: 30rpx;
   color: #5D737E;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Avenir Next', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .h1 {
@@ -44,7 +44,6 @@ page {
   /*border-radius: 50rpx;*/
   border-radius: 10rpx;
   letter-spacing: 0.4px;
-  padding: 30rpx 40rpx;
   margin: 10rpx;
-  font-size: 40rpx;
+  font-size: 35rpx;
 }
