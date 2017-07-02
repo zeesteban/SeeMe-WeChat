@@ -56,9 +56,8 @@
 }
 
 .btn{
-  border: 2rpx solid #4BDDB9; 
+  border: 2rpx solid #4BDDB9;
   box-shadow:0rpx 1rpx 20rpx #c7f6eb;
-  text-align: center;
   background-color: #4BDDB9;
   color: #FCFFFD;
   border-radius: 10rpx;
@@ -68,6 +67,10 @@
   margin-right: 10rpx;
   margin-bottom: 10rpx;
   z-index: 3;
+}
+
+.btn-small {
+  width: 50%;
 }
 
 .gender {

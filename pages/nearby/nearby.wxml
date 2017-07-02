@@ -1,7 +1,7 @@
 <!--nearby.wxml-->
 
 <!--Search bar-->
-<view class="page">
+<!-- <view class="page">
   <view class="page__bd">
     <view class="weui-search-bar">
       <view class="weui-search-bar__form">
@@ -41,15 +41,16 @@
       </navigator>
     </view>
   </view>
-</view>
+</view> -->
 
 <!--Card loop -->
 
 <view class="wrapper">
 <block wx:for="{{users}}" wx:for-item="user" wx:key>
-
+  <block wx:if="{{user.id == current_user}}">
+  </block>
+  <block wx:else>
   <view class="card" id="{{user.id}}" bindtap="profileTap">
-
     <image class="userinfo-avatar card-image" src="{{user.avatar}}"></image>
   <view class="card-name">
       {{user.nickname}}
@@ -59,8 +60,8 @@
       <block wx:elif="{{user.gender == 1}}">
       <image src="../../images/male.png" class="gender"></image>
       </block>
-      </view>
-      <view class="align-center tiny-text">2 km away</view>
+  </view>
+  <view class="align-center tiny-text">2 km away</view>
     <view class="box">
       <text class="top-tag">Reading</text>
       <text class="top-tag">WXML</text>
@@ -69,4 +70,6 @@
     <view class="btn align-center" id="{{user.id}}" catchtap="meetViewTap">Meet</view>
 </view>
 </block>
+</block>
 </view>
+

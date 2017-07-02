@@ -1,6 +1,6 @@
 /* profile.wxss */
 .profile-img {
-  width: 200px; 
+  width: 200px;
   height: 200px;
   border-radius: 50%;
   box-shadow:1rpx 1rpx 50rpx #dde0e1;
@@ -20,7 +20,7 @@
   justify-content: space-between;
   margin-top: -250rpx;
   box-sizing: border-box;
-} 
+}
 
 .title-box {
   background-color: #E5E6E4;
@@ -47,4 +47,23 @@
   letter-spacing: 0.4px;
   padding: 15rpx 20rpx;
   margin: 10rpx;
+}
+
+/* Buttons */
+
+.btn{
+  border: 2rpx solid #4BDDB9;
+  box-shadow:0rpx 1rpx 20rpx #c7f6eb;
+  text-align: center;
+  background-color: #4BDDB9;
+  color: #FCFFFD;
+  border-radius: 10rpx;
+  letter-spacing: 0.4px;
+  margin-bottom: 40rpx;
+  line-height: 2;
+}
+
+.btn-small {
+  width: 30%;
+  text-align: center;
 }

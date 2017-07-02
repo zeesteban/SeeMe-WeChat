@@ -26,7 +26,6 @@ Page({
       url: '../meeting/meeting?id=' + e.currentTarget.id
 
     })
-    console.log("num ;eeti")
   },
 
   /**
@@ -35,16 +34,17 @@ Page({
   onLoad: function (e) {
     console.log('onLoad')
     let that = this
+    var token = wx.getStorageSync('token')
     app.getUserInfo(function (userInfo) {
       that.setData({
-        userInfo: userInfo
+        userInfo: app.userInfo
       })
     }),
     wx.request({
       url: 'https://seeme.shanghaiwogeng.com/api/v1/meetings/',
       method: 'get',
       header: {
-        'X-User-Token': app.globalData.authToken
+        'X-User-Token': token
       },
       success: function (res) {
         console.log("Success on getting meetings")

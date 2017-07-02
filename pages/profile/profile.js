@@ -9,8 +9,6 @@ Page({
     bio: ""
   },
 
-
-
   meetTap: function () {
     wx.navigateTo({
       url: '../meeting/meeting'
@@ -23,54 +21,47 @@ Page({
     })
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
+  /** Side note: make this refactored by making less requests to the profile, only call the getStorageSync   */
   onLoad: function () {
     console.log('onLoad')
     var that = this
-    app.getUserInfo(function (userInfo) {
-      console.log("userinfo below")
-      console.log(userInfo)
-      that.setData({
-        userInfo: userInfo,
-        bio: userInfo.bio
-        // At the moment we have no bio.
-        // Before that we need to local cache our userInfo data.
-        // Secondly, update that information to our database via a POST request.
-        // Then GET the user profile data and fill all these fields in.
-      })
-    })
+    var token = wx.getStorageSync('token')
+    var bio = wx.getStorageSync('bio')
+    var userInfo = wx.getStorageSync('userInfo')
+    that.setData({
+                  bio: bio,
+                  userInfo: userInfo
+                })
+    // wx.request({
+    //   success: function(res) {
+    //     app.getUserInfo(function (userInfo) {
+    //             that.setData({
+    //               bio: bio,
+    //               userInfo: userInfo
+    //             })
+    //           })
+    //           },
+    //           url: 'https://seeme.shanghaiwogeng.com/api/v1/profile', //仅为示例，并非真实的接口地址
+    //           method: 'get',
+    //           header: {
+    //               'Content-Type': 'application/json',
+    //               'X-User-Token': token
+    //           }
+    //         })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    console.log('on show ready')
-    var that = this
-    wx.request({
-              url: 'https://seeme.shanghaiwogeng.com/api/v1/profile', //仅为示例，并非真实的接口地址
-              method: 'get',
-              header: {
-                  'Content-Type': 'application/json',
-                  'X-User-Token': app.globalData.authToken
-              },
-              success: function(res) {
-                console.log(res.data),
-                that.setData({
-                  bio: res.data.bio
-                })
-                }
-            })
-  },
 
+
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */

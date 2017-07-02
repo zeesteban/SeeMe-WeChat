@@ -13,7 +13,7 @@
         <view class="weui-cells weui-cells_after-title">
           <view class="weui-cell weui-cell_input">
             <view class="weui-cell__bd">
-              <input class="weui-input" name="bio" placeholder="Edit your bio" />
+              <input class="weui-input" name="bio" placeholder="{{bio}}" />
             </view>
           </view>
         </view>
