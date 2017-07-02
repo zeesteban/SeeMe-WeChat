@@ -16,7 +16,7 @@ Page({
       },
       header: {
           'Content-Type': 'application/json',
-          'X-User-Token': app.globalData.authToken
+          'X-User-Token': app.globalData.authToken.authentication_token
       },
       success: function(res) {
         console.log(res.data)
@@ -37,7 +37,7 @@ Page({
       },
       header: {
           'content-type': 'application/json',
-          'X-User-Token': app.globalData.authToken
+          'X-User-Token': app.globalData.authToken.authentication_token
       },
       success: function(res) {
         console.log(res.data)

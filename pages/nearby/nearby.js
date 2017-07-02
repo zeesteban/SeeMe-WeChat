@@ -10,7 +10,7 @@ Page({
     let page = this;
     // Nearby API request
     wx.request({
-      url: 'https://seeme.shanghaiwogeng.com/api/v1/users',
+      url: 'http://localhost:3000/api/v1/users',
       method: "get",
       // header: {
       //   'content-type': 'application/json'
@@ -37,7 +37,7 @@ Page({
         wx.hideLoading()
       },2000),
     wx.request({
-      url: 'https://seeme.shanghaiwogeng.com/api/v1/meetings/',
+      url: 'http://localhost:3000/api/v1/meetings/',
       method: "post",
       data: {
         meeting: {
@@ -45,7 +45,7 @@ Page({
         }
       },
       header: {
-        'X-User-Token': app.globalData.authToken,
+        'X-User-Token': 'o1mdRAuDDoy5ef-KSvMm',
         'Content-Type': 'application/json'
       },
       success: function (res) {
@@ -68,6 +68,7 @@ Page({
 
   profileTap: function (e) {
     var userid = e.currentTarget.id
+    console.log(e.currentTarget.id)
     wx.navigateTo({
       url: '../userProfile/userProfile?id=' + userid
     })

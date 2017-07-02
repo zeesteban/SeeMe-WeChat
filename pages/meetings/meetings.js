@@ -7,9 +7,61 @@ Page({
   data: {
     userInfo: {},
     meetings: [],
+    sender_meetings: [],
+    recipient_meetings: [],
     meeting_id: null,
     recipients: null,
   },
+
+  cancelTap: function(e) {
+    console.log(e.currentTarget.id)
+    var meeting_id = e.currentTarget.id
+    wx.request({
+      url: 'http://localhost:3000/api/v1/meetings/' + meeting_id + '/cancel',
+      method: 'patch',
+      header: {
+        'X-User-Token': 'TmQBvysyZYTdzwJZkse3',
+      },
+      success: function (res) {
+        console.log("Success on cancelled a meeting")
+        console.log(res.data.status)
+      }
+    })
+    this.onLoad()
+  },
+
+  acceptTap: function(e) {
+    console.log(e.currentTarget.id)
+    var meeting_id = e.currentTarget.id
+    wx.request({
+      url: 'http://localhost:3000/api/v1/meetings/' + meeting_id + '/accept',
+      method: 'patch',
+      header: {
+        'X-User-Token': 'TmQBvysyZYTdzwJZkse3',
+      },
+      success: function (res) {
+        console.log("Success on accept a meeting")
+      }
+    })
+    this.onLoad()
+  },
+
+  declineTap: function(e) {
+    console.log(e.currentTarget.id)
+    var meeting_id = e.currentTarget.id
+    wx.request({
+      url: 'http://localhost:3000/api/v1/meetings/' + meeting_id + '/decline',
+      method: 'patch',
+      header: {
+        'X-User-Token': 'TmQBvysyZYTdzwJZkse3',
+      },
+      success: function (res) {
+        console.log("Success on declined a meeting")
+      }
+    })
+    this.onLoad()
+  },
+
   meetingTap: function (e) {
     console.log("Meeting data")
     console.log(e.currentTarget.id)
@@ -41,10 +93,10 @@ Page({
       })
     }),
     wx.request({
-      url: 'https://seeme.shanghaiwogeng.com/api/v1/meetings/',
+      url: 'http://localhost:3000/api/v1/meetings/',
       method: 'get',
       header: {
-        'X-User-Token': app.globalData.authToken
+        'X-User-Token': 'TmQBvysyZYTdzwJZkse3',
       },
       success: function (res) {
         console.log("Success on getting meetings")

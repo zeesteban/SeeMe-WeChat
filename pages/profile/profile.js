@@ -27,7 +27,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function () {
-    console.log('onLoad')
+    console.log('onLoad!!!')
     var that = this
     app.getUserInfo(function (userInfo) {
       console.log("userinfo below")
@@ -53,14 +53,15 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    console.log('on show ready')
+    console.log('on show ready!!!'),
+    console.log(app.globalData.authToken.authentication_token)
     var that = this
     wx.request({
               url: 'https://seeme.shanghaiwogeng.com/api/v1/profile', //仅为示例，并非真实的接口地址
               method: 'get',
               header: {
                   'Content-Type': 'application/json',
-                  'X-User-Token': app.globalData.authToken
+                  'X-User-Token': app.globalData.authToken.authentication_token
               },
               success: function(res) {
                 console.log(res.data),

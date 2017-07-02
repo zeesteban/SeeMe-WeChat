@@ -29,11 +29,11 @@ Page({
         meeting_id: e.id
       }),
      wx.request({
-      url: 'https://seeme.shanghaiwogeng.com/api/v1/meetings/' + e.id,
+      url: 'http://localhost:3000/api/v1/meetings/' + e.id,
       method: "get",
       header: {
         'Content-Type': 'application/json',
-        'X-User-Token': app.globalData.authToken
+        'X-User-Token': 'TmQBvysyZYTdzwJZkse3',
       },
       success: function (res) {
         console.log("got user meeting")
