@@ -44,7 +44,22 @@ App({
           }
         });
       }
-    })
+    }),
+
+  wx.getLocation({
+  type: 'wgs84',
+  success: function(location) {
+    var lat = location.latitude
+    var lng = location.longitude
+     console.log(location)
+   },
+  url: 'https://seeme.shanghaiwogeng.com/api/v1/users',
+  method: "post",
+  data: {
+  code: location.code,
+  userInfo: userInfo
+        }
+  })
   },
 
   getUserInfo: function (cb) {

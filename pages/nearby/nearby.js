@@ -20,7 +20,14 @@ Page({
           current_user: current_user
         })
       }
-    })
+    }),
+
+    // Calculate Distance between the User and all the users
+
+
+
+
+
   },
 
   // End of API request
