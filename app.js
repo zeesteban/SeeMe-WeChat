@@ -4,7 +4,7 @@ App({
     let app = this;
     wx.checkSession({
       success: function() {
-        console.log("success, he has account")
+        console.log("success, has account")
       },
       fail: function() {
          wx.login({
