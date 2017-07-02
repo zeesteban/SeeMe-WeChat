@@ -95,6 +95,14 @@ Page({
         success: function(res) {
           console.log(res)
         }
-})
-}
+      },
+      header: {
+        'content-type': 'application/json',
+        'X-User-Token': token
+      },
+      success: function (res) {
+        console.log(res)
+      }
+    })
+  }
 })

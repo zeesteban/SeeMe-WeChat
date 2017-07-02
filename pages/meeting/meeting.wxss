@@ -1,9 +1,17 @@
 /* meeting.wxss */
+#myMap {
+  width: 100%;
+  height: 300rpx;
+  z-index: 1;
+}
+
 .meeting-img {
   width: 100px;
   height: 100px;
   border-radius: 50%;
   border: 0rpx solid white;
+  background-color: lightblue;
+  box-shadow:1rpx 1rpx 20rpx #dde0e1;
 }
 
 .meeting-title {
@@ -13,26 +21,35 @@
 .meeting-profile {
   width: 220rpx;
   text-align: center;
+  z-index: 100;
+  margin-left: 10rpx;
+}
+
+.meeting-profile2 {
+  width: 220rpx;
+  text-align: center;
+  z-index: 100;
+  margin-left:-10rpx;
 }
 
 .wrapper {
   width: 100%;
-  background-color: #4BDDB9;
   height: 300rpx;
 }
 
 .container-meeting {
   height: 100%;
   display: flex;
-  justify-content: space-around;
-  margin-top: -100rpx;
+  justify-content: center;
+  margin-top: 10rpx;
 }
 
 .box {
-  margin: 0 20rpx;
+  margin: 40rpx 30rpx;
   padding: 20rpx;
   line-height: 1.5em;
   text-align: center;
+  box-shadow:1rpx 1rpx 30rpx #dde0e1;
 }
 
 .call {
