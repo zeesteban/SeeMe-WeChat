@@ -22,10 +22,23 @@
       </view>
     </view>
   </view>
-  <form bindsubmit="bindFormSubmit" id="{{meeting_id}}" data-recipient="{{recipient.id}}" data-sender="{{current_user}}"> <!--  this still needs a meeting id-->
-  <input type="text" name="content" class="textBox" placeholder="Your message"/>
+
+{{meeting_id}}
+Test 1
+<view class="section">
+  <input  confirm-type="send" bindconfirm="bindFormSubmit" name="content" placeholder="input message" id="{{meeting_id}}"/>
+</view>
+
+ Test 2
+  <view class="section">
+  <input type="text" confirm-type="send" bindconfirm="bindFormSubmit" name="content" placeholder="enter text" data-id="{{meeting_id}}" />
+</view>
+
+  <!-- <form bindsubmit="bindFormSubmit" id="{{meeting_id}}" data-recipient="{{recipient.id}}" data-sender="{{current_user}}">
+  <input confirm-type="send" type="text" name="content" class="textBox" placeholder="Your message"/>
   <button form-type="submit">Send</button>
-  </form>
+  </form> -->
+
 
 <!-- If status has been accepted then show phone -->
 
