@@ -1,17 +1,26 @@
 <!--meeting.wxml-->
-<view class="wrapper"></view>
-  <view class="container-meeting">
-    <view class="meeting-profile"><image src="{{userInfo.avatarUrl}}" class="meeting-img"></image>{{userInfo.nickName}}</view>
-      <view class="meeting-profile"><image src="{{recipient.avatar}}" class="meeting-img"></image><text>{{recipient.nickname}}</text></view>
-    </view>
-    <view class="align-center meeting-title">
-      <text class="h1">Meeting with <text class="underline">{{recipient.nickname}}</text></text>
-        <view>
-        <view> You got lucky! </view>
-        {{recipient.nickname}} also wants to meet up with you. Call them and decide on where you are going to meet up.
-      </view>
-      </view>
-<view class="align-center"><text class="h1 messages underline align-center">Messages</text></view>
+<view class="align-center meeting-title padded">
+  <text class="h1">Meeting with <text class="underline">{{recipient.nickname}}</text></text>
+  <view class="box">
+      <view> You got lucky!</view>
+      {{recipient.nickname}} also wants to meet up with you. Send them a message and decide on where you are going to meet up.
+  </view>
+</view>
+
+<view class="container-meeting">
+  <view class="meeting-profile">
+    <image src="{{userInfo.avatarUrl}}" class="meeting-img"></image>
+    <view>{{userInfo.nickName}}</view>
+  </view>
+  <view class="meeting-profile2">
+    <image src="{{recipient.avatar}}" class="meeting-img"></image>
+    <view>{{recipient.nickname}}</view>
+  </view>
+</view>
+
+<view class="wrapper padded"><map id="myMap" show-location /></view>
+    
+<view class="align-center padded"><text class="h1 messages underline">Messages</text></view>
   <view class="messageBox">
     <view wx:for="{{message}}" wx:for-item="message" wx:key>
       <view wx:if="{{sender}}">
@@ -27,6 +36,8 @@
   <input type="text" name="content" class="textBox" placeholder="Your message"/>
   <button form-type="submit">Send</button>
   </form>
+
+
 
 <!-- If status has been accepted then show phone -->
 
