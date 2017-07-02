@@ -21,13 +21,15 @@
 .card{
   background-color:white;
   box-shadow:1rpx 1rpx 30rpx #dde0e1;
-  border-radius: 10rpx;
+  border-radius:10rpx;
   width:45%;
-  height:30%;
-  position:relative;
+  max-height:30%;
+  display:flex;
   padding:1%;
-  margin: 1.5%;
-  z-index: 2;
+  margin:1.5%;
+  z-index:2;
+  flex-direction:column;
+  justify-content:space-between;
 }
 
 .card-name {
@@ -69,7 +71,7 @@
 }
 
 .gender {
-  width: 25rpx;
+  width: 25rpx; 
   height: 25rpx;
 }
 
