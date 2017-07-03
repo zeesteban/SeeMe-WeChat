@@ -2,12 +2,12 @@ App({
   onLaunch: function () {
     // WX code
     let app = this;
-    wx.checkSession({
-      success: function() {
-        console.log("success, has account")
-      },
-      fail: function() {
-         wx.login({
+    // wx.checkSession({
+    //   success: function() {
+    //     console.log("success, has account")
+    //   },
+    //   fail: function() {
+    wx.login({
       success: function (res) {
         console.log(res)
         if (res.code) {
@@ -43,8 +43,8 @@ App({
             }
           }
         });
-      }
-    })
+    //   }
+    // })
   },
 
   getUserInfo: function (cb) {
