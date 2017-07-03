@@ -115,6 +115,14 @@ Page({
         success: function(res) {
           var message = null
         }
-})
-}
+      },
+      header: {
+        'content-type': 'application/json',
+        'X-User-Token': token
+      },
+      success: function (res) {
+        console.log(res)
+      }
+    })
+  }
 })
