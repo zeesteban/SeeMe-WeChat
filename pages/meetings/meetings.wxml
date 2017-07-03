@@ -20,17 +20,36 @@
             <text class="status pending"></text>
           </view>
           </block>
-<!--         <block wx:else>
-          <block wx:if="{{meeting.status == 'pending'}}">
-          <view class="m-card" bindtap="meetingTap" id="{{meeting.id}}" data-meeting="{{meeting.recipient}}">
-            <image class="m-img" src="{{meeting.recipient.avatar}}"></image>
-            <view class="m-text">
-            <text>Meeting with {{meeting.recipient.nickname}}</text>
+            <block wx:if="{{meeting.status == 'accepted'}}">
+            <view class="m-card" bindtap="meetingTap" id="{{meeting.id}}" data-meeting="{{meeting.recipient}}">
+              <image class="m-img" src="{{meeting.recipient.avatar}}"></image>
+              <view class="m-text">
+              <text>Meeting with {{meeting.recipient.nickname}}</text>
+          <!--  <text class="tiny-text">Connection made at XX</text>  -->
+              </view>
+              <text class="status pending"></text>
             </view>
-            <text class="status pending"></text>
-          </view>
-          </block>
-        </block> -->
+            </block>
+            <block wx:if="{{meeting.status == 'declined'}}">
+            <view class="m-card" bindtap="meetingTap" id="{{meeting.id}}" data-meeting="{{meeting.recipient}}">
+              <image class="m-img" src="{{meeting.recipient.avatar}}"></image>
+              <view class="m-text">
+              <text>Meeting with {{meeting.recipient.nickname}}</text>
+          <!--  <text class="tiny-text">Connection made at XX</text>  -->
+              </view>
+              <text class="status pending"></text>
+            </view>
+            </block>
+            <block wx:if="{{meeting.status == 'cancelled'}}">
+            <view class="m-card" bindtap="meetingTap" id="{{meeting.id}}" data-meeting="{{meeting.recipient}}">
+              <image class="m-img" src="{{meeting.recipient.avatar}}"></image>
+              <view class="m-text">
+              <text>Meeting with {{meeting.recipient.nickname}}</text>
+          <!--  <text class="tiny-text">Connection made at XX</text>  -->
+              </view>
+              <text class="status pending"></text>
+            </view>
+            </block>
       </block>
     </block>
 
@@ -47,26 +66,39 @@
           <text class="status pending"></text>
         </view>
         </block>
-      </block>
-    </block>
-
-
-<!--  Accepted meetings  -->
-<!--
-    <view wx:if="{{meetings.status == 'accepted'}}">
-    <view class="h1 padded">Your accepted meetings</view>
-    </view>
-    <block wx:for="{{meetings.status == 'pending'}}" wx:for-item="meeting" wx:key>
-      <view class="m-card" bindtap="meetingTap">
-        <image class="m-img" src="{{meeting.recipient.avatar}}"></image>
-        <view class="m-text">
-        <text>Meeting with {{meeting.recipient.nickname}}</text>
-     <text class="tiny-text">Connection made at XX</text>
+        <block wx:if="{{meeting.status == 'accepted'}}">
+        <view class="m-card" bindtap="meetingTap" id="{{meeting.id}}" data-meeting="{{meeting.sender}}">
+          <image class="m-img" src="{{meeting.sender.avatar}}"></image>
+          <view class="m-text">
+          <text>{{meeting.sender.nickname}} accepted!</text>
+      <!--  <text class="tiny-text">Connection made at XX</text>  -->
+          </view>
+          <text class="status accepted"></text>
         </view>
-        <text class="status accepted"></text>
-      </view>
+        </block>
+      </block>
+      <block wx:if="{{meeting.status == 'declined'}}">
+        <view class="m-card" bindtap="meetingTap" id="{{meeting.id}}" data-meeting="{{meeting.sender}}">
+          <image class="m-img" src="{{meeting.sender.avatar}}"></image>
+          <view class="m-text">
+          <text>{{meeting.sender.nickname}} declined.</text>
+      <!--  <text class="tiny-text">Connection made at XX</text>  -->
+          </view>
+          <text class="status declined"></text>
+        </view>
+        </block>
+        <block wx:if="{{meeting.status == 'cancelled'}}">
+        <view class="m-card" bindtap="meetingTap" id="{{meeting.id}}" data-meeting="{{meeting.sender}}">
+          <image class="m-img" src="{{meeting.sender.avatar}}"></image>
+          <view class="m-text">
+          <text>{{meeting.sender.nickname}} wants to meet!</text>
+      <!--  <text class="tiny-text">Connection made at XX</text>  -->
+          </view>
+          <text class="status cancelled"></text>
+        </view>
+        </block>
     </block>
-  </view> -->
+
 
 <!-- Status code -->
     <!-- <view class="h1 padded">Your accepted meetings</view> -->
@@ -91,3 +123,5 @@
   </view>
   <text class="status pending"></text>
 </view> -->
+
+
