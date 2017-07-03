@@ -4,6 +4,29 @@ App({
     let app = this;
     wx.checkSession({
       success: function() {
+        wx.getLocation({
+          type: 'wgs84',
+          success: function (res) {
+            var lat = res.latitude
+            var lng = res.longitude
+            console.log(lat)
+            console.log(lng)
+            console.log(res)
+          },
+          url: 'https://seeme.shanghaiwogeng.com/api/v1/profile',
+          method: 'patch',
+          data: {
+            "user": {
+              "lat": lat,
+              "lng": lng
+            }
+          },
+          header: {
+            'Content-Type': 'application/json',
+            'X-User-Token': token
+          }
+        })
+
         console.log("success, has account")
       },
       fail: function() {
