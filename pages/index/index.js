@@ -22,7 +22,35 @@ Page({
       //更新数据
       that.setData({
         userInfo: userInfo
-      })
+      }),
+    wx.getLocation({
+      type: 'wgs84',
+      success: function (res) {
+        var token = wx.getStorageSync('token')
+        console.log("nearby users")
+        console.log(res)
+        var lat = res.latitude
+        var lng = res.longitude
+        var current_user = wx.getStorageSync('currentUserId')
+        var token = wx.getStorageSync('token')
+        wx.setStorageSync('lat', lat)
+        wx.setStorageSync('lng', lng)
+        wx.request({
+          url: 'https://seeme.shanghaiwogeng.com/api/v1/profile',
+          method: 'patch',
+          data: {
+            "user": {
+              "lat": lat,
+              "lng": lng
+            }
+          },
+          header: {
+            'Content-Type': 'application/json',
+            'X-User-Token': token
+          }
+        })
+      }
+    })
   },
   onPullDownRefresh: function(){
     wx.stopPullDownRefresh()

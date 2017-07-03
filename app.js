@@ -24,7 +24,6 @@ App({
             }
             wx.request({
               success: function (res) {
-                console.log(res)
                 try {
                   wx.setStorageSync('token', res.data.authentication_token)
                   wx.setStorageSync('currentUserId', res.data.id)
@@ -44,32 +43,8 @@ App({
           console.log('error' + res.errMsg)
         }
       }
-    }),
-
-      wx.getLocation({
-        type: 'wgs84',
-        success: function (res) {
-          var token = wx.getStorageSync('token')
-          console.log(res)
-          var lat = res.latitude
-          var lng = res.longitude
-          wx.request({
-            url: 'https://seeme.shanghaiwogeng.com/api/v1/profile',
-            method: 'patch',
-            data: {
-              "user": {
-                "lat": lat,
-                "lng": lng
-              }
-            },
-            header: {
-              'Content-Type': 'application/json',
-              'X-User-Token': token
-            }
-          })
-        }
-      })
-      },
+    })
+  },
       // wx.getLocation({
       //   type: 'wgs84',
       //   success: function (res) {
