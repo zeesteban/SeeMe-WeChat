@@ -5,6 +5,7 @@ Page({
    */
   data: {
     userInfo: {},
+    sender: null,
     recipient: null,
     messages: [],
     recipient_meetings: [],
@@ -68,7 +69,7 @@ Page({
           })
         }
       })
-      }, 9000 )
+      }, 12000 )
     }
 
   },
