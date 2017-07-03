@@ -23,5 +23,8 @@ Page({
       that.setData({
         userInfo: userInfo
       })
+  },
+  onPullDownRefresh: function(){
+    wx.stopPullDownRefresh()
   }
 })

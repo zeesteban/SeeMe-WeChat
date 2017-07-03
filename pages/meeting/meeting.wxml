@@ -11,7 +11,46 @@
         {{recipient.nickname}} also wants to meet up with you. Call them and decide on where you are going to meet up.
       </view>
       </view>
-<view class="align-center"><text class="h1 messages underline align-center">Messages</text></view>
+
+<view class="chat-box">
+  <view wx:for="{{message}}" wx:for-item="message" wx:key>
+      <view wx:if="{{message.sender_id == current_user}}">
+        <view class="message-box right-img">
+            <image src="{{userInfo.avatarUrl}}" class="picture sender"></image>
+        <view class="message">
+          <text>{{message.content}}</text>
+        </view>
+      </view>
+      </view>
+      <view wx:else>
+        <view class="message-box left-img">
+              <image class="recipient picture left-image" src="{{recipient.avatar}}"></image>
+          <view class="message">
+            <text>{{message.content}}</text>
+          </view>
+        </view>
+    </view>
+    </view>
+    <view class="enter-message">
+      <input maxlength="120" class="textbox" confirm-type="send" bindconfirm="bindFormSubmit"placeholder="input message" id="{{meeting_id}}"/>
+    </view>
+
+  </view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <view class="align-center"><text class="h1 messages underline align-center">Messages</text></view>
   <view class="messageBox">
     <view wx:for="{{message}}" wx:for-item="message" wx:key>
       <view wx:if="{{message.sender_id == current_user}}">
@@ -21,18 +60,11 @@
           <view class="recipient"> <image class="profile-image recipient" src="{{recipient.avatar}}"></image><text class="message">{{message.content}}</text></view>
       </view>
     </view>
-  </view>
+    <view class="section">
+      <input class="textbox" confirm-type="send" bindconfirm="bindFormSubmit"placeholder="input message" id="{{meeting_id}}"/>
+    </view>
+  </view> -->
 
-{{meeting_id}}
-Test 1
-<view class="section">
-  <input  confirm-type="send" bindconfirm="bindFormSubmit" name="content" placeholder="input message" id="{{meeting_id}}"/>
-</view>
-
- Test 2
-  <view class="section">
-  <input type="text" confirm-type="send" bindconfirm="bindFormSubmit" name="content" placeholder="enter text" data-id="{{meeting_id}}" />
-</view>
 
   <!-- <form bindsubmit="bindFormSubmit" id="{{meeting_id}}" data-recipient="{{recipient.id}}" data-sender="{{current_user}}">
   <input confirm-type="send" type="text" name="content" class="textBox" placeholder="Your message"/>

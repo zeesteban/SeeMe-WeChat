@@ -12,7 +12,7 @@ page {
   background-color: #fefefe;
   font-size: 30rpx;
   color: #5D737E;
-  /*font-family: 'Avenir Next', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;*/
+  font-family: 'Avenir Next', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .h1 {

@@ -9,7 +9,8 @@ Page({
     messages: [],
     recipient_meetings: [],
     meeting_id: null,
-    current_user: null
+    current_user: null,
+    request: true
   },
 
   /**
@@ -47,24 +48,43 @@ Page({
         })
       }
     })
-     setInterval(function(){
-     wx.request({
-      url: 'https://seeme.shanghaiwogeng.com/api/v1/meetings/' + e.id + '/messages',
-      method: "get",
-      header: {
-        'Content-Type': 'application/json',
-        'X-User-Token': token
-      },
-      success: function (res) {
-        console.log("got user meeting")
-        console.log(res.data)
-        // do a loop here to check id...not in view layer.
-        that.setData({
-          message: res.data
-        })
-      }
+     //  Refactor
+     if (that.data.request == true) {
+      setInterval(function(){
+       wx.request({
+        url: 'https://seeme.shanghaiwogeng.com/api/v1/meetings/' + e.id + '/messages',
+        method: "get",
+        header: {
+          'Content-Type': 'application/json',
+          'X-User-Token': token
+        },
+        success: function (res) {
+          console.log("got user meeting")
+          console.log(res.data)
+          // do a loop here to check id...not in view layer.
+          that.setData({
+            message: res.data,
+            request: true
+          })
+        }
+      })
+      }, 9000 )
+    }
+
+  },
+
+  onUnload: function(e) {
+    console.log("Onunload")
+    let that = this
+    console.log(that.data.request)
+    that.setData({
+      request: false
     })
-    }, 9000 )
+  console.log(that.data.request)
+  },
+
+   onHide: function () {
+    console.log("onHide")
   },
 
   bindFormSubmit: function (e) {
@@ -93,7 +113,7 @@ Page({
           'X-User-Token': token
        },
         success: function(res) {
-          // console.log(res)
+          var message = null
         }
 })
 }

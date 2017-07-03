@@ -7,13 +7,14 @@
     "pages/meetings/meetings",
     "pages/meeting/meeting",
     "pages/userProfile/userProfile",
-    "pages/profile_edit/profile_edit"
+    "pages/profile_edit/profile_edit",
+    "pages/maps/maps"
   ],
   "window": {
     "navigationBarBackgroundColor": "#5D737E",
     "navigationBarTextStyle": "white",
     "navigationBarTitleText": "SeeMe",
-    "backgroundColor": "#fefefe",
+    "backgroundColor": "#5D737E",
     "backgroundTextStyle": "light",
     "enablePullDownRefresh": true
   },
@@ -22,7 +23,8 @@
     "borderStyle": "#D3D3D3",
     "selectedColor": "#D03232",
     "color": "#131313",
-    "list": [{
+    "list": [
+      {
         "pagePath": "pages/nearby/nearby",
         "iconPath": "images/radar-gray.png",
         "selectedIconPath": "images/radar-green.png"
@@ -36,6 +38,7 @@
         "pagePath": "pages/profile/profile",
         "iconPath": "images/profile-gray.png",
         "selectedIconPath": "images/profile-green.png"
-      }]
-    }
+      }
+    ]
+  }
 }
