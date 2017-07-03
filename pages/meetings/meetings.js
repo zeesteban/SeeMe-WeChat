@@ -9,6 +9,7 @@ Page({
     meetings: [],
     meeting_id: null,
     recipient: null,
+    current_user: null
   },
 
   meetingTap: function (e) {
@@ -36,9 +37,11 @@ Page({
     console.log('onLoad')
     let that = this
     var token = wx.getStorageSync('token')
+    var current_user = wx.getStorageSync('currentUserId')
     app.getUserInfo(function (userInfo) {
       that.setData({
-        userInfo: app.userInfo
+        userInfo: app.userInfo,
+        current_user: current_user
       })
     }),
     wx.request({
