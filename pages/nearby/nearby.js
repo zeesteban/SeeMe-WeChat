@@ -15,6 +15,7 @@ Page({
       url: 'https://seeme.shanghaiwogeng.com/api/v1/users',
       method: "get",
       success: function (res) {
+        console.log(res)
         page.setData({
           users: res.data,
           current_user: current_user
