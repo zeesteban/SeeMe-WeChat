@@ -62,12 +62,12 @@
       </block>
   </view>
   <view class="align-center tiny-text">2 km away</view>
-    <view class="box">
-      <text class="top-tag">Reading</text>
-      <text class="top-tag">WXML</text>
-      <text class="top-tag">Traveling</text>
-    </view>
-    <view class="btn align-center" id="{{user.id}}" catchtap="meetViewTap">Meet</view>
+  <view class="box">
+    <block wx:for="{{user.tag_list}}" wx:for-item="tag" wx:key>
+      <text class="top-tag">{{tag}}</text>
+    </block>
+  </view>
+  <view class="btn align-center" id="{{user.id}}" catchtap="meetViewTap">Meet</view>
 </view>
 </block>
 </block>
