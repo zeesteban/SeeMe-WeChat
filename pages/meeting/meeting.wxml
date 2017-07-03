@@ -1,12 +1,14 @@
 <!--meeting.wxml-->
-<view class="align-center meeting-title padded">
+
+<!-- For the sender -->
+<block wx:if="{{sender.id == current_user}}">
+  <view class="align-center meeting-title padded">
   <text class="h1">Meeting with <text class="underline">{{recipient.nickname}}</text></text>
   <view class="box">
       <view> You got lucky!</view>
       {{recipient.nickname}} also wants to meet up with you. Send them a message and decide on where you are going to meet up.
   </view>
 </view>
-
 <view class="container-meeting">
   <view class="meeting-profile">
     <image src="{{userInfo.avatarUrl}}" class="meeting-img"></image>
@@ -19,7 +21,7 @@
 </view>
 
 <view class="wrapper padded"><map id="myMap" show-location /></view>
-    
+
 <view class="align-center padded"><text class="h1 messages underline">Messages</text></view>
 <view class="chat-box">
   <view wx:for="{{message}}" wx:for-item="message" wx:key>
@@ -45,9 +47,57 @@
     </view>
 
   </view>
+</block>
 
+<!-- For receiving -->
 
+<block wx:if="{{sender.id != current_user}}">
+  <view class="align-center meeting-title padded">
+  <text class="h1"><text class="underline">{{sender.nickname}}</text>wants to meet!</text>
+  <view class="box">
+      <view> You got lucky!</view>
+      {{sender.nickname}} wants to meet up!
+  </view>
+</view>
+<view class="container-meeting">
+  <view class="meeting-profile">
+    <image src="{{userInfo.avatarUrl}}" class="meeting-img"></image>
+    <view>{{userInfo.nickName}}</view>
+  </view>
+  <view class="meeting-profile2">
+    <image src="{{sender.avatar}}" class="meeting-img"></image>
+    <view>{{sender.nickname}}</view>
+  </view>
+</view>
 
+<view class="wrapper padded"><map id="myMap" show-location /></view>
+
+<view class="align-center padded"><text class="h1 messages underline">Messages</text></view>
+<view class="chat-box">
+  <view wx:for="{{message}}" wx:for-item="message" wx:key>
+      <view wx:if="{{message.sender_id == current_user}}">
+        <view class="message-box right-img">
+            <image src="{{userInfo.avatarUrl}}" class="picture sender"></image>
+        <view class="message">
+          <text>{{message.content}}</text>
+        </view>
+      </view>
+      </view>
+      <view wx:else>
+        <view class="message-box left-img">
+              <image class="recipient picture left-image" src="{{sender.avatar}}"></image>
+          <view class="message">
+            <text>{{message.content}}</text>
+          </view>
+        </view>
+    </view>
+    </view>
+    <view class="enter-message">
+      <input maxlength="120" class="textbox" confirm-type="send" bindconfirm="bindFormSubmit" placeholder="input message" id="{{meeting_id}}"/>
+    </view>
+
+  </view>
+</block>
 
 <!-- If status has been accepted then show phone -->
 
