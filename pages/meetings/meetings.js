@@ -9,6 +9,8 @@ Page({
     meetings: [],
     meeting_id: null,
     recipient: null,
+    current_user: null,
+    token: null,
   },
 
   meetingTap: function (e) {
@@ -29,16 +31,72 @@ Page({
     })
   },
 
+  cancelTap: function(e) {
+    console.log(e.currentTarget.id)
+    var that = this
+    var meeting_id = e.currentTarget.id
+    wx.request({
+      url: 'https://seeme.shanghaiwogeng.com/api/v1/meetings/' + meeting_id + '/cancel',
+      method: 'patch',
+      header: {
+        'X-User-Token': that.data.token,
+      },
+      success: function (res) {
+        console.log("Success on cancelled a meeting")
+        console.log(res.data.status)
+      }
+    })
+    this.onLoad()
+  },
+
+  acceptTap: function(e) {
+    console.log(e.currentTarget.id)
+    var that = this
+    var meeting_id = e.currentTarget.id
+    wx.request({
+      url: 'https://seeme.shanghaiwogeng.com/api/v1/meetings/' + meeting_id + '/accept',
+      method: 'patch',
+      header: {
+        'X-User-Token': that.data.token,
+      },
+      success: function (res) {
+        console.log("Success on accept a meeting")
+      }
+    })
+    this.onLoad()
+  },
+
+  declineTap: function(e) {
+    console.log(e.currentTarget.id)
+    var that = this
+    var meeting_id = e.currentTarget.id
+    wx.request({
+      url: 'https://seeme.shanghaiwogeng.com/api/v1/meetings/' + meeting_id + '/decline',
+      method: 'patch',
+      header: {
+        'X-User-Token': that.data.token,
+      },
+      success: function (res) {
+        console.log("Success on declined a meeting")
+      }
+    })
+    this.onLoad()
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (e) {
-    console.log('onLoad')
+    console.log('onLoad--!')
     let that = this
     var token = wx.getStorageSync('token')
+    var current_user = wx.getStorageSync('currentUserId')
+    console.log(token)
+    console.log(current_user)
     app.getUserInfo(function (userInfo) {
       that.setData({
-        userInfo: app.userInfo
+        userInfo: app.userInfo,
+        current_user: current_user,
+        token: token
       })
     }),
     wx.request({
