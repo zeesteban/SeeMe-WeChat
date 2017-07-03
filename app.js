@@ -30,6 +30,7 @@ App({
                     console.log("Didn't set storage")
                 }
               },
+              
               url: 'https://seeme.shanghaiwogeng.com/api/v1/users',
               method: "post",
               data: {
@@ -46,20 +47,26 @@ App({
       }
     }),
 
+// Localisation
   wx.getLocation({
   type: 'wgs84',
-  success: function(location) {
-    var lat = location.latitude
-    var lng = location.longitude
-     console.log(location)
+  success: function(res) {
+    var lat = res.latitude
+    var lng = res.longitude
+     console.log(res)
+
    },
-  url: 'https://seeme.shanghaiwogeng.com/api/v1/users',
-  method: "post",
+  url: 'https://seeme.shanghaiwogeng.com/api/v1/profile',
+  method: "patch",
   data: {
-  code: location.code,
-  userInfo: userInfo
+    "user":{
+      "lat" :e.detail.value.lat,
+      "lng": e.detail.value.lng
+    }
         }
   })
+  console.log(lat)
+  console.log(lng)
   },
 
   getUserInfo: function (cb) {
