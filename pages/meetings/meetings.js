@@ -8,8 +8,9 @@ Page({
     userInfo: {},
     meetings: [],
     meeting_id: null,
-    recipients: null,
+    recipient: null,
   },
+
   meetingTap: function (e) {
     console.log("Meeting data")
     console.log(e.currentTarget.id)

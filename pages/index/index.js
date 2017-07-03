@@ -9,7 +9,7 @@ Page({
   },
   //事件处理函数
   bindViewTap: function() {
-    wx.switchTab({
+    wx.reLaunch({
       url: '../nearby/nearby'
 
     })
@@ -23,5 +23,8 @@ Page({
       that.setData({
         userInfo: userInfo
       })
+  },
+  onPullDownRefresh: function(){
+    wx.stopPullDownRefresh()
   }
 })

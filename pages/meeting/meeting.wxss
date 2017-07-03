@@ -73,30 +73,160 @@
 
 /* Messages */
 
-.sender {
+/*.sender {
   text-align: right;
   margin-top: 30rpx;
   vertical-align: middle;
-  /*vertical-align: middle;*/
 }
 
+/*
 .recipient {
   text-align: left;
   margin-top: 30rpx;
   vertical-align: middle;
-}
+}*/
 
-.profile-image {
+/*.profile-image {
   width:80rpx;
   height:80rpx;
   border-radius: 50%;
   margin: 0 auto;
-}
+}*/
 
-.message {
+/*.message {
   padding: 40rpx;
 }
 
 .messages {
   margin-top: 40rpx;
+}*/
+
+/* Chat box xss */
+
+
+.container{
+  width:400px;
+  display:block;
+  margin:0 auto;
+  box-shadow:0 2px 5px rgba(0,0,0,0.4);
 }
+.header{
+  padding:20px 20px 18px 20px;
+  background:#5FB471;
+  color:#fff;
+}
+.header h2{
+  font-size:16px;
+  line-height:15px;
+  display:inline-block;
+}
+.header a{
+  display:inline-block;
+  float:right;
+  background:#3d8b4e;
+  font-size:25px;
+  line-height:20px;
+  padding:3px 6px;
+  margin-top:-5px;
+  border-radius:2px;
+}
+.chat-box, .enter-message{
+  background:#ECECEC;
+  padding:0 20px;
+  color:#a1a1a1;
+}
+.chat-box .message-box{
+  padding:20rpx 0 10rpx;
+  clear:both;
+}
+
+.picture {
+  width:60rpx;
+  height:60rpx;
+  border-radius:50%;
+}
+.picture span{
+  font-weight:bold;
+  font-size:12px;
+  clear:both;
+  display:block;
+  text-align:center;
+  margin-top:3px;
+}
+.message{
+  background:#fff;
+  display:inline-block;
+  padding:13px;
+  width: 80%;
+  border-radius:2px;
+  box-shadow: 0 1px 1px rgba(0,0,0,.04);
+  position:relative;
+}
+.message:before{
+  content:"";
+  position:absolute;
+  display:block;
+  left:0;
+  border-right:6px solid #fff;
+  border-top: 6px solid transparent;
+  border-bottom:6px solid transparent;
+  top:10px;
+  margin-left:-6px;
+}
+.message span{
+  color:#555;
+}
+
+.left-image {
+  float: left;
+  margin-right: 20rpx;
+}
+
+.message-left {
+  right:100%;
+  margin-left:0;
+  border-right:6px solid #fff;
+  border-left:6px solid transparent;
+  border-top:6px solid transparent;
+  border-bottom:6px solid transparent;
+}
+
+.message-box.right-img .picture{
+  float:right;
+  padding:0;
+}
+.message-box.right-img .picture img{
+  float:right;
+}
+.message-box.right-img .message:before{
+  left:100%;
+  margin-right:6px;
+  margin-left:0;
+  border-right:6px solid transparent;
+  border-left:6px solid #fff;
+  border-top: 6px solid transparent;
+  border-bottom:6px solid transparent;
+}
+
+.message-box .picture{
+  float:left;
+  display:block;
+}
+
+.enter-message{
+  padding:13px 0px;
+}
+.enter-message input{
+  border:none;
+  padding:10px 12px;
+  background:#d3d3d3;
+  width:80%;
+  border-radius:2px;
+}
+.enter-message a.send{
+  padding:10px 15px;
+  background:#6294c2;
+  border-radius:2px;
+  float:right;
+}
+

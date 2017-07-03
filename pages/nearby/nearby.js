@@ -47,18 +47,9 @@ Page({
         'Content-Type': 'application/json'
       },
       success: function (res) {
-        console.log("Sent")
-        console.log(res.data.id)
-        wx.reLaunch({
+        wx.navigateTo({
            url: '../meeting/meeting?id=' + res.data.id
-        //   success: function() {
-        //   wx.showToast({
-        //     title: 'Success!',
-        //     icon: 'success',
-        //     duration: 2000
-        //   })
-        // },
-      })
+        })
       }
     })
   },
@@ -71,27 +62,42 @@ Page({
     })
   },
 
-  showInput: function () {
-    this.setData({
-      inputShowed: true
-    });
-  },
-  hideInput: function () {
-    this.setData({
-      inputVal: "",
-      inputShowed: false
-    });
-  },
-  clearInput: function () {
-    this.setData({
-      inputVal: ""
-    });
-  },
-  inputTyping: function (e) {
-    this.setData({
-      inputVal: e.detail.value
-    });
-  },
+  onPullDownRefresh: function(){
+    wx.request({
+      url: 'https://seeme.shanghaiwogeng.com/api/v1/users',
+      method: "get",
+      success: function (res) {
+        console.log("refreshed")
+        page.setData({
+          users: res.data,
+          current_user: current_user
+        })
+      }
+    })
+    wx.stopPullDownRefresh()
+  }
+
+  // showInput: function () {
+  //   this.setData({
+  //     inputShowed: true
+  //   });
+  // },
+  // hideInput: function () {
+  //   this.setData({
+  //     inputVal: "",
+  //     inputShowed: false
+  //   });
+  // },
+  // clearInput: function () {
+  //   this.setData({
+  //     inputVal: ""
+  //   });
+  // },
+  // inputTyping: function (e) {
+  //   this.setData({
+  //     inputVal: e.detail.value
+  //   });
+  // },
 
 
 });
