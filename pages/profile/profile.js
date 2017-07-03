@@ -6,7 +6,8 @@ Page({
    */
   data: {
     userInfo: {},
-    bio: ""
+    bio: [],
+    tag_list: []
   },
 
   meetTap: function () {
@@ -28,9 +29,12 @@ Page({
     var token = wx.getStorageSync('token')
     var bio = wx.getStorageSync('bio')
     var userInfo = wx.getStorageSync('userInfo')
+    var tag_list = wx.getStorageSync('tag_list')
+    console.log(tag_list)
     that.setData({
                   bio: bio,
-                  userInfo: userInfo
+                  userInfo: userInfo,
+                  tag_list: tag_list
                 })
     // wx.request({
     //   success: function(res) {

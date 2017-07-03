@@ -16,13 +16,14 @@ Page({
 
   formSubmit: function (e) {
     var token = wx.getStorageSync('token')
-    console.log(e.detail.value.bio),
+    var base = e.detail.value
     wx.request({
       url: 'https://seeme.shanghaiwogeng.com/api/v1/profile', //仅为示例，并非真实的接口地址
       method: 'patch',
       data: {
         "user": {
-          "bio": e.detail.value.bio
+          "bio": base.bio,
+          "tag_list": base.hobby1 + "," + base.hobby2 + "," + base.hobby3 + "," + base.hobby4 + "," + base.hobby5
          }
       },
       header: {
@@ -32,7 +33,7 @@ Page({
       success: function(res) {
         try {
           wx.setStorageSync('bio', res.data.bio)
-
+          wx.setStorageSync('tag_list', res.data.tag_list)
           // wx.setStorageSync('token', res.data.interests)
         } catch (e) {
             console.log("Didn't set storage")
