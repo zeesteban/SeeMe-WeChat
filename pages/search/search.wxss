@@ -4,7 +4,7 @@
   padding: 20rpx;
   line-height: 1.5em;
   text-align: center;
-  box-shadow:1rpx 1rpx 30rpx #dde0e1;
+  /*box-shadow:1rpx 1rpx 30rpx #dde0e1;*/
 }
 
 .tags {

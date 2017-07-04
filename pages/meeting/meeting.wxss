@@ -57,7 +57,7 @@
 }
 
 .messageBox {
-  maring-top: 30rpx;
+  margin-top: 30rpx;
   padding-bottom: 200rpx;
   width: 90%;
   margin: 0 20rpx 20rpx 20rpx;

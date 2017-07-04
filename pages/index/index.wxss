@@ -6,7 +6,8 @@
 }
 
 .tag-line{
-  margin-top: 7%;
+  margin: 40rpx 0; 
+  font-size: 1.3em;
 }
 
 page {
@@ -26,16 +27,27 @@ page {
   color: #aaa;
 }
 
-.usermotto {
-  margin-top: 420rpx;
+.container {
+  margin: 20rpx 40rpx;
 }
 
-body {
-  background-color: black;
-  margin: 0;
+.swiper-view {
+  margin: 80rpx 0;
+  border-radius: 10%;
 }
 
-.radar {
+image {
+  width: 100%;
+}
+
+swiper {
+  height: 450rpx;
+}
+
+
+
+/* RADAR */
+/*.radar {
   width: 400px;
   height: 400px;
   background-size: 400px 400px;
@@ -134,4 +146,4 @@ body {
   to {
     opacity: 0;
   }
-}
+}*/

@@ -1,15 +1,30 @@
 <!--index.wxml-->
 <view class="container">
-  <text class="tag-line">Meet people instantly</text>
-<view class="radar">
+  <view class="h1 padded">LOGO</view>
+  <text class="underline padded tag-line">Meet people instantly</text>
+
+  <view class="align-center">Connect with people who share the same interests and hobbies. They are closer than you think!</view>
+
+  <!-- RADAR -->
+<!--<view class="radar">
   <view class="pointer"></view>
   <view class="shadow"></view>
+</view>-->
 </view>
 
-  <view class="userinfo">
-    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-  </view>
-  <view class="usermotto">
+        <swiper class="swiper-view" bindscroll="scroll" indicator-dots="true" autoplay="true" interval="2500">
+          <swiper-item>
+            <image src="../../images/cover1.jpg" mode="scaleToFill"></image>
+          </swiper-item>
+          <swiper-item>
+            <image src="../../images/cover2.jpg" mode="aspectFill"></image>
+          </swiper-item>
+          <swiper-item>
+            <image src="../../images/cover3.jpg" mode="aspectFill"></image>
+          </swiper-item>
+        </swiper>
+
+  <view class="container">
     <button class="btn-green" bindtap="bindViewTap">Continue</button>
   </view>
-</view>
+
