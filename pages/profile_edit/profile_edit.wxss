@@ -16,3 +16,21 @@ form{
 .page-section {
   margin-bottom: 30px;
 }
+
+.box {
+  margin: 0 20rpx;
+  padding: 20rpx;
+  line-height: 1.5em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.tags {
+  border: 1rpx solid #4BDDB9;
+  box-shadow:1rpx 1rpx 20rpx #c7f6eb;
+  border-radius: 40rpx;
+  letter-spacing: 0.4px;
+  padding: 15rpx 20rpx;
+  margin: 10rpx;
+}
