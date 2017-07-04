@@ -3,17 +3,18 @@
 <!-- SCROLL -->
 
 <scroll-view scroll-x="true" style=" white-space: nowrap; display: flex" >
-  <view style="display: inline-block" class="btn scroll-tag tiny-text">Select a tag</view>
-  <view style="display: inline-block" class="scroll-tag tiny-text">Tag 1</view>
-  <view style="display: inline-block" class="scroll-tag tiny-text">Tag 2</view>
-  <view style="display: inline-block" class="scroll-tag tiny-text">Tag 3</view>
-  <view style="display: inline-block" class="scroll-tag-active tiny-text">Tag 4</view>
-  <view style="display: inline-block" class="scroll-tag tiny-text">Tag 5</view>
-  <view style="display: inline-block" class="scroll-tag tiny-text">Tag 6</view>
-  <view style="display: inline-block" class="scroll-tag tiny-text">Tag 7</view>
-  <view style="display: inline-block" class="scroll-tag tiny-text">Tag 8</view>
-  <view style="display: inline-block" class="scroll-tag tiny-text">Tag 9</view>
-  <view style="display: inline-block" class="scroll-tag tiny-text">Tag 10</view>
+ <view style="display: inline-block" class="scroll-tag tiny-text">Distance Filter:</view>
+  <view style="display: inline-block" class="scroll-tag tiny-text">≤ 5 Km</view>
+  <view style="display: inline-block" class="scroll-tag tiny-text">≤ 4 Km</view>
+  <view style="display: inline-block" class="scroll-tag-active tiny-text">≤ 3 Km</view>
+  <view style="display: inline-block" class="scroll-tag tiny-text">≤ 2 Km</view>
+   <view style="display: inline-block" class="scroll-tag tiny-text">≤ 1 Km</view>
+</scroll-view>
+
+<scroll-view scroll-x="true" style=" white-space: nowrap; display: flex" >
+  <view style="display: inline-block" class="scroll-tag tiny-text">Gender Filter:</view>
+  <view style="display: inline-block" class="scroll-tag tiny-text">Male</view>
+  <view style="display: inline-block" class="scroll-tag-active tiny-text">Female</view>
 </scroll-view>
 
 <!--Card loop -->
