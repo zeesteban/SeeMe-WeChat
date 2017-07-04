@@ -23,7 +23,8 @@ Page({
       data: {
         "user": {
           "bio": base.bio,
-          "tag_list": base.hobby1 + "," + base.hobby2 + "," + base.hobby3 + "," + base.hobby4 + "," + base.hobby5
+          "tag_list": base.hobby1 + "," + base.hobby2 + "," + base.hobby3 + "," + base.hobby4 + "," + base.hobby5,
+          "phone": base.phone
          }
       },
       header: {
@@ -34,6 +35,7 @@ Page({
         try {
           wx.setStorageSync('bio', res.data.bio)
           wx.setStorageSync('tag_list', res.data.tag_list)
+          wx.setStorageSync('phone', res.data.phone)
           // wx.setStorageSync('token', res.data.interests)
         } catch (e) {
             console.log("Didn't set storage")

@@ -35,6 +35,24 @@
         </view>
       </view>
 
+
+<p>Want to know when other users want to meet you?</p>
+
+<view class="page-section">
+        <view class="page-section-title">Phone number:</view>
+        <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__bd">
+              <input class="weui-input" name="phone" placeholder="SMS-Notification" value="{{phone}}"/>
+            </view>
+          </view>
+        </view>
+      </view>
+
+
+
+
+
       <view class="btn-area">
         <button type="primary" formType="submit">Submit</button>
       </view>
