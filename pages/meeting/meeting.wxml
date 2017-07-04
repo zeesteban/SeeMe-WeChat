@@ -54,10 +54,10 @@
 <block wx:if="{{sender.id != current_user}}">
   <view class="align-center meeting-title padded">
   <text class="h1"><text class="underline">{{sender.nickname}}</text>wants to meet!</text>
-  <view class="box">
+  <!--<view class="box">
       <view> You got lucky!</view>
       {{sender.nickname}} wants to meet up!
-  </view>
+  </view>-->
 </view>
 <view class="container-meeting">
   <view class="meeting-profile">
@@ -70,9 +70,9 @@
   </view>
 </view>
 
-<view class="wrapper padded"><map id="myMap" show-location /></view>
+<!--<view class="wrapper padded"><map id="myMap" show-location /></view>-->
 
-<view class="align-center padded"><text class="h1 messages underline">Messages</text></view>
+<view class="align-center padded"><text class="h1 messages">Start chatting right now!</text></view>
 <view class="chat-box">
   <view wx:for="{{message}}" wx:for-item="message" wx:key>
       <view wx:if="{{message.sender_id == current_user}}">

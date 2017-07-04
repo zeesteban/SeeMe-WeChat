@@ -1,7 +1,6 @@
 <!--pages/search/search.wxml-->
-<view class="h1 padded">Who do you want to search for?</view>
-<view class="box">Today I want to meet someone who is interested in...</view>
-
+<image src="../../images/search-top.jpg" style="width: 100%; height: 200rpx;"></image>
+<view class="h1 padded box">Today I want to meet someone who is interested in...</view>
 
 <view class="container-tags">
   <block wx:for="{{tag_list}}" wx:for-item="tag" wx:key>
