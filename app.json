@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/search/search",
     "pages/nearby/nearby",
     "pages/logs/logs",
     "pages/profile/profile",
@@ -24,6 +25,11 @@
     "selectedColor": "#D03232",
     "color": "#131313",
     "list": [
+      {
+        "pagePath": "pages/search/search",
+        "iconPath": "images/search-gray.png",
+        "selectedIconPath": "images/search-green.png"
+      },
       {
         "pagePath": "pages/nearby/nearby",
         "iconPath": "images/radar-gray.png",
