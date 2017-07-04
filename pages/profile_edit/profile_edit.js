@@ -4,7 +4,8 @@ Page({
   data: {
     pickerHidden: true,
     chosen: '',
-    bio: null
+    bio: null,
+    phone: null
   },
 
   onLoad: function() {
@@ -22,7 +23,8 @@ Page({
       method: 'patch',
       data: {
         "user": {
-          "bio": e.detail.value.bio
+          "bio": e.detail.value.bio,
+          "phone": e.detail.phone
          }
       },
       header: {

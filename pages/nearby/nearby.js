@@ -12,12 +12,12 @@ Page({
     var current_user = wx.getStorageSync('currentUserId')
     // Nearby API request
     wx.request({
-      url: 'https://seeme.shanghaiwogeng.com/api/v1/users',
+      url: 'http://localhost:3000/api/v1/users',
       method: "get",
       success: function (res) {
         page.setData({
-          users: res.data,
-          current_user: current_user
+          lat: wx.getStorageSync('lat'),
+          lng: wx.getStorageSync('lng')  
         })
       }
     })

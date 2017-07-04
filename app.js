@@ -53,14 +53,15 @@ App({
           console.log(res)
           var lat = res.latitude
           var lng = res.longitude
-          wx.request({
-            url: 'https://seeme.shanghaiwogeng.com/api/v1/profile',
+          wx.setStorageSync('lat', lat)
+          wx.setStorageSync('lng', lng)
+         wx.request({
+           url: 'https://seeme.shanghaiwogeng.com/api/v1/profile',
             method: 'patch',
             data: {
               "user": {
                 "lat": lat,
-                "lng": lng
-              }
+                "lng": lng,              }
             },
             header: {
               'Content-Type': 'application/json',
