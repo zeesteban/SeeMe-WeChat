@@ -1,0 +1,10 @@
+<!--pages/search/search.wxml-->
+<view class="h1 padded">Who do you want to search for?</view>
+<view class="box">Today I want to meet someone who is interested in...</view>
+
+
+<view class="container-tags">
+  <block wx:for="{{tag_list}}" wx:for-item="tag" wx:key>
+    <text class="tags" bindtap="addTag" id="{{tag}}">{{tag}}</text>
+  </block>
+</view>
