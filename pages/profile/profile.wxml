@@ -15,7 +15,7 @@
 </view>
 
 <view class="title-box">
-  Hobbies & Interests:
+  Looking for people interested in...
 </view>
 <view class="box">
  <block wx:for="{{tag_list}}" wx:for-item="tag" wx:key>

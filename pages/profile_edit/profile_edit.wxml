@@ -9,11 +9,11 @@
 
 
       <view class="page-section">
-        <view class="page-section-title">Bio</view>
+        <view class="h1 padded">Bio</view>
         <view class="weui-cells weui-cells_after-title">
           <view class="weui-cell weui-cell_input">
             <view class="weui-cell__bd">
-              <input class="weui-input" name="bio" placeholder="{{bio}}" value="{{bio}}" />
+              <textarea class="weui-input" style="height: 5em" name="bio" placeholder="{{bio}}" value="{{bio}}" />
             </view>
           </view>
         </view>
@@ -21,23 +21,15 @@
 
 
       <view class="page-section">
-        <view class="page-section-title">Hobbies & Interests</view>
-        <view class="weui-cells weui-cells_after-title">
-          <view class="weui-cell weui-cell_input">
-            <view class="weui-cell__bd">
-              <input class="weui-input" name="hobby1" placeholder="It is a input " />
-              <input class="weui-input" name="hobby2" placeholder="It is a input " />
-              <input class="weui-input" name="hobby3" placeholder="It is a input " />
-              <input class="weui-input" name="hobby4" placeholder="It is a input " />
-              <input class="weui-input" name="hobby5" placeholder="It is a input " />
-            </view>
-          </view>
+        <view class="h1 padded">Looking for people interested in...</view>
+        <view class="box">
+          <block wx:for="{{tag_list}}" wx:for-item="tag" wx:key>
+            <text class="tags">{{tag}}</text>
+          </block>
         </view>
       </view>
 
-      <view class="btn-area">
-        <button type="primary" formType="submit">Submit</button>
-      </view>
+      <button class="btn-green" formType="submit">Submit</button>
     </form>
   </view>
 
