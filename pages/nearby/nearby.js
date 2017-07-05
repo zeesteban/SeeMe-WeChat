@@ -6,13 +6,6 @@ Page({
     inputVal: "",
     users: [],
     current_user: null,
-    unactive: "scroll-tag-tiny-text",
-    active: null,
-    items: [
-      {name: 0, value: 'All', checked: 'true'},
-      {name: 1, value: 'Male'},
-      {name: 2, value: 'Female'},
-    ]
   },
 
   changeStatus: function () {
@@ -28,36 +21,36 @@ Page({
     var current_user = wx.getStorageSync('currentUserId')
     var token = wx.getStorageSync('token')
     // API request for search. the value e is from the search page.
-    wx.request({
-      url: 'https://seeme.shanghaiwogeng.com/api/v1/users/search?tag=' + tag,
-      method: "patch",
-      success: function (res) {
-        console.log(res)
-        page.setData({
-          users: res.data,
-          current_user: current_user
+    // wx.request({
+    //   url: 'https://seeme.shanghaiwogeng.com/api/v1/users/search?tag=' + tag,
+    //   method: "patch",
+    //   success: function (res) {
+    //     console.log(res)
+    //     page.setData({
+    //       users: res.data,
+    //       current_user: current_user
 
-        
-//     // Nearby API request
-//     wx.request({
-//           url: 'https://seeme.shanghaiwogeng.com/api/v1/users',
-//           method: 'get',
-//           data: {
-//             latitude: wx.getStorageSync('lat'),
-//             longitude: wx.getStorageSync('lng')
-//           },
-//           header: {
-//             'Content-Type': 'application/json',
-//             'X-User-Token': token
-//           },
-//           success: function(res) {
-//             console.log("Response from get request")
-//             console.log(res.data)
-//             page.setData({
-//               users: res.data,
-//               current_user: current_user
-//             })
-//           }
+
+    // Nearby API request
+    wx.request({
+          url: 'https://seeme.shanghaiwogeng.com/api/v1/users',
+          method: 'get',
+          data: {
+            latitude: wx.getStorageSync('lat'),
+            longitude: wx.getStorageSync('lng')
+          },
+          header: {
+            'Content-Type': 'application/json',
+            'X-User-Token': token
+          },
+          success: function(res) {
+            console.log("Response from get request")
+            console.log(res.data)
+            page.setData({
+              users: res.data,
+              current_user: current_user
+            })
+          }
 
         })
 
