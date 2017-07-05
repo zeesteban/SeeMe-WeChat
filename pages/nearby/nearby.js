@@ -10,18 +10,29 @@ Page({
   onLoad: function () {
     let page = this;
     var current_user = wx.getStorageSync('currentUserId')
+    var token = wx.getStorageSync('token')
     // Nearby API request
     wx.request({
-      url: 'https://seeme.shanghaiwogeng.com/api/v1/users',
-      method: "get",
-      success: function (res) {
-        console.log(res)
-        page.setData({
-          users: res.data,
-          current_user: current_user
+          url: 'http://localhost:3000/api/v1/users',
+          method: 'get',
+          data: {
+            latitude: wx.getStorageSync('lat'),
+            longitude: wx.getStorageSync('lng')
+          },
+          header: {
+            'Content-Type': 'application/json',
+            'X-User-Token': token
+          },
+          success: function(res) {
+            console.log("Response from get request")
+            console.log(res.data)
+            page.setData({
+              users: res.data,
+              current_user: current_user
+            })
+          }
         })
-      }
-    })
+
   },
 
   // End of API request
@@ -36,7 +47,7 @@ Page({
         wx.hideLoading()
       },2000),
     wx.request({
-      url: 'https://seeme.shanghaiwogeng.com/api/v1/meetings/',
+      url: 'http://localhost:3000/api/v1/meetings/',
       method: "post",
       data: {
         meeting: {
@@ -65,7 +76,7 @@ Page({
 
   onPullDownRefresh: function(){
     wx.request({
-      url: 'https://seeme.shanghaiwogeng.com/api/v1/users',
+      url: 'http://localhost:3000/api/v1/users',
       method: "get",
       success: function (res) {
         console.log("refreshed")
