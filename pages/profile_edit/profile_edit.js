@@ -23,10 +23,10 @@ Page({
   formSubmit: function (e) {
     var token = wx.getStorageSync('token')
     var base = e.detail.value
-  
+
     wx.request({
       url: 'https://seeme.shanghaiwogeng.com/api/v1/profile', //仅为示例，并非真实的接口地址
-      method: 'patch',
+      method: 'put',
       data: {
         "user": {
           "bio": base.bio,

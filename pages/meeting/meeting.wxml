@@ -37,7 +37,8 @@
     <view>
     <text class="align-center">Is {{recipient.nickname}} taking too long to reply?</text>
   </view>
-  <text class="btn btn-small" bindtap="cancelTap" data-id="{{meeting.id}}">Cancel</text>
+  <view>
+  <button class="btn btn-small" bindtap="cancelTap" data-id="{{meeting.id}}">Cancel meeting</button></view>
   </view>
 </block>
 <block wx:if="{{meeting == 'accepted'}}">

@@ -19,7 +19,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (e) {
-    console.log(e)
     // console.log(e.data.recipient)
     var that = this
     var token = wx.getStorageSync('token')
@@ -52,7 +51,7 @@ Page({
     })
      //  Refactor
      if (that.data.request == true) {
-      setInterval(function(){
+      // setInterval(function(){
        wx.request({
         url: 'https://seeme.shanghaiwogeng.com/api/v1/meetings/' + e.id + '/messages',
         method: "get",
@@ -70,7 +69,7 @@ Page({
           })
         }
       })
-      }, 3000 )
+      // }, 3000 )
     }
 
   },
@@ -127,7 +126,7 @@ Page({
     var meeting_id = e.currentTarget.dataset.id
     wx.request({
       url: 'https://seeme.shanghaiwogeng.com/api/v1/meetings/' + meeting_id + '/cancel',
-      method: 'patch',
+      method: 'put',
       header: {
         'X-User-Token': wx.getStorageSync('token'),
       },
@@ -153,7 +152,7 @@ Page({
     var meeting_id = e.currentTarget.dataset.id
     wx.request({
       url: 'https://seeme.shanghaiwogeng.com/api/v1/meetings/' + meeting_id + '/accept',
-      method: 'patch',
+      method: 'put',
       header: {
         'X-User-Token': wx.getStorageSync('token'),
       },
@@ -178,7 +177,7 @@ Page({
     var meeting_id = e.currentTarget.dataset.id
     wx.request({
       url: 'https://seeme.shanghaiwogeng.com/api/v1/meetings/' + meeting_id + '/decline',
-      method: 'patch',
+      method: 'put',
       header: {
         'X-User-Token': wx.getStorageSync('token'),
       },

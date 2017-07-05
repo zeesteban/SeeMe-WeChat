@@ -20,7 +20,7 @@ Page({
     wx.request({
       // this is the url for add hobby, we pass value through the url, so inside this request we dont need body of data.
       url: 'https://seeme.shanghaiwogeng.com/api/v1/profile/addhobby?hobby=' + tag,
-      method: 'patch',
+      method: 'put',
       header: {
         'Content-Type': 'application/json',
         'X-User-Token': token

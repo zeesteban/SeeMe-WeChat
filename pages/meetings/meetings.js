@@ -56,7 +56,7 @@ Page({
         token: token
       })
     }),
-  setInterval(function(){
+  // setInterval(function(){
     wx.request({
       url: 'https://seeme.shanghaiwogeng.com/api/v1/meetings/',
       method: 'get',
@@ -72,7 +72,7 @@ Page({
         })
         }
       })
-    }, 3000 )
+    // }, 3000 )
 
     },
 
