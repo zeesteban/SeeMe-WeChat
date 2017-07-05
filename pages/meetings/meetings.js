@@ -25,12 +25,7 @@ Page({
   meetingTap: function (e) {
     console.log("Meeting data")
     console.log(e.currentTarget.id)
-    let that = this
-    // let meeting_id = e.target.id
-    // var recipient = e.target.dataset.meeting.id
-      that.setData({
-        // recipients: recipient,
-      }),
+
     wx.navigateTo({
       success: function () {
         console.log("Moved to meeting")
@@ -56,25 +51,25 @@ Page({
         token: token
       })
     }),
-  // setInterval(function(){
-    wx.request({
-      url: 'https://seeme.shanghaiwogeng.com/api/v1/meetings/',
-      method: 'get',
-      header: {
-        'X-User-Token': token
-      },
-      success: function (res) {
-        console.log("Success on getting meetings")
-        console.log(res.data)
-        that.setData({
-          current_user: current_user,
-          meetings: res.data
-        })
+      // setInterval(function(){
+      wx.request({
+        url: 'https://seeme.shanghaiwogeng.com/api/v1/meetings/',
+        method: 'get',
+        header: {
+          'X-User-Token': token
+        },
+        success: function (res) {
+          console.log("Success on getting meetings")
+          console.log(res.data)
+          that.setData({
+            current_user: current_user,
+            meetings: res.data
+          })
         }
       })
     // }, 3000 )
 
-    },
+  },
 
 
 
@@ -110,21 +105,26 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-     wx.request({
+    let that = this
+    wx.request({
       url: 'https://seeme.shanghaiwogeng.com/api/v1/meetings/',
       method: 'get',
       header: {
-        'X-User-Token': token
+        'X-User-Token': wx.getStorageSync('token')
       },
       success: function (res) {
+        wx.stopPullDownRefresh()
         console.log("Success on getting meetings")
         console.log(res.data)
         that.setData({
-          current_user: current_user,
           meetings: res.data
         })
-        }
-      })
+      },
+      fail: function(){
+        wx.stopPullDownRefresh()
+      }
+    })
+
   },
 
   /**

@@ -41,7 +41,7 @@
     </view>
   </view>
 </block>
-<block wx:if="{{meeting == 'accepted'}}">
+<block wx:if="{{meeting.status == 'accepted'}}">
 
 <view class="align-center padded"><text class="h1 messages underline">Messages</text></view>
 <view class="chat-box">

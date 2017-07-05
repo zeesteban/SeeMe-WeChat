@@ -53,6 +53,9 @@ Page({
       url: '../profile/profile'
     })
   },
+  onPullDownRefresh: function () {
+    wx.stopPullDownRefresh()
+  },
 
 
   // profileUpdate: function () {

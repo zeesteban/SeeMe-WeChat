@@ -100,11 +100,23 @@ Page({
   },
 
   onPullDownRefresh: function(){
+    let page = this
+    var current_user = wx.getStorageSync('currentUserId')
+    var token = wx.getStorageSync('token')
     wx.request({
       url: 'https://seeme.shanghaiwogeng.com/api/v1/users',
       method: "get",
+      data: {
+        latitude: wx.getStorageSync('lat'),
+        longitude: wx.getStorageSync('lng')
+      },
+      header: {
+        'Content-Type': 'application/json',
+        'X-User-Token': token
+      },
       success: function (res) {
         console.log("refreshed")
+        console.log(res)
         page.setData({
           users: res.data,
           current_user: current_user

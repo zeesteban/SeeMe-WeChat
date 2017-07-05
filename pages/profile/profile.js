@@ -6,6 +6,9 @@ Page({
     bio: [],
     tag_list: []
   },
+  onPullDownRefresh: function () {
+    wx.stopPullDownRefresh()
+  },
 
   meetTap: function () {
     wx.navigateTo({

@@ -45,5 +45,8 @@ Page({
     wx.reLaunch({
       url: '../nearby/nearby?id=' + tag
     })
-  }
+  },
+  onPullDownRefresh: function () {
+    wx.stopPullDownRefresh()
+  },
 })

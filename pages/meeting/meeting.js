@@ -99,6 +99,7 @@ Page({
     console.log(current_user)
     console.log("message")
     console.log(message)
+    let that = this
     // console.log('https://seeme.shanghaiwogeng.com/api/v1/meetings/' + e.currentTarget.id + '/messages')
       wx.request({
         url: 'https://seeme.shanghaiwogeng.com/api/v1/meetings/' + meeting_id + '/messages', //仅为示例，并非真实的接口地址
@@ -114,7 +115,24 @@ Page({
           'X-User-Token': token
        },
         success: function(res) {
-          var message = null
+            // console.log(res.data.id)
+          wx.request({
+        url: 'https://seeme.shanghaiwogeng.com/api/v1/meetings/' + meeting_id + '/messages',
+        method: "get",
+        header: {
+          'Content-Type': 'application/json',
+          'X-User-Token': token
+        },
+        success: function (res) {
+          console.log("got user meeting")
+          console.log(res.data)
+          // do a loop here to check id...not in view layer.
+          that.setData({
+            message: res.data,
+            request: true
+          })
+        }
+      })
         }
 })
 },
@@ -158,13 +176,14 @@ Page({
       },
       success: function (res) {
         console.log("Success on accept a meeting")
+        console.log(res)
          wx.showToast({
             title: 'Accepted',
             icon: 'complete',
             duration: 2000
           }),
-        wx.reLaunch({
-          url: '../meetings/meetings'
+        wx.navigateTo({
+          url: '../meeting/meeting?id=' + res.data.id
       })
       }
     })
