@@ -5,7 +5,7 @@ Page({
     inputShowed: false,
     inputVal: "",
     users: [],
-    current_user: null
+    current_user: null,
   },
   onLoad: function () {
     let page = this;

@@ -11,7 +11,16 @@ Page({
     recipient: null,
     current_user: null,
     token: null,
+    navbar: ['Active', 'Pending', 'Past'],
+    currentNavbar: '0', 
   },
+
+  swichNav(e) {
+    this.setData({
+      currentNavbar: e.currentTarget.dataset.idx
+    })
+  },
+
 
   meetingTap: function (e) {
     console.log("Meeting data")

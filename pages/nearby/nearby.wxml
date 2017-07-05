@@ -3,17 +3,21 @@
 <!-- SCROLL -->
 
 <scroll-view scroll-x="true" style=" white-space: nowrap; display: flex" >
-  <view style="display: inline-block" class="btn scroll-tag tiny-text">Select a tag</view>
-  <view style="display: inline-block" class="scroll-tag tiny-text">Tag 1</view>
-  <view style="display: inline-block" class="scroll-tag tiny-text">Tag 2</view>
-  <view style="display: inline-block" class="scroll-tag tiny-text">Tag 3</view>
-  <view style="display: inline-block" class="scroll-tag-active tiny-text">Tag 4</view>
-  <view style="display: inline-block" class="scroll-tag tiny-text">Tag 5</view>
-  <view style="display: inline-block" class="scroll-tag tiny-text">Tag 6</view>
-  <view style="display: inline-block" class="scroll-tag tiny-text">Tag 7</view>
-  <view style="display: inline-block" class="scroll-tag tiny-text">Tag 8</view>
-  <view style="display: inline-block" class="scroll-tag tiny-text">Tag 9</view>
-  <view style="display: inline-block" class="scroll-tag tiny-text">Tag 10</view>
+
+ <view style="display: inline-block" class="scroll-tag tiny-text">Distance:</view>
+  <view style="display: inline-block" class="scroll-tag tiny-text">≤ 100 m</view>
+  <view style="display: inline-block" class="scroll-tag tiny-text">≤ 500 m</view>
+  <view style="display: inline-block" class="scroll-tag tiny-text">≤ 1 km</view>
+  <view style="display: inline-block" class="scroll-tag tiny-text">≤ 2 km</view>
+  <view style="display: inline-block" class="scroll-tag-active tiny-text">≤ 3 km</view>
+  <view style="display: inline-block" class="scroll-tag tiny-text">≤ 4 km</view>
+   <view style="display: inline-block" class="scroll-tag tiny-text">≤ 5 km</view>
+</scroll-view>
+
+<scroll-view scroll-x="true" style=" white-space: nowrap; display: flex" >
+  <view style="display: inline-block" class="scroll-tag tiny-text">Gender:</view>
+  <view style="display: inline-block" class="scroll-tag tiny-text">Male</view>
+  <view style="display: inline-block" class="scroll-tag-active tiny-text">Female</view>
 </scroll-view>
 
 <!--Card loop -->
@@ -37,11 +41,6 @@
     </view>
     <view class="align-center tiny-text">
        {{user.distance}} m
-    </view>
-    <view class="box">
-      <block wx:for="{{user.tag_list}}" wx:for-item="tag" wx:key>
-        <text class="top-tag">{{tag}}</text>
-      </block>
     </view>
     <view class="btn align-center" id="{{user.id}}" catchtap="meetViewTap">Meet</view>
   </view>

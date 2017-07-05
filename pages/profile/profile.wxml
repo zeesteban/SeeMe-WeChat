@@ -15,15 +15,12 @@
 </view>
 
 <view class="title-box">
-  Hobbies & Interests:
+  Looking for people interested in...
 </view>
 <view class="box">
- <text class="tags">Reading</text>
- <text class="tags">Photography</text>
- <text class="tags">WXML</text>
- <text class="tags">WXSS</text>
- <text class="tags">Language learning</text>
- <text class="tags">Traveling</text>
+ <block wx:for="{{tag_list}}" wx:for-item="tag" wx:key>
+ <text class="tags">{{tag}}</text>
+ </block>
 </view>
 
 <button bindtap="profileEdit" class="btn btn-small">edit</button>

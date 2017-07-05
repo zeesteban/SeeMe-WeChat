@@ -13,13 +13,14 @@ page {
   font-size: 30rpx;
   color: #5D737E;
   font-family: 'Avenir Next', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: light;
 }
 
 .h1 {
   font-size: 40rpx;
   text-align: center;
   line-height: 60rpx;
-  font-weight: bolder;
+  font-weight: light;
 }
 
 .align-center {
