@@ -53,6 +53,19 @@
 }
 
 
+
+
+.box {
+  margin-top: 20%;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  margin-bottom: 80rpx;
+  padding: 20rpx;
+  line-height: 1.5em;
+  text-align: center;
+}
+
+
 /*Navbar styling*/
 
 .navbar {

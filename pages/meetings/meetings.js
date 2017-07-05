@@ -11,7 +11,7 @@ Page({
     recipient: null,
     current_user: null,
     token: null,
-    navbar: ['Active', 'Pending', 'Past'],
+    navbar: ['Active', 'Pending', 'Decline'],
     currentNavbar: '0', 
   },
 
