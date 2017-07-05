@@ -42,7 +42,7 @@ Page({
         }
       },
       header: {
-        'X-User-Token': app.globalData.authToken,
+        'X-User-Token': wx.getStorageSync('token'),
         'Content-Type': 'application/json'
       },
       success: function (res) {

@@ -30,6 +30,6 @@
 </view>
 
 <view class="box">
-  <text class="btn-green" bindtap="meetTap" id="{{user.id}}">Meet {{user.nickname}}</text>
+  <text class="btn btn-small" bindtap="meetTap" id="{{user.id}}">Meet {{user.nickname}}</text>
 </view>
 

@@ -11,7 +11,8 @@ Page({
     recipient_meetings: [],
     meeting_id: null,
     current_user: null,
-    request: true
+    request: true,
+    meeting: []
   },
 
   /**
@@ -19,7 +20,6 @@ Page({
    */
   onLoad: function (e) {
     console.log(e)
-    console.log(e.id)
     // console.log(e.data.recipient)
     var that = this
     var token = wx.getStorageSync('token')
@@ -29,7 +29,7 @@ Page({
       that.setData({
         meeting_id: meeting_id,
         userInfo: userInfo,
-        current_user: current_user
+        current_user: current_user,
       }),
      wx.request({
       url: 'https://seeme.shanghaiwogeng.com/api/v1/meetings/' + e.id,
@@ -44,6 +44,7 @@ Page({
         var recipient_id = res.data.recipient.id
         // do a loop here to check id...not in view layer.
         that.setData({
+          meeting: res.data,
           recipient: res.data.recipient,
           sender: res.data.sender
         })
@@ -123,16 +124,24 @@ Page({
   cancelTap: function(e) {
     console.log(e.currentTarget.id)
     var that = this
-    var meeting_id = e.currentTarget.id
+    var meeting_id = e.currentTarget.dataset.id
     wx.request({
       url: 'https://seeme.shanghaiwogeng.com/api/v1/meetings/' + meeting_id + '/cancel',
       method: 'patch',
       header: {
-        'X-User-Token': that.data.token,
+        'X-User-Token': wx.getStorageSync('token'),
       },
       success: function (res) {
         console.log("Success on cancelled a meeting")
         console.log(res.data.status)
+        wx.showToast({
+            title: 'Cancelled',
+            icon: 'complete',
+            duration: 2000
+          }),
+         wx.reLaunch({
+          url: '../meetings/meetings'
+          })
       }
     })
     this.onLoad()
@@ -141,15 +150,23 @@ Page({
   acceptTap: function(e) {
     console.log(e.currentTarget.id)
     var that = this
-    var meeting_id = e.currentTarget.id
+    var meeting_id = e.currentTarget.dataset.id
     wx.request({
       url: 'https://seeme.shanghaiwogeng.com/api/v1/meetings/' + meeting_id + '/accept',
       method: 'patch',
       header: {
-        'X-User-Token': that.data.token,
+        'X-User-Token': wx.getStorageSync('token'),
       },
       success: function (res) {
         console.log("Success on accept a meeting")
+         wx.showToast({
+            title: 'Accepted',
+            icon: 'complete',
+            duration: 2000
+          }),
+        wx.reLaunch({
+          url: '../meetings/meetings'
+      })
       }
     })
     this.onLoad()
@@ -158,17 +175,33 @@ Page({
   declineTap: function(e) {
     console.log(e.currentTarget.id)
     var that = this
-    var meeting_id = e.currentTarget.id
+    var meeting_id = e.currentTarget.dataset.id
     wx.request({
       url: 'https://seeme.shanghaiwogeng.com/api/v1/meetings/' + meeting_id + '/decline',
       method: 'patch',
       header: {
-        'X-User-Token': that.data.token,
+        'X-User-Token': wx.getStorageSync('token'),
       },
       success: function (res) {
         console.log("Success on declined a meeting")
+          wx.showToast({
+            title: 'Declined',
+            icon: 'complete',
+            duration: 2000
+          }),
+        wx.reLaunch({
+          url: '../meetings/meetings'
+        })
       }
     })
     this.onLoad()
+  },
+
+profileTap: function (e) {
+    var userid = e.currentTarget.id
+    wx.navigateTo({
+      url: '../userProfile/userProfile?id=' + userid
+    })
   }
+
 })
