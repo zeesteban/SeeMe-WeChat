@@ -1,7 +1,7 @@
 /* pages/userProfile/userProfile.wxss */
 
 .profile-img {
-  width: 200px; 
+  width: 200px;
   height: 200px;
   border-radius: 50%;
   border: 10rpx solid white;
@@ -11,6 +11,7 @@
   width: 100%;
   background: linear-gradient(180deg, rgba(211, 211, 211, 1) 0%, rgba(211, 211, 211, 0) 90%);
   height: 300rpx;
+  background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
 }
 
 .container-profile {
@@ -21,9 +22,10 @@
   justify-content: space-between;
   margin-top: -250rpx;
   box-sizing: border-box;
-} 
+}
 
 .title-box {
+  background-color: #F4F7F7;
   padding-left: 40rpx;
   padding-top: 20rpx;
   padding-bottom: 20rpx;
@@ -61,6 +63,8 @@
   letter-spacing: 0.4px;
   margin-bottom: 40rpx;
   line-height: 2;
+  padding-left: 10rpx;
+  padding-right: 10rpx
 }
 
 .btn-small {

@@ -3,11 +3,11 @@ var app = getApp()
 
 Page({
   data: {
-    users: [],
+    user: [],
     id: null
   },
   onLoad: function (e) {
-
+    console.log(e)
     var findId = e.id
     this.setData({
       id: findId
@@ -15,7 +15,7 @@ Page({
     let page = this;
     // Nearby API request
     wx.request({
-      url: 'https://seeme.shanghaiwogeng.com/api/v1/users',
+      url: 'https://seeme.shanghaiwogeng.com/api/v1/users/' + page.data.id ,
       method: "get",
       // header: {
       //   'content-type': 'application/json'
@@ -23,7 +23,7 @@ Page({
       success: function (res) {
         console.log(res.data)
         page.setData({
-          users: res.data
+          user: res.data
         })
       },
       fail: function() {
@@ -42,7 +42,7 @@ Page({
         }
       },
       header: {
-        'X-User-Token': app.globalData.authToken,
+        'X-User-Token': wx.getStorageSync('token'),
         'Content-Type': 'application/json'
       },
       success: function (res) {

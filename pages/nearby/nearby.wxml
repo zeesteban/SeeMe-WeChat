@@ -36,18 +36,17 @@
       <image class="userinfo-avatar card-image" src="{{user.avatar}}"></image>
     <view class="card-name">
         {{user.nickname}}
-        <block wx:if="{{user.user.gender == 2}}">
+        <block wx:if="{{user.gender == 2}}">
         <image src="../../images/female.png" class="gender"></image>
         </block>
-        <block wx:elif="{{user.user.gender == 1}}">
+        <block wx:elif="{{user.gender == 1}}">
         <image src="../../images/male.png" class="gender"></image>
         </block>
     </view>
     <view class="align-center tiny-text">
-       {{user.distance}} m
+       {{user.distance * 1000}} m
     </view>
-    <view></view>
-    <view class="btn align-center" id="{{user.id}}" catchtap="meetViewTap">Meet</view>
+    <view class="btn align-center margin-top" id="{{user.id}}" catchtap="meetViewTap">Meet</view>
   </view>
   </block>
   </block>
