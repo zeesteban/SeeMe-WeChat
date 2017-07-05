@@ -1,4 +1,44 @@
 /* nearby.wxss */
+div.wx-radio-input.wx-radio-input-checked::before {
+  background-color: black !important;
+}
+
+wx-radio-input {
+  background-color: black !important;
+}
+
+div.wx-radio-input {
+  background-color: black !important;
+}
+
+div.wx-radio-input-checked::before {
+  background-color: black !important;
+}
+
+view.wx-radio-input.wx-radio-input-checked::before {
+  background-color: black !important;
+}
+
+view.wx-radio-input {
+  background-color: black !important;
+}
+
+view.wx-radio-input-checked::before {
+  background-color: black !important;
+}
+
+radio.wx-radio-input.wx-radio-input-checked::before {
+  background-color: black !important;
+}
+
+radio.wx-radio-input {
+  background-color: black !important;
+}
+
+radio.wx-radio-input-checked::before {
+  background-color: black !important;
+}
+
 .wrapper {
   display: flex;
   flex-wrap: wrap;
