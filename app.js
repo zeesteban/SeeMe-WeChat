@@ -29,6 +29,7 @@ App({
                   console.log("Didn't set storage")
                 }
               },
+
               url: 'https://seeme.shanghaiwogeng.com/api/v1/users',
               method: "post",
               data: {
