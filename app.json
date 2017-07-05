@@ -12,7 +12,7 @@
     "pages/maps/maps"
   ],
   "window": {
-    "navigationBarBackgroundColor": "#5D737E",
+    "navigationBarBackgroundColor": "#d3d3d3",
     "navigationBarTextStyle": "white",
     "navigationBarTitleText": "SeeMe",
     "backgroundColor": "#5D737E",

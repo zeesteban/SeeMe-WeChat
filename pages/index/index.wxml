@@ -27,6 +27,6 @@
         </swiper>
 
   <view class="container">
-    <button class="btn-green" bindtap="bindViewTap">Continue</button>
+    <button class="btn-green" bindtap="bindViewTap">Start exploring</button>
   </view>
 
