@@ -19,7 +19,6 @@
 
 <!-- TWO -->
 <scroll-view class="{{currentNavbar==1 ? '' : 'hidden'}}">
-tab two
   <view class="container-tags padded">
     <block wx:for="{{tag_list}}" wx:for-item="tag" wx:key>
       <text class="tags" bindtap="addTag" id="{{tag}}">{{tag}}</text>
@@ -29,7 +28,6 @@ tab two
 
 <!-- THREE -->
 <scroll-view class="{{currentNavbar==2 ? '' : 'hidden'}}">
-tab three
   <view class="container-tags padded">
     <block wx:for="{{tag_list}}" wx:for-item="tag" wx:key>
       <text class="tags" bindtap="addTag" id="{{tag}}">{{tag}}</text>
@@ -39,7 +37,6 @@ tab three
 
 <!-- FOUR -->
 <scroll-view class="{{currentNavbar==3 ? '' : 'hidden'}}">
-tab four
   <view class="container-tags padded">
     <block wx:for="{{tag_list}}" wx:for-item="tag" wx:key>
       <text class="tags" bindtap="addTag" id="{{tag}}">{{tag}}</text>
