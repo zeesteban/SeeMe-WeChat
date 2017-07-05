@@ -31,6 +31,7 @@ Page({
         console.log(res)
         var lat = res.latitude
         var lng = res.longitude
+  
         var current_user = wx.getStorageSync('currentUserId')
         var token = wx.getStorageSync('token')
         wx.setStorageSync('lat', lat)

@@ -7,14 +7,14 @@
   <view style="display: inline-block" class="scroll-tag tiny-text">≤ 5 Km</view>
   <view style="display: inline-block" class="scroll-tag tiny-text">≤ 4 Km</view>
   <view style="display: inline-block" class="scroll-tag-active tiny-text">≤ 3 Km</view>
-  <view style="display: inline-block" class="scroll-tag tiny-text">≤ 2 Km</view>
+  <view style="display: inline-block" class="scroll-tag tiny-text" bindtap="">≤ 2 Km</view>
    <view style="display: inline-block" class="scroll-tag tiny-text">≤ 1 Km</view>
 </scroll-view>
 
 <scroll-view scroll-x="true" style=" white-space: nowrap; display: flex" >
   <view style="display: inline-block" class="scroll-tag tiny-text">Gender Filter:</view>
   <view style="display: inline-block" class="scroll-tag tiny-text">Male</view>
-  <view style="display: inline-block" class="scroll-tag-active tiny-text">Female</view>
+  <view style="display: inline-block" class="scroll-tag tiny-text">Female</view>
 </scroll-view>
 
 <!--Card loop -->
