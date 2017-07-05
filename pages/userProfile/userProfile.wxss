@@ -9,7 +9,7 @@
 
 .wrapper {
   width: 100%;
-  /*background: linear-gradient(180deg, rgba(93, 115, 126, 1) 0%, rgba(252, 255, 253, 0.2) 90%);*/
+  background: linear-gradient(180deg, rgba(211, 211, 211, 1) 0%, rgba(211, 211, 211, 0) 90%);
   height: 300rpx;
   background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
 }
@@ -30,7 +30,7 @@
   padding-top: 20rpx;
   padding-bottom: 20rpx;
   margin: 20rpx 0;
-  /*box-shadow: 1rpx 3rpx 3rpx #5D737E;*/
+  border-bottom: 2rpx solid #d3d3d3;
 }
 
 .box {
@@ -44,11 +44,14 @@
 
 .tags {
   border: 1rpx solid #4BDDB9;
+  box-shadow:1rpx 1rpx 20rpx #c7f6eb;
   border-radius: 40rpx;
   letter-spacing: 0.4px;
   padding: 15rpx 20rpx;
   margin: 10rpx;
 }
+
+/* Buttons */
 
 .btn{
   border: 2rpx solid #4BDDB9;

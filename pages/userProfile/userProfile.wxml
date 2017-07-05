@@ -4,12 +4,12 @@
 <view class="container-profile">
   <image src="{{user.avatar}}" class="profile-img"></image>
 </view>
-<view class="align-center">
+<view class="align-center padded">
   <text class="h1">{{user.nickname}}</text>
 </view>
 
 <view class="title-box">
-  About:
+  You should meet me because...
 </view>
 <view class="box">
   <block wx:if="{{ user.bio == null }}">
@@ -22,8 +22,9 @@
 </view>
 
 <view class="title-box">
-  Hobbies & Interests:
+  Looking for people interested in...
 </view>
+
 <view class="box">
   <block wx:for="{{user.tag_list}}" wx:for-item="tag"></block>
   <text class="tags">{{tag}}</text>

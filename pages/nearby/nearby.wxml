@@ -1,8 +1,8 @@
-<!--nearby.wxml-->
+<!-- nearby.wxml -->
 
 <!-- SCROLL -->
 
-<scroll-view scroll-x="true" style=" white-space: nowrap; display: flex" >
+<!-- <scroll-view scroll-x="true" style=" white-space: nowrap; display: flex" >
 
  <view style="display: inline-block" class="scroll-tag tiny-text">Distance:</view>
   <view style="display: inline-block" class="scroll-tag tiny-text">≤ 100 m</view>
@@ -16,9 +16,13 @@
 
 <scroll-view scroll-x="true" style=" white-space: nowrap; display: flex" >
   <view style="display: inline-block" class="scroll-tag tiny-text">Gender:</view>
-  <view style="display: inline-block" class="scroll-tag tiny-text">Male</view>
-  <view style="display: inline-block" class="scroll-tag-active tiny-text">Female</view>
+  <view style="display: inline-block" class="scroll-tag-tiny-text">All</view>
+  <view style="display: inline-block" class="scroll-tag-tiny-text">Male</view>
+  <view style="display: inline-block" class="scroll-tag-active">Female</view>
 </scroll-view>
+
+<view><text selectable='ture' class="scroll-tag-active">Show all</text> </view> -->
+
 
 <!--Card loop -->
 

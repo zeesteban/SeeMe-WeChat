@@ -7,10 +7,30 @@ Page({
     users: [],
     current_user: null,
   },
-  onLoad: function () {
+
+  changeStatus: function () {
+    this.setData({
+      active: "scroll-tag-active"
+    })
+  },
+
+  onLoad: function (e) {
+    console.log(e.id)
+    var tag = e.id
     let page = this;
     var current_user = wx.getStorageSync('currentUserId')
     var token = wx.getStorageSync('token')
+    // API request for search. the value e is from the search page.
+    // wx.request({
+    //   url: 'https://seeme.shanghaiwogeng.com/api/v1/users/search?tag=' + tag,
+    //   method: "patch",
+    //   success: function (res) {
+    //     console.log(res)
+    //     page.setData({
+    //       users: res.data,
+    //       current_user: current_user
+
+
     // Nearby API request
     wx.request({
           url: 'https://seeme.shanghaiwogeng.com/api/v1/users',
@@ -31,8 +51,13 @@ Page({
               current_user: current_user
             })
           }
+
         })
 
+  },
+
+  radioChange: function(e) {
+    console.log(e.detail.value)
   },
 
   // End of API request

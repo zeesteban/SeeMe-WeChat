@@ -8,7 +8,7 @@
 
 <form bindsubmit="formSubmit" catchreset="formReset">
   <view class="title-box">
-    Bio:
+    You should meet me because...
   </view>
   <view class="box">
   <textarea style="height: 5em" name="bio" placeholder="{{bio}}" value="{{bio}}" />

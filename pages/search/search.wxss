@@ -16,7 +16,7 @@
   border-radius: 40rpx;
   letter-spacing: 0.4px;
   padding: 15rpx 20rpx;
-  margin: 10rpx;
+  margin: 12rpx;
 }
 
 .netflix {
@@ -31,6 +31,7 @@
   justify-content: center;
   margin: 0 20rpx;
 }
+
 
 /* NAVBAR */
 .navbar {

@@ -1,11 +1,11 @@
 // pages/search/search.js
 Page({
   data: {
-    tag_list_fun: ["Stand-up Comedy", "Hot Sauce Tasting", "Taobao Shopping", "Mispronouncing Mandarin Tones"],
+    tag_list_fun: ["Stand-up Comedy", "Hot Sauce Tasting", "Taobao Shopping", "Bargaining", "Mispronouncing Mandarin Tones", "外卖 at 2 am", "Drinking beer", "Having no personal space", "KTV", "Beyoncé", "Craving Western food", "Hot Pot"],
+    tag_list_active: ["Cutting in line", "Dancing", "Subway Combat Sports", "Stalking", "Using chopsticks", "Spitting", "Visiting friends in Pudong", "Beerwalking", "Running from pollution", "Queuing", "Finding Mobikes", "Taxi catching"],
+    tag_list_geeky: ["Ruby", "HTML", "CSS", "AR/VR", "Startups", "UX/UI", "Le Wagon", "Finding the right VPN server", "Meetups", "Orbital Mechanics", "Octocat", "Collecting stickers", "Fizz Buzz", "Chewbacca"],
     tag_list_chill: ["Netflix"],
-    tag_list_active: ["Basketball", "Subway Combat Sports", "Dancing", "Stalking", "Golf", "Beerwalking", "Running from pollution", "Swimming", "Tennis", "Finding Mobikes", "Taxi catching"],
-    tag_list_geeky: ["Ruby", "HTML", "CSS", "AR/VR", "Startups", "UX/UI", "Le Wagon", "Databases", "Star Wars", "Orbital Mechanics"],
-    navbar: ['Fun', 'Chill', 'Active', "Geeky"],
+    navbar: ['Fun', 'Geeky', 'Active', "Chill"],
     currentNavbar: '0'
   },
   swichNav(e) {
@@ -18,13 +18,9 @@ Page({
     var token = wx.getStorageSync('token')
     var tag = e.currentTarget.id
     wx.request({
-      url: 'https://seeme.shanghaiwogeng.com/api/v1/profile',
+      // this is the url for add hobby, we pass value through the url, so inside this request we dont need body of data.
+      url: 'https://seeme.shanghaiwogeng.com/api/v1/profile/addhobby?hobby=' + tag,
       method: 'patch',
-      data: {
-        "user": {
-          "tag_list": tag
-        }
-      },
       header: {
         'Content-Type': 'application/json',
         'X-User-Token': token
@@ -39,7 +35,15 @@ Page({
       }
     }),
       wx.reLaunch({
-        url: '../nearby/nearby'
+        url: '../nearby/nearby?id=' + tag
       })
   },
+
+  showAll: function (e) {
+    console.log(e)
+    var tag = e.currentTarget.id
+    wx.reLaunch({
+      url: '../nearby/nearby?id=' + tag
+    })
+  }
 })
