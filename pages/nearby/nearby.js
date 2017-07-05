@@ -6,33 +6,65 @@ Page({
     inputVal: "",
     users: [],
     current_user: null,
+    unactive: "scroll-tag-tiny-text",
+    active: null,
+    items: [
+      {name: 0, value: 'All', checked: 'true'},
+      {name: 1, value: 'Male'},
+      {name: 2, value: 'Female'},
+    ]
   },
-  onLoad: function () {
+
+  changeStatus: function () {
+    this.setData({
+      active: "scroll-tag-active"
+    })
+  },
+
+  onLoad: function (e) {
+    console.log(e.id)
+    var tag = e.id
     let page = this;
     var current_user = wx.getStorageSync('currentUserId')
     var token = wx.getStorageSync('token')
-    // Nearby API request
+    // API request for search. the value e is from the search page.
     wx.request({
-          url: 'https://seeme.shanghaiwogeng.com/api/v1/users',
-          method: 'get',
-          data: {
-            latitude: wx.getStorageSync('lat'),
-            longitude: wx.getStorageSync('lng')
-          },
-          header: {
-            'Content-Type': 'application/json',
-            'X-User-Token': token
-          },
-          success: function(res) {
-            console.log("Response from get request")
-            console.log(res.data)
-            page.setData({
-              users: res.data,
-              current_user: current_user
-            })
-          }
+      url: 'https://seeme.shanghaiwogeng.com/api/v1/users/search?tag=' + tag,
+      method: "patch",
+      success: function (res) {
+        console.log(res)
+        page.setData({
+          users: res.data,
+          current_user: current_user
+
+        
+//     // Nearby API request
+//     wx.request({
+//           url: 'https://seeme.shanghaiwogeng.com/api/v1/users',
+//           method: 'get',
+//           data: {
+//             latitude: wx.getStorageSync('lat'),
+//             longitude: wx.getStorageSync('lng')
+//           },
+//           header: {
+//             'Content-Type': 'application/json',
+//             'X-User-Token': token
+//           },
+//           success: function(res) {
+//             console.log("Response from get request")
+//             console.log(res.data)
+//             page.setData({
+//               users: res.data,
+//               current_user: current_user
+//             })
+//           }
+
         })
 
+  },
+
+  radioChange: function(e) {
+    console.log(e.detail.value)
   },
 
   // End of API request

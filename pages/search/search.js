@@ -18,13 +18,9 @@ Page({
     var token = wx.getStorageSync('token')
     var tag = e.currentTarget.id
     wx.request({
-      url: 'https://seeme.shanghaiwogeng.com/api/v1/profile',
+      // this is the url for add hobby, we pass value through the url, so inside this request we dont need body of data.
+      url: 'https://seeme.shanghaiwogeng.com/api/v1/profile/addhobby?hobby=' + tag,
       method: 'patch',
-      data: {
-        "user": {
-          "tag_list": tag
-        }
-      },
       header: {
         'Content-Type': 'application/json',
         'X-User-Token': token
@@ -39,7 +35,15 @@ Page({
       }
     }),
       wx.reLaunch({
-        url: '../nearby/nearby'
+        url: '../nearby/nearby?id=' + tag
       })
   },
+
+  showAll: function (e) {
+    console.log(e)
+    var tag = e.currentTarget.id
+    wx.reLaunch({
+      url: '../nearby/nearby?id=' + tag
+    })
+  }
 })
