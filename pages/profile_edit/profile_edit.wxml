@@ -27,7 +27,7 @@
     Phone number:
   </view>
   <view class="box">
-    <input maxlength="120" class="textbox" name="phone" placeholder="Enter your phone number" value="{{phone}}" />
+    <input maxlength="120" class="textbox" type="number" name="phone" placeholder="Enter your phone number to receive notifications" value="{{phone}}" />
   </view>
 
   <button class="btn btn-small" formType="submit">Submit</button>
