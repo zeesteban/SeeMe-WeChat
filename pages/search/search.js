@@ -1,13 +1,15 @@
 // pages/search/search.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-    tag_list: ["lala", "something", "something else", "tags", "hobbies"]
+    tag_list: ["lala", "something", "something else", "tags", "hobbies"],
+    navbar: ['Fun', 'Chill', 'Active', "Geeky"],
+    currentNavbar: '0'
   },
-
+  swichNav(e) {
+    this.setData({
+      currentNavbar: e.currentTarget.dataset.idx
+    })
+  },
   addTag: function (e) {
     console.log(e)
     var token = wx.getStorageSync('token')
