@@ -65,6 +65,8 @@
   margin-left: 10rpx;
   margin-right: 10rpx;
   margin-bottom: 10rpx;
+  margin-top: 20rpx;
+  font-size: 1.3em;
   z-index: 3;
 }
 
