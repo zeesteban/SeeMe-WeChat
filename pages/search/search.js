@@ -1,10 +1,10 @@
 // pages/search/search.js
 Page({
   data: {
-    tag_list_fun: ["Stand-up Comedy", "Hot Sauce Tasting", "Taobao Shopping", "Bargaining", "Mispronouncing Mandarin Tones", "Drinking beer", "Having no personal space"],
-    tag_list_chill: ["Netflix"],
-    tag_list_active: ["Cutting in line", "Dancing", "Subway Combat Sports", "Stalking", "Using chopsticks", "Beerwalking", "Running from pollution", "Queuing", "Finding Mobikes", "Taxi catching"],
+    tag_list_fun: ["Stand-up Comedy", "Hot Sauce Tasting", "Taobao Shopping", "Bargaining", "Mispronouncing Mandarin Tones", "外卖 at 2 am", "Drinking beer", "Having no personal space", "KTV", "Craving Western food"],
+    tag_list_active: ["Cutting in line", "Dancing", "Subway Combat Sports", "Stalking", "Using chopsticks", "Spitting", "Visiting friends in Pudong", "Beerwalking", "Running from pollution", "Queuing", "Finding Mobikes", "Taxi catching"],
     tag_list_geeky: ["Ruby", "HTML", "CSS", "AR/VR", "Startups", "UX/UI", "Le Wagon", "Finding the right VPN server", "Meetups", "Orbital Mechanics"],
+    tag_list_chill: ["Netflix"],
     navbar: ['Fun', 'Geeky', 'Active', "Chill"],
     currentNavbar: '0'
   },
