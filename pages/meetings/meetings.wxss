@@ -1,5 +1,5 @@
 /* meetings.wxss */
-.m-card {
+.m-card-accepted {
   background-color:white;
   box-shadow:1rpx 1rpx 30rpx #dde0e1;
   border-radius: 10rpx;
@@ -9,6 +9,33 @@
   margin:40rpx 30rpx;
   display:flex;
   position:relative;
+  border-right: 4rpx solid lightgreen;
+}
+
+.m-card-pending {
+  background-color:white;
+  box-shadow:1rpx 1rpx 30rpx #dde0e1;
+  border-radius: 10rpx;
+  padding-left:40rpx;
+  padding-top:20rpx;
+  padding-bottom:20rpx;
+  margin:40rpx 30rpx;
+  display:flex;
+  position:relative;
+  border-right: 4rpx solid yellow;
+}
+
+.m-card-declined {
+  background-color:white;
+  box-shadow:1rpx 1rpx 30rpx #dde0e1;
+  border-radius: 10rpx;
+  padding-left:40rpx;
+  padding-top:20rpx;
+  padding-bottom:20rpx;
+  margin:40rpx 30rpx;
+  display:flex;
+  position:relative;
+  border-right: 4rpx solid orangered;
 }
 
 .m-img {
