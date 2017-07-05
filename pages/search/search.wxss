@@ -19,6 +19,11 @@
   margin: 10rpx;
 }
 
+.netflix {
+  border: 1rpx solid red !important;
+  box-shadow:1rpx 1rpx 20rpx red !important;
+}
+
 .container-tags {
   height: 100%;
   display: flex;
