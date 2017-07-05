@@ -33,12 +33,12 @@
   </view>
 </view>
 <block wx:if="{{meeting.status == 'pending'}}">
-  <view class="box">
-    <view>
-    <text class="align-center">Is {{recipient.nickname}} taking too long to reply?</text>
-  </view>
-  <view>
-  <button class="btn btn-small" bindtap="cancelTap" data-id="{{meeting.id}}">Cancel meeting</button></view>
+
+  <view class="box align-center">
+    Is {{recipient.nickname}} taking too long to reply?
+    <view class="padded" style="margin-bottom: 20rpx;">
+      <text class="btn btn-small" bindtap="cancelTap" data-id="{{meeting.id}}">Cancel</text>
+    </view>
   </view>
 </block>
 <block wx:if="{{meeting == 'accepted'}}">
@@ -94,8 +94,6 @@
   </view>
 </view>
 
-<!--<view class="wrapper padded"><map id="myMap" show-location /></view>-->
-
 <block wx:if="{{meeting.status == 'accepted'}}">
 
 <view class="align-center padded"><text class="h1 messages">Start chatting right now!</text></view>
@@ -124,16 +122,18 @@
 
   </view>
 </block>
+
 <block wx:elif="{{meeting.status == 'declined'}}">
-  <text>You've declined this {{sender.nickname}}</text>
+    <text>You've declined this {{sender.nickname}}</text>
 </block>
+
 <block wx:else>
-  <view>
-  <text class="btn btn-small" bindtap="acceptTap" data-id="{{meeting.id}}">Accept</text></view>
-<view>
+  <view class="wrapper">
+  <text class="btn btn-small" bindtap="acceptTap" data-id="{{meeting.id}}">Accept</text>
   <text class="btn-red btn-small" bindtap="declineTap" data-id="{{meeting.id}}">Decline</text>
-</view>
+  </view>
 </block>
+
 </block>
 
 

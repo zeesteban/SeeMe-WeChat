@@ -19,13 +19,12 @@
       <block wx:for="{{meetings}}" wx:for-item="meeting" wx:key>
         <block wx:if="{{meeting.sender.id == current_user}}">
           <block wx:if="{{meeting.status == 'accepted'}}">
-            <view class="m-card" bindtap="meetingTap" id="{{meeting.id}}" data-meeting="{{meeting.recipient}}">
+            <view class="m-card-accepted" bindtap="meetingTap" id="{{meeting.id}}" data-meeting="{{meeting.recipient}}">
               <image class="m-img" src="{{meeting.recipient.avatar}}"></image>
               <view class="m-text">
               <text>Meeting with {{meeting.recipient.nickname}}</text>
           <!--  <text class="tiny-text">Connection made at XX</text>  -->
               </view>
-              <text class="status pending"></text>
             </view>
           </block>
         </block>
@@ -34,13 +33,12 @@
       <block wx:for="{{meetings}}" wx:for-item="meeting" wx:key>
         <block wx:if="{{meeting.recipient.id == current_user}}">
           <block wx:if="{{meeting.status == 'accepted'}}">
-            <view class="m-card" bindtap="meetingTap" id="{{meeting.id}}" data-meeting="{{meeting.sender}}">
+            <view class="m-card-accepted" bindtap="meetingTap" id="{{meeting.id}}" data-meeting="{{meeting.sender}}">
               <image class="m-img" src="{{meeting.sender.avatar}}"></image>
               <view class="m-text">
               <text>Meeting with {{meeting.sender.nickname}}</text>
           <!--  <text class="tiny-text">Connection made at XX</text>  -->
               </view>
-              <text class="status accepted"></text>
             </view>
           </block>
         </block>
@@ -65,13 +63,12 @@
   <block wx:for="{{meetings}}" wx:for-item="meeting" wx:key>
     <block wx:if="{{meeting.sender.id == current_user}}">
         <block wx:if="{{meeting.status == 'pending'}}">
-        <view class="m-card" bindtap="meetingTap" id="{{meeting.id}}" data-meeting="{{meeting.recipient}}">
+        <view class="m-card-pending" bindtap="meetingTap" id="{{meeting.id}}" data-meeting="{{meeting.recipient}}">
           <image class="m-img" src="{{meeting.recipient.avatar}}"></image>
           <view class="m-text">
           <text>Meeting with {{meeting.recipient.nickname}}</text>
       <!--  <text class="tiny-text">Connection made at XX</text>  -->
           </view>
-          <text class="status pending"></text>
         </view>
         </block>
       </block>
@@ -84,13 +81,12 @@
   <block wx:for="{{meetings}}" wx:for-item="meeting" wx:key>
 <block wx:if="{{meeting.recipient.id == current_user}}">
             <block wx:if="{{meeting.status == 'pending'}}">
-            <view class="m-card" bindtap="meetingTap" id="{{meeting.id}}" data-meeting="{{meeting.sender}}">
+            <view class="m-card-pending" bindtap="meetingTap" id="{{meeting.id}}" data-meeting="{{meeting.sender}}">
               <image class="m-img" src="{{meeting.sender.avatar}}"></image>
               <view class="m-text">
               <text>{{meeting.sender.nickname}} wants to meet!</text>
           <!--  <text class="tiny-text">Connection made at XX</text>  -->
               </view>
-              <text class="status pending"></text>
             </view>
           </block>
     </block>
@@ -108,23 +104,21 @@
       <block wx:if="{{meeting.sender.id == current_user}}">
 
         <block wx:if="{{meeting.status == 'declined'}}">
-            <view class="m-card" bindtap="meetingTap" id="{{meeting.id}}" data-meeting="{{meeting.recipient}}">
+            <view class="m-card-declined" bindtap="meetingTap" id="{{meeting.id}}" data-meeting="{{meeting.recipient}}">
               <image class="m-img" src="{{meeting.recipient.avatar}}"></image>
               <view class="m-text">
               <text>Meeting with {{meeting.recipient.nickname}}</text>
           <!--  <text class="tiny-text">Connection made at XX</text>  -->
               </view>
-              <text class="status pending"></text>
             </view>
             </block>
             <block wx:if="{{meeting.status == 'cancelled'}}">
-            <view class="m-card" bindtap="meetingTap" id="{{meeting.id}}" data-meeting="{{meeting.recipient}}">
+            <view class="m-card-declined" bindtap="meetingTap" id="{{meeting.id}}" data-meeting="{{meeting.recipient}}">
               <image class="m-img" src="{{meeting.recipient.avatar}}"></image>
               <view class="m-text">
               <text>Meeting with {{meeting.recipient.nickname}}</text>
           <!--  <text class="tiny-text">Connection made at XX</text>  -->
               </view>
-              <text class="status declined"></text>
             </view>
           </block>
   </block>
@@ -136,23 +130,21 @@
   <block wx:if="{{meeting.recipient.id === current_user}}">
 
     <block wx:if="{{meeting.status == 'declined'}}">
-      <view class="m-card" bindtap="meetingTap" id="{{meeting.id}}" data-meeting="{{meeting.sender}}">
+      <view class="m-card-declined" bindtap="meetingTap" id="{{meeting.id}}" data-meeting="{{meeting.sender}}">
         <image class="m-img" src="{{meeting.sender.avatar}}"></image>
         <view class="m-text">
           <text>{{meeting.sender.nickname}} declined.</text>
       <!--  <text class="tiny-text">Connection made at XX</text>  -->
           </view>
-          <text class="status declined"></text>
         </view>
       </block>
       <block wx:if="{{meeting.status == 'cancelled'}}">
-        <view class="m-card" bindtap="meetingTap" id="{{meeting.id}}" data-meeting="{{meeting.sender}}">
+        <view class="m-card-declined" bindtap="meetingTap" id="{{meeting.id}}" data-meeting="{{meeting.sender}}">
           <image class="m-img" src="{{meeting.sender.avatar}}"></image>
           <view class="m-text">
             <text>{{meeting.sender.nickname}} cancelled.</text>
       <!--  <text class="tiny-text">Connection made at XX</text>  -->
           </view>
-            <text class="status cancelled"></text>
         </view>
         </block>
       </block>
