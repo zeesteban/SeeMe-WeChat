@@ -51,7 +51,7 @@ Page({
     })
      //  Refactor
      if (that.data.request == true) {
-      setInterval(function(){
+      // setInterval(function(){
        wx.request({
         url: 'https://seeme.shanghaiwogeng.com/api/v1/meetings/' + e.id + '/messages',
         method: "get",
@@ -69,7 +69,7 @@ Page({
           })
         }
       })
-      }, 3000 )
+      // }, 3000 )
     }
 
   },
