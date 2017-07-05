@@ -1,13 +1,8 @@
 <!--meetings.wxml-->
-<image src="../../images/meetings-top.jpg" style="width: 100%; height: 200rpx;" mode="scaleToFit"></image>
 
-<view wx:if="{{!meetings}}">
-  <view class="h1 padded">You have no meetings :(</view>
-  <view class="h1 padded">Let's go change that!</view>
+<view class = "h1 padded box">
+<text class = "tiny-text">Active meetings will disapear in 24h!</text>
 </view>
-  <view wx:else>
-  </view>
-
 
 <!--Different Tabs-->
 <view class="navbar">
@@ -19,93 +14,19 @@
 <!-- ACTIVE -->
 <scroll-view class="{{currentNavbar==0 ? '' : 'hidden'}}">
   <view>
-<!--For meeting sent-->
-    <block wx:for="{{meetings}}" wx:for-item="meeting" wx:key>
-      <block wx:if="{{meeting.sender.id == current_user}}">
-        <block wx:if="{{meeting.status == 'accepted'}}">
-          <view class="m-card" bindtap="meetingTap" id="{{meeting.id}}" data-meeting="{{meeting.recipient}}">
-            <image class="m-img" src="{{meeting.recipient.avatar}}"></image>
-            <view class="m-text">
-            <text>Meeting with {{meeting.recipient.nickname}}</text>
-        <!--  <text class="tiny-text">Connection made at XX</text>  -->
-            </view>
-            <text class="status pending"></text>
-          </view>
-        </block>
-      </block>
-    </block>
 
-<!--For meeting received-->
-    <block wx:for="{{meetings}}" wx:for-item="meeting" wx:key>
-      <block wx:if="{{meeting.recipient.id === current_user}}">
-        <block wx:if="{{meeting.status == 'accepted'}}">
-          <view class="m-card" bindtap="meetingTap" id="{{meeting.id}}" data-meeting="{{meeting.sender}}">
-            <image class="m-img" src="{{meeting.sender.avatar}}"></image>
-            <view class="m-text">
-            <text>{{meeting.sender.nickname}} accepted!</text>
-        <!--  <text class="tiny-text">Connection made at XX</text>  -->
-            </view>
-            <text class="status accepted"></text>
-          </view>
-        </block>
-      </block>
-    </block>
+  <view wx:if="{{!meetings}}">
+  <view class="h1 padded">You have no meetings :(</view>
+  <view class="h1 padded">Let's go change that!</view>
+</view>
+  <view wx:else>
   </view>
-</scroll-view>
-
-<!-- PENDING -->
-<scroll-view class="{{currentNavbar==1 ? '' : 'hidden'}}">
-  <view>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  </view>
-</scroll-view>
-
-<!-- Past -->
-<scroll-view class="{{currentNavbar==2 ? '' : 'hidden'}}">
-  <view>
-   view three
-  </view>
-</scroll-view>
-
-<!--tabs end-->
-
-
 
     <view class="align-center padded">
-    <text class="h1 underline">Meetings sent</text>
-    <block wx:for="{{meetings}}" wx:for-item="meeting" wx:key>
-      <block wx:if="{{meeting.sender.id == current_user}}">
-          <block wx:if="{{meeting.status == 'pending'}}">
-          <view class="m-card" bindtap="meetingTap" id="{{meeting.id}}" data-meeting="{{meeting.recipient}}">
-            <image class="m-img" src="{{meeting.recipient.avatar}}"></image>
-            <view class="m-text">
-            <text>Meeting with {{meeting.recipient.nickname}}</text>
-        <!--  <text class="tiny-text">Connection made at XX</text>  -->
-            </view>
-            <text class="status pending"></text>
-          </view>
-          </block>
-            <block wx:if="{{meeting.status == 'accepted'}}">
+  <!--For meeting sent-->
+      <block wx:for="{{meetings}}" wx:for-item="meeting" wx:key>
+        <block wx:if="{{meeting.sender.id == current_user}}">
+          <block wx:if="{{meeting.status == 'accepted'}}">
             <view class="m-card" bindtap="meetingTap" id="{{meeting.id}}" data-meeting="{{meeting.recipient}}">
               <image class="m-img" src="{{meeting.recipient.avatar}}"></image>
               <view class="m-text">
@@ -114,8 +35,83 @@
               </view>
               <text class="status pending"></text>
             </view>
-            </block>
-            <block wx:if="{{meeting.status == 'declined'}}">
+          </block>
+        </block>
+      </block>
+
+  <!--For meeting received-->
+      <block wx:for="{{meetings}}" wx:for-item="meeting" wx:key>
+        <block wx:if="{{meeting.recipient.id === current_user}}">
+          <block wx:if="{{meeting.status == 'accepted'}}">
+            <view class="m-card" bindtap="meetingTap" id="{{meeting.id}}" data-meeting="{{meeting.sender}}">
+              <image class="m-img" src="{{meeting.sender.avatar}}"></image>
+              <view class="m-text">
+              <text>{{meeting.sender.nickname}} accepted!</text>
+          <!--  <text class="tiny-text">Connection made at XX</text>  -->
+              </view>
+              <text class="status accepted"></text>
+            </view>
+          </block>
+        </block>
+      </block>
+    </view>
+  </view>
+</scroll-view>
+
+<!-- PENDING -->
+<scroll-view class="{{currentNavbar==1 ? '' : 'hidden'}}">
+  <view>
+
+<!--For Pending Meetings Sent-->
+
+  <view class="align-center padded">
+  <text class="h1 underline">Meetings sent</text>
+  <block wx:for="{{meetings}}" wx:for-item="meeting" wx:key>
+    <block wx:if="{{meeting.sender.id == current_user}}">
+        <block wx:if="{{meeting.status == 'pending'}}">
+        <view class="m-card" bindtap="meetingTap" id="{{meeting.id}}" data-meeting="{{meeting.recipient}}">
+          <image class="m-img" src="{{meeting.recipient.avatar}}"></image>
+          <view class="m-text">
+          <text>Meeting with {{meeting.recipient.nickname}}</text>
+      <!--  <text class="tiny-text">Connection made at XX</text>  -->
+          </view>
+          <text class="status pending"></text>
+        </view>
+        </block>
+      </block>
+    </block>
+  </view>
+
+<!--For Pending meeting received-->
+  <view class="align-center padded">
+    <text class="h1 underline">Meetings received</text>
+        <block wx:for="{{meetings}}" wx:for-item="meeting" wx:key>
+          <block wx:if="{{meeting.recipient.id === current_user}}">
+            <block wx:if="{{meeting.status == 'pending'}}">
+            <view class="m-card" bindtap="meetingTap" id="{{meeting.id}}" data-meeting="{{meeting.sender}}">
+              <image class="m-img" src="{{meeting.sender.avatar}}"></image>
+              <view class="m-text">
+              <text>{{meeting.sender.nickname}} wants to meet!</text>
+          <!--  <text class="tiny-text">Connection made at XX</text>  -->
+              </view>
+              <text class="status pending"></text>
+            </view>
+          </block>
+        </block>
+      </block>
+    </view>
+  </view>
+</scroll-view>
+
+<!-- PAST -->
+<scroll-view class="{{currentNavbar==2 ? '' : 'hidden'}}">
+  <view>
+   
+<!--For Meeting Sent Cancel and Decline-->
+<block wx:for="{{meetings}}" wx:for-item="meeting" wx:key>
+      <block wx:if="{{meeting.sender.id == current_user}}">
+
+        <block wx:if="{{meeting.status == 'declined'}}">
             <view class="m-card" bindtap="meetingTap" id="{{meeting.id}}" data-meeting="{{meeting.recipient}}">
               <image class="m-img" src="{{meeting.recipient.avatar}}"></image>
               <view class="m-text">
@@ -134,59 +130,44 @@
               </view>
               <text class="status pending"></text>
             </view>
-            </block>
-      </block>
-    </block>
-    </view>
+          </block>
+  </block>
+</block>
 
-    <view class="align-center padded">
-    <text class="h1 underline">Meetings received</text>
-    <block wx:for="{{meetings}}" wx:for-item="meeting" wx:key>
-      <block wx:if="{{meeting.recipient.id === current_user}}">
-        <block wx:if="{{meeting.status == 'pending'}}">
-        <view class="m-card" bindtap="meetingTap" id="{{meeting.id}}" data-meeting="{{meeting.sender}}">
-          <image class="m-img" src="{{meeting.sender.avatar}}"></image>
-          <view class="m-text">
-          <text>{{meeting.sender.nickname}} wants to meet!</text>
-      <!--  <text class="tiny-text">Connection made at XX</text>  -->
-          </view>
-          <text class="status pending"></text>
-        </view>
-        </block>
-        <block wx:if="{{meeting.status == 'accepted'}}">
-        <view class="m-card" bindtap="meetingTap" id="{{meeting.id}}" data-meeting="{{meeting.sender}}">
-          <image class="m-img" src="{{meeting.sender.avatar}}"></image>
-          <view class="m-text">
-          <text>{{meeting.sender.nickname}} accepted!</text>
-      <!--  <text class="tiny-text">Connection made at XX</text>  -->
-          </view>
-          <text class="status accepted"></text>
-        </view>
-        </block>
-      </block>
-      <block wx:if="{{meeting.status == 'declined'}}">
-        <view class="m-card" bindtap="meetingTap" id="{{meeting.id}}" data-meeting="{{meeting.sender}}">
-          <image class="m-img" src="{{meeting.sender.avatar}}"></image>
-          <view class="m-text">
+<!--For Meeting Received Cancel and Decline-->
+
+<block wx:for="{{meetings}}" wx:for-item="meeting" wx:key>
+  <block wx:if="{{meeting.recipient.id === current_user}}">
+
+    <block wx:if="{{meeting.status == 'declined'}}">
+      <view class="m-card" bindtap="meetingTap" id="{{meeting.id}}" data-meeting="{{meeting.sender}}">
+        <image class="m-img" src="{{meeting.sender.avatar}}"></image>
+        <view class="m-text">
           <text>{{meeting.sender.nickname}} declined.</text>
       <!--  <text class="tiny-text">Connection made at XX</text>  -->
           </view>
           <text class="status declined"></text>
         </view>
-        </block>
-        <block wx:if="{{meeting.status == 'cancelled'}}">
+      </block>
+      <block wx:if="{{meeting.status == 'cancelled'}}">
         <view class="m-card" bindtap="meetingTap" id="{{meeting.id}}" data-meeting="{{meeting.sender}}">
           <image class="m-img" src="{{meeting.sender.avatar}}"></image>
           <view class="m-text">
-          <text>{{meeting.sender.nickname}} wants to meet!</text>
+            <text>{{meeting.sender.nickname}} wants to meet!</text>
       <!--  <text class="tiny-text">Connection made at XX</text>  -->
           </view>
-          <text class="status cancelled"></text>
+            <text class="status cancelled"></text>
         </view>
         </block>
+      </block>
     </block>
+  </view>
+</scroll-view>
 
-</view>
+<!--tabs end-->
+
+
+
 <!-- Status code -->
     <!-- <view class="h1 padded">Your accepted meetings</view> -->
       <!--   <view wx:elif="{{meeting.status}} == 'accepted' ">
