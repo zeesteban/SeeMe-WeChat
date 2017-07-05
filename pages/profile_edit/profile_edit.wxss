@@ -1,7 +1,7 @@
 
 textarea{
   width: 100%;
-  border: 2rpx solid lightgray;
+  border: 2rpx solid #d3d3d3;
 }
 
 .profile-img {
@@ -13,7 +13,7 @@ textarea{
 
 .wrapper {
   width: 100%;
-  background: linear-gradient(180deg, rgba(93, 115, 126, 1) 0%, rgba(252, 255, 253, 0.2) 90%);
+  background: linear-gradient(180deg, rgba(211, 211, 211, 1) 0%, rgba(211, 211, 211, 0) 90%);
   height: 300rpx;
 }
 
@@ -28,12 +28,11 @@ textarea{
 }
 
 .title-box {
-  background-color: #E5E6E4;
   padding-left: 40rpx;
   padding-top: 20rpx;
   padding-bottom: 20rpx;
   margin: 20rpx 0;
-  /*box-shadow: 1rpx 3rpx 3rpx #5D737E;*/
+  border-bottom: 2rpx solid #d3d3d3;
 }
 
 .box {
