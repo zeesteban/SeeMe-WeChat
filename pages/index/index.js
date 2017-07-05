@@ -14,7 +14,7 @@ Page({
 
     })
   },
-  onReady: function () {
+  onLoad: function () {
     console.log('onLoad')
     var that = this
     //调用应用实例的方法获取全局数据
@@ -27,26 +27,31 @@ Page({
       type: 'wgs84',
       success: function (res) {
         var token = wx.getStorageSync('token')
-        console.log("nearby users")
+        console.log("Getting Location data")
         console.log(res)
-        var lat = res.latitude
-        var lng = res.longitude
+        var latitude = res.latitude
+        var longitude = res.longitude
         var current_user = wx.getStorageSync('currentUserId')
         var token = wx.getStorageSync('token')
-        wx.setStorageSync('lat', lat)
-        wx.setStorageSync('lng', lng)
+        console.log(token)
+        wx.setStorageSync('lat', latitude)
+        wx.setStorageSync('lng', longitude)
         wx.request({
-          url: 'https://seeme.shanghaiwogeng.com/api/v1/profile',
+          url: 'http://localhost:3000/api/v1/profile',
           method: 'patch',
           data: {
             "user": {
-              "lat": lat,
-              "lng": lng
+              "latitude": latitude,
+              "longitude": longitude
             }
           },
           header: {
             'Content-Type': 'application/json',
             'X-User-Token': token
+          },
+          success: function(res){
+            console.log("Patch success")
+            console.log(res.data)
           }
         })
       }

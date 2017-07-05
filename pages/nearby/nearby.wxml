@@ -3,6 +3,7 @@
 <!-- SCROLL -->
 
 <scroll-view scroll-x="true" style=" white-space: nowrap; display: flex" >
+
  <view style="display: inline-block" class="scroll-tag tiny-text">Distance:</view>
   <view style="display: inline-block" class="scroll-tag tiny-text">≤ 100 m</view>
   <view style="display: inline-block" class="scroll-tag tiny-text">≤ 500 m</view>
@@ -21,31 +22,29 @@
 
 <!--Card loop -->
 
-<view class="wrapper">
-<block wx:for="{{users}}" wx:for-item="user" wx:key>
-  <block wx:if="{{user.id == current_user}}">
-  </block>
-  <block wx:else>
-  <view class="card" id="{{user.id}}" bindtap="profileTap">
-    <image class="userinfo-avatar card-image" src="{{user.avatar}}"></image>
-  <view class="card-name">
-      {{user.nickname}}
-      <block wx:if="{{user.gender == 2}}">
-      <image src="../../images/female.png" class="gender"></image>
-      </block>
-      <block wx:elif="{{user.gender == 1}}">
-      <image src="../../images/male.png" class="gender"></image>
-      </block>
-  </view>
-  <view class="align-center tiny-text">2 km away</view>
-  <view class="box">
-    <block wx:for="{{user.tag_list}}" wx:for-item="tag" wx:key>
-      <text class="top-tag">{{tag}}</text>
+<block wx:if="{{users}}">
+  <view class="wrapper">
+  <block wx:for="{{users}}" wx:for-item="user" wx:key>
+    <block wx:if="{{user.user.id == current_user}}">
     </block>
+    <block wx:else>
+    <view class="card" id="{{user.id}}" bindtap="profileTap">
+      <image class="userinfo-avatar card-image" src="{{user.user.avatar}}"></image>
+    <view class="card-name">
+        {{user.user.nickname}}
+        <block wx:if="{{user.user.gender == 2}}">
+        <image src="../../images/female.png" class="gender"></image>
+        </block>
+        <block wx:elif="{{user.user.gender == 1}}">
+        <image src="../../images/male.png" class="gender"></image>
+        </block>
+    </view>
+    <view class="align-center tiny-text">
+       {{user.distance}} m
+    </view>
+    <view class="btn align-center" id="{{user.id}}" catchtap="meetViewTap">Meet</view>
   </view>
-  <view class="btn align-center" id="{{user.id}}" catchtap="meetViewTap">Meet</view>
-</view>
+  </block>
+  </block>
+  </view>
 </block>
-</block>
-</view>
-
