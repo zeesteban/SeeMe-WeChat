@@ -1,7 +1,7 @@
 <!--meetings.wxml-->
 
 <view class = "h1 padded box">
-<text class = "tiny-text">Active meetings will disappear in 24h!</text>
+<text class="underline">Act fast</text>, you only have 24 hours to connect with your newly found friends.
 </view>
 
 <!--Different Tabs-->
