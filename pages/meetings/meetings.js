@@ -56,7 +56,7 @@ Page({
         token: token
       })
     }),
-  setInterval(function(){
+  // setInterval(function(){
     wx.request({
       url: 'https://seeme.shanghaiwogeng.com/api/v1/meetings/',
       method: 'get',
@@ -72,7 +72,7 @@ Page({
         })
         }
       })
-    }, 3000 )
+    // }, 3000 )
 
     },
 
@@ -110,7 +110,21 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+     wx.request({
+      url: 'https://seeme.shanghaiwogeng.com/api/v1/meetings/',
+      method: 'get',
+      header: {
+        'X-User-Token': token
+      },
+      success: function (res) {
+        console.log("Success on getting meetings")
+        console.log(res.data)
+        that.setData({
+          current_user: current_user,
+          meetings: res.data
+        })
+        }
+      })
   },
 
   /**

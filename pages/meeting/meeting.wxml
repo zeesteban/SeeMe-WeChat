@@ -33,6 +33,7 @@
   </view>
 </view>
 <block wx:if="{{meeting.status == 'pending'}}">
+
   <view class="box align-center">
     Is {{recipient.nickname}} taking too long to reply?
     <view class="padded" style="margin-bottom: 20rpx;">

@@ -19,7 +19,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (e) {
-    console.log(e)
     // console.log(e.data.recipient)
     var that = this
     var token = wx.getStorageSync('token')
@@ -127,7 +126,7 @@ Page({
     var meeting_id = e.currentTarget.dataset.id
     wx.request({
       url: 'https://seeme.shanghaiwogeng.com/api/v1/meetings/' + meeting_id + '/cancel',
-      method: 'patch',
+      method: 'put',
       header: {
         'X-User-Token': wx.getStorageSync('token'),
       },
@@ -144,7 +143,7 @@ Page({
           })
       }
     })
-    this.onLoad()
+    // this.onLoad()
   },
 
   acceptTap: function(e) {
@@ -153,7 +152,7 @@ Page({
     var meeting_id = e.currentTarget.dataset.id
     wx.request({
       url: 'https://seeme.shanghaiwogeng.com/api/v1/meetings/' + meeting_id + '/accept',
-      method: 'patch',
+      method: 'put',
       header: {
         'X-User-Token': wx.getStorageSync('token'),
       },
@@ -169,7 +168,7 @@ Page({
       })
       }
     })
-    this.onLoad()
+    // this.onLoad()
   },
 
   declineTap: function(e) {
@@ -178,7 +177,7 @@ Page({
     var meeting_id = e.currentTarget.dataset.id
     wx.request({
       url: 'https://seeme.shanghaiwogeng.com/api/v1/meetings/' + meeting_id + '/decline',
-      method: 'patch',
+      method: 'put',
       header: {
         'X-User-Token': wx.getStorageSync('token'),
       },
@@ -194,7 +193,7 @@ Page({
         })
       }
     })
-    this.onLoad()
+    // this.onLoad()
   },
 
 profileTap: function (e) {
