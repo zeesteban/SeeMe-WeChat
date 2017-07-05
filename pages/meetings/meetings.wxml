@@ -8,6 +8,89 @@
   <view wx:else>
   </view>
 
+
+<!--Different Tabs-->
+<view class="navbar">
+  <view class="navbar-item" wx:for="{{navbar}}" wx:for-index="idx" data-idx="{{idx}}" bindtap="swichNav">
+    <text class="navbar-text {{currentNavbar==idx ? 'active' : ''}}">{{item}}</text>
+  </view>
+</view>
+
+<!-- ACTIVE -->
+<scroll-view class="{{currentNavbar==0 ? '' : 'hidden'}}">
+  <view>
+<!--For meeting sent-->
+    <block wx:for="{{meetings}}" wx:for-item="meeting" wx:key>
+      <block wx:if="{{meeting.sender.id == current_user}}">
+        <block wx:if="{{meeting.status == 'accepted'}}">
+          <view class="m-card" bindtap="meetingTap" id="{{meeting.id}}" data-meeting="{{meeting.recipient}}">
+            <image class="m-img" src="{{meeting.recipient.avatar}}"></image>
+            <view class="m-text">
+            <text>Meeting with {{meeting.recipient.nickname}}</text>
+        <!--  <text class="tiny-text">Connection made at XX</text>  -->
+            </view>
+            <text class="status pending"></text>
+          </view>
+        </block>
+      </block>
+    </block>
+
+<!--For meeting received-->
+    <block wx:for="{{meetings}}" wx:for-item="meeting" wx:key>
+      <block wx:if="{{meeting.recipient.id === current_user}}">
+        <block wx:if="{{meeting.status == 'accepted'}}">
+          <view class="m-card" bindtap="meetingTap" id="{{meeting.id}}" data-meeting="{{meeting.sender}}">
+            <image class="m-img" src="{{meeting.sender.avatar}}"></image>
+            <view class="m-text">
+            <text>{{meeting.sender.nickname}} accepted!</text>
+        <!--  <text class="tiny-text">Connection made at XX</text>  -->
+            </view>
+            <text class="status accepted"></text>
+          </view>
+        </block>
+      </block>
+    </block>
+  </view>
+</scroll-view>
+
+<!-- PENDING -->
+<scroll-view class="{{currentNavbar==1 ? '' : 'hidden'}}">
+  <view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </view>
+</scroll-view>
+
+<!-- Past -->
+<scroll-view class="{{currentNavbar==2 ? '' : 'hidden'}}">
+  <view>
+   view three
+  </view>
+</scroll-view>
+
+<!--tabs end-->
+
+
+
     <view class="align-center padded">
     <text class="h1 underline">Meetings sent</text>
     <block wx:for="{{meetings}}" wx:for-item="meeting" wx:key>
