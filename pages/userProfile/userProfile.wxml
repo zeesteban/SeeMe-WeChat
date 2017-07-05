@@ -14,7 +14,7 @@
 <view class="box">
   <block wx:if="{{ user.bio == null }}">
     <view>{{user.nickname}} hasn't yet set a profile.</view>
-    <view>Remind them!</view>
+    <view> Remind them!</view>
   </block>
   <block wx:else>
     <view>  {{ user.bio }}  </view>

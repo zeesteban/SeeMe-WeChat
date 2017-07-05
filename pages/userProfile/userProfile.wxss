@@ -24,7 +24,6 @@
 }
 
 .title-box {
-  background-color: #F4F7F7;
   padding-left: 40rpx;
   padding-top: 20rpx;
   padding-bottom: 20rpx;

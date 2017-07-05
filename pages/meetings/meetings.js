@@ -11,8 +11,8 @@ Page({
     recipient: null,
     current_user: null,
     token: null,
-    navbar: ['Active', 'Pending', 'Declined'],
-    currentNavbar: '0',
+    navbar: ['Accepted', 'Pending', 'Declined'],
+    currentNavbar: '1',
   },
 
   swichNav(e) {
@@ -67,11 +67,12 @@ Page({
         console.log("Success on getting meetings")
         console.log(res.data)
         that.setData({
+          current_user: current_user,
           meetings: res.data
         })
         }
       })
-    }, 5000 )
+    }, 3000 )
 
     },
 

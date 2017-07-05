@@ -239,19 +239,38 @@
 .btn{
   border: 2rpx solid #4BDDB9;
   box-shadow:0rpx 1rpx 20rpx #c7f6eb;
-  text-align: center;
   background-color: #4BDDB9;
   color: #FCFFFD;
   border-radius: 10rpx;
   letter-spacing: 0.4px;
-  margin-bottom: 40rpx;
-  line-height: 2;
-  padding-left: 10rpx;
-  padding-right: 10rpx
+  padding: 10rpx 10rpx;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+  margin-bottom: 10rpx;
+  margin-top: 20rpx;
+  font-size: 1.3em;
+  z-index: 3;
+}
+
+.btn-red{
+  border: 2rpx solid #F23E36;
+  box-shadow:0rpx 1rpx 20rpx #F39383;
+  background-color: #F23E36;
+  color: #FCFFFD;
+  border-radius: 10rpx;
+  letter-spacing: 0.4px;
+  padding: 10rpx 10rpx;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+  margin-bottom: 10rpx;
+  margin-top: 20rpx;
+  font-size: 1.3em;
+  z-index: 3;
 }
 
 .btn-small {
-  width: 30%;
-  text-align: center;
+  width: 50%;
 }
+
+
 
