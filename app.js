@@ -29,7 +29,7 @@ App({
                   console.log("Didn't set storage")
                 }
               },
-              url: 'http://localhost:3000/api/v1/users',
+              url: 'https://seeme.shanghaiwogeng.com/api/v1/users',
               method: "post",
               data: {
                 code: res.code,

@@ -13,7 +13,7 @@ Page({
     var token = wx.getStorageSync('token')
     // Nearby API request
     wx.request({
-          url: 'http://localhost:3000/api/v1/users',
+          url: 'https://seeme.shanghaiwogeng.com/api/v1/users',
           method: 'get',
           data: {
             latitude: wx.getStorageSync('lat'),
@@ -47,7 +47,7 @@ Page({
         wx.hideLoading()
       },2000),
     wx.request({
-      url: 'http://localhost:3000/api/v1/meetings/',
+      url: 'https://seeme.shanghaiwogeng.com/api/v1/meetings/',
       method: "post",
       data: {
         meeting: {
@@ -76,7 +76,7 @@ Page({
 
   onPullDownRefresh: function(){
     wx.request({
-      url: 'http://localhost:3000/api/v1/users',
+      url: 'https://seeme.shanghaiwogeng.com/api/v1/users',
       method: "get",
       success: function (res) {
         console.log("refreshed")

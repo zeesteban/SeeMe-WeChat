@@ -37,7 +37,7 @@ Page({
         wx.setStorageSync('lat', latitude)
         wx.setStorageSync('lng', longitude)
         wx.request({
-          url: 'http://localhost:3000/api/v1/profile',
+          url: 'https://seeme.shanghaiwogeng.com/api/v1/profile',
           method: 'patch',
           data: {
             "user": {
