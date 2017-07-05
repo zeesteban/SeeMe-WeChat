@@ -1,5 +1,5 @@
 <!--pages/search/search.wxml-->
-<view class="h1 padded box">Match me with someone who likes beeing...</view>
+<view class="h1 padded box">Match me with someone who likes...</view>
 
 <!-- NAVBAR -->
 <view class="navbar">
@@ -20,8 +20,8 @@
 <!-- TWO -->
 <scroll-view class="{{currentNavbar==1 ? '' : 'hidden'}}">
   <view class="container-tags padded">
-    <block wx:for="{{tag_list_chill}}" wx:for-item="tag" wx:key>
-      <text class="tags netflix" bindtap="addTag" id="{{tag}}">{{tag}}</text>
+    <block wx:for="{{tag_list_geeky}}" wx:for-item="tag" wx:key>
+      <text class="tags" bindtap="addTag" id="{{tag}}">{{tag}}</text>
     </block>
   </view>
 </scroll-view>
@@ -38,8 +38,8 @@
 <!-- FOUR -->
 <scroll-view class="{{currentNavbar==3 ? '' : 'hidden'}}">
   <view class="container-tags padded">
-    <block wx:for="{{tag_list_geeky}}" wx:for-item="tag" wx:key>
-      <text class="tags" bindtap="addTag" id="{{tag}}">{{tag}}</text>
+    <block wx:for="{{tag_list_chill}}" wx:for-item="tag" wx:key>
+      <text class="tags netflix" bindtap="addTag" id="{{tag}}">{{tag}}</text>
     </block>
   </view>
 </scroll-view>

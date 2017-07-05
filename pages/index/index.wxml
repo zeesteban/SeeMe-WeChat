@@ -14,7 +14,7 @@
 </view>-->
 </view>
 
-        <swiper class="swiper-view" bindscroll="scroll" indicator-dots="true" autoplay="true" interval="2500">
+        <swiper class="swiper-view" bindscroll="scroll" indicator-dots="true" autoplay="true" interval="3000">
           <swiper-item>
             <image src="../../images/cover1.jpg" mode="scaleToFill"></image>
           </swiper-item>

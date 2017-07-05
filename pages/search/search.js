@@ -1,11 +1,11 @@
 // pages/search/search.js
 Page({
   data: {
-    tag_list_fun: ["Stand-up Comedy", "Hot Sauce Tasting", "Taobao Shopping", "Mispronouncing Mandarin Tones"],
+    tag_list_fun: ["Stand-up Comedy", "Hot Sauce Tasting", "Taobao Shopping", "Bargaining", "Mispronouncing Mandarin Tones", "Drinking beer", "Having no personal space"],
     tag_list_chill: ["Netflix"],
-    tag_list_active: ["Basketball", "Subway Combat Sports", "Dancing", "Stalking", "Golf", "Beerwalking", "Running from pollution", "Swimming", "Tennis", "Finding Mobikes", "Taxi catching"],
-    tag_list_geeky: ["Ruby", "HTML", "CSS", "AR/VR", "Startups", "UX/UI", "Le Wagon", "Databases", "Star Wars", "Orbital Mechanics"],
-    navbar: ['Fun', 'Chill', 'Active', "Geeky"],
+    tag_list_active: ["Cutting in line", "Subway Combat Sports", "Dancing", "Stalking", "Using chopsticks", "Beerwalking", "Running from pollution", "Queuing", "Finding Mobikes", "Taxi catching"],
+    tag_list_geeky: ["Ruby", "HTML", "CSS", "AR/VR", "Startups", "UX/UI", "Le Wagon", "Finding the right VPN server", "Meetups", "Orbital Mechanics"],
+    navbar: ['Fun', 'Geeky', 'Active', "Chill"],
     currentNavbar: '0'
   },
   swichNav(e) {

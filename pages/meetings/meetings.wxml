@@ -1,7 +1,7 @@
 <!--meetings.wxml-->
 
 <view class = "h1 padded box">
-<text class = "tiny-text">Active meetings will disapear in 24h!</text>
+<text class = "tiny-text">Active meetings will disappear in 24h!</text>
 </view>
 
 <!--Different Tabs-->

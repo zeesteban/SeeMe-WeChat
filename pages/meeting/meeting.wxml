@@ -20,8 +20,6 @@
   </view>
 </view>
 
-<view class="wrapper padded"><map id="myMap" show-location /></view>
-
 <view class="align-center padded"><text class="h1 messages underline">Messages</text></view>
 <view class="chat-box">
   <view wx:for="{{message}}" wx:for-item="message" wx:key>
