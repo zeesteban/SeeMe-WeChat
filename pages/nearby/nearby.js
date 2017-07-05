@@ -6,14 +6,30 @@ Page({
     inputVal: "",
     users: [],
     current_user: null,
+    unactive: "scroll-tag-tiny-text",
+    active: null,
+    items: [
+      {name: 0, value: 'All', checked: 'true'},
+      {name: 1, value: 'Male'},
+      {name: 2, value: 'Female'},
+    ]
   },
-  onLoad: function () {
+
+  changeStatus: function () {
+    this.setData({
+      active: "scroll-tag-active"
+    })
+  },
+
+  onLoad: function (e) {
+    console.log(e.id)
+    var tag = e.id
     let page = this;
     var current_user = wx.getStorageSync('currentUserId')
-    // Nearby API request
+    // API request for search. the value e is from the search page.
     wx.request({
-      url: 'https://seeme.shanghaiwogeng.com/api/v1/users',
-      method: "get",
+      url: 'https://seeme.shanghaiwogeng.com/api/v1/users/search?tag=' + tag,
+      method: "patch",
       success: function (res) {
         console.log(res)
         page.setData({
@@ -22,6 +38,10 @@ Page({
         })
       }
     })
+  },
+
+  radioChange: function(e) {
+    console.log(e.detail.value)
   },
 
   // End of API request

@@ -2,6 +2,7 @@
 <image src="../../images/search-top.jpg" style="width: 100%; height: 200rpx;"></image>
 <view class="h1 padded box">Today I want to meet someone who is interested in...</view>
 
+<text bindtap="showAll" class="tags" id="all">Show all</text>
 <view class="container-tags">
   <block wx:for="{{tag_list}}" wx:for-item="tag" wx:key>
     <text class="tags" bindtap="addTag" id="{{tag}}">{{tag}}</text>

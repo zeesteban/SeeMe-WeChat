@@ -23,3 +23,12 @@
   justify-content: center;
   margin: 0 20rpx;
 }
+
+.showall {
+  border: 1rpx solid #4BDDB9;
+  box-shadow:1rpx 1rpx 20rpx #c7f6eb;
+  border-radius: 40rpx;
+  letter-spacing: 0.4px;
+  padding: 15rpx 20rpx;
+  margin: 20rpx;
+}
