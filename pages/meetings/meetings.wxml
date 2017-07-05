@@ -13,14 +13,6 @@
 
 <!-- ACTIVE -->
 <scroll-view class="{{currentNavbar==0 ? '' : 'hidden'}}">
-  <view>
-
-  <view wx:if="{{!meetings}}">
-  <view class="h1 padded">You have no meetings :(</view>
-  <view class="h1 padded">Let's go change that!</view>
-</view>
-  <view wx:else>
-  </view>
 
     <view class="align-center padded">
   <!--For meeting sent-->
@@ -54,7 +46,7 @@
         </block>
       </block>
     </view>
-  </view>
+  <!-- </view> -->
 </scroll-view>
 
 <!-- PENDING -->
@@ -64,7 +56,12 @@
 <!--For Pending Meetings Sent-->
 
   <view class="align-center padded">
-  <text class="h1 underline">Meetings sent</text>
+  <view wx:if="{{!meetings}}">
+    <view class="h1 padded">You have no meetings :(</view>
+  </view>
+  <view wx:else>
+    <text class="h1 underline">Meetings</text>
+  </view>
   <block wx:for="{{meetings}}" wx:for-item="meeting" wx:key>
     <block wx:if="{{meeting.sender.id == current_user}}">
         <block wx:if="{{meeting.status == 'pending'}}">
@@ -84,7 +81,6 @@
 <!--For Pending meeting received-->
 <!-- need to properly do this -->
       <view class="align-center padded">
-    <text class="h1 underline">Meetings received</text>
   <block wx:for="{{meetings}}" wx:for-item="meeting" wx:key>
 <block wx:if="{{meeting.recipient.id == current_user}}">
             <block wx:if="{{meeting.status == 'pending'}}">
@@ -153,7 +149,7 @@
         <view class="m-card" bindtap="meetingTap" id="{{meeting.id}}" data-meeting="{{meeting.sender}}">
           <image class="m-img" src="{{meeting.sender.avatar}}"></image>
           <view class="m-text">
-            <text>{{meeting.sender.nickname}} wants to meet!</text>
+            <text>{{meeting.sender.nickname}} cancelled.</text>
       <!--  <text class="tiny-text">Connection made at XX</text>  -->
           </view>
             <text class="status cancelled"></text>
