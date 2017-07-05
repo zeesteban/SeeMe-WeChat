@@ -10,10 +10,6 @@
   font-size: 1.3em;
 }
 
-page {
-  background-color: white;
-}
-
 .userinfo-avatar {
   width: 128rpx;
   height: 128rpx;
@@ -28,7 +24,7 @@ page {
 }
 
 .container {
-  margin: 20rpx 40rpx;
+  margin: 20rpx 30rpx;
 }
 
 .swiper-view {

@@ -1,5 +1,4 @@
 <!--pages/search/search.wxml-->
-<image src="../../images/search-top.jpg" style="width: 100%; height: 200rpx;"></image>
 <view class="h1 padded box">Match me with someone who likes beeing...</view>
 
 <!-- NAVBAR -->
@@ -31,6 +30,16 @@ tab two
 <!-- THREE -->
 <scroll-view class="{{currentNavbar==2 ? '' : 'hidden'}}">
 tab three
+  <view class="container-tags padded">
+    <block wx:for="{{tag_list}}" wx:for-item="tag" wx:key>
+      <text class="tags" bindtap="addTag" id="{{tag}}">{{tag}}</text>
+    </block>
+  </view>
+</scroll-view>
+
+<!-- FOUR -->
+<scroll-view class="{{currentNavbar==3 ? '' : 'hidden'}}">
+tab four
   <view class="container-tags padded">
     <block wx:for="{{tag_list}}" wx:for-item="tag" wx:key>
       <text class="tags" bindtap="addTag" id="{{tag}}">{{tag}}</text>
