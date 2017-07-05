@@ -1,36 +1,34 @@
-<import src="../common/head.wxml" />
-<import src="../common/foot.wxml" />
+<view class="wrapper"></view>
+  <view class="container-profile">
+  <image src="{{userInfo.avatarUrl}}" class="profile-img"></image>
+</view>
+<view class="align-center">
+  <text class="h1">{{userInfo.nickName}}</text>
+</view>
 
-<view class="container">
-
-
-  <view class="page-body">
-    <form bindsubmit="formSubmit" catchreset="formReset">
-
-
-      <view class="page-section">
-        <view class="h1 padded">Bio</view>
-        <view class="weui-cells weui-cells_after-title">
-          <view class="weui-cell weui-cell_input">
-            <view class="weui-cell__bd">
-              <textarea class="weui-input" style="height: 5em" name="bio" placeholder="{{bio}}" value="{{bio}}" />
-            </view>
-          </view>
-        </view>
-      </view>
-
-
-      <view class="page-section">
-        <view class="h1 padded">Looking for people interested in...</view>
-        <view class="box">
-          <block wx:for="{{tag_list}}" wx:for-item="tag" wx:key>
-            <text class="tags">{{tag}}</text>
-          </block>
-        </view>
-      </view>
-
-      <button class="btn-green" formType="submit">Submit</button>
-    </form>
+<form bindsubmit="formSubmit" catchreset="formReset">
+  <view class="title-box">
+    Bio:
+  </view>
+  <view class="box">
+  <textarea style="height: 5em" name="bio" placeholder="{{bio}}" value="{{bio}}" />
   </view>
 
-</view>
+  <view class="title-box">
+    Looking for people interested in...
+  </view>
+  <view class="box">
+    <block wx:for="{{tag_list}}" wx:for-item="tag" wx:key>
+      <text class="tags">{{tag}}</text>
+    </block>
+  </view>
+
+  <view class="title-box">
+    Phone number:
+  </view>
+  <view class="box">
+    <input maxlength="120" class="textbox" name="phone" placeholder="Enter your phone number" value="{{phone}}" />
+  </view>
+
+  <button class="btn btn-small" formType="submit">Submit</button>
+</form>

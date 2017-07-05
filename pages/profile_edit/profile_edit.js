@@ -2,17 +2,21 @@ var app = getApp()
 
 Page({
   data: {
+    userInfo: {},
     pickerHidden: true,
     chosen: '',
     bio: null,
+    phone: null,
     tag_list: []
   },
 
   onLoad: function() {
     let that = this
+    var userInfo = wx.getStorageSync('userInfo')
     that.setData ({
       bio: wx.getStorageSync('bio'),
-      tag_list: wx.getStorageSync('tag_list')
+      tag_list: wx.getStorageSync('tag_list'),
+      userInfo: userInfo,
     })
   },
 
@@ -26,6 +30,7 @@ Page({
       data: {
         "user": {
           "bio": base.bio,
+          "phone": base.phone
          }
       },
       header: {
@@ -36,6 +41,7 @@ Page({
         try {
           wx.setStorageSync('bio', res.data.bio)
           wx.setStorageSync('tag_list', res.data.tag_list)
+          wx.setStorageSync('phone', res.data.phone)
           // wx.setStorageSync('token', res.data.interests)
         } catch (e) {
             console.log("Didn't set storage")
