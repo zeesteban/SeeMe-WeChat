@@ -56,6 +56,7 @@ Page({
         token: token
       })
     }),
+  setInterval(function(){
     wx.request({
       url: 'https://seeme.shanghaiwogeng.com/api/v1/meetings/',
       method: 'get',
@@ -70,7 +71,11 @@ Page({
         })
         }
       })
+    }, 5000 )
+
     },
+
+
 
   /**
    * 生命周期函数--监听页面初次渲染完成
