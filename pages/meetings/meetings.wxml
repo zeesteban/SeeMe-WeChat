@@ -8,6 +8,53 @@
   <view wx:else>
   </view>
 
+
+<!--Different Tabs-->
+<view class="navbar">
+  <view class="navbar-item" wx:for="{{navbar}}" wx:for-index="idx" data-idx="{{idx}}" bindtap="swichNav">
+    <text class="navbar-text {{currentNavbar==idx ? 'active' : ''}}">{{item}}</text>
+  </view>
+</view>
+
+<!-- Active -->
+<scroll-view class="{{currentNavbar==0 ? '' : 'hidden'}}">
+  <view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </view>
+</scroll-view>
+
+<!-- Pending -->
+<scroll-view class="{{currentNavbar==1 ? '' : 'hidden'}}">
+  <view>
+   view two
+  </view>
+</scroll-view>
+
+<!-- Past -->
+<scroll-view class="{{currentNavbar==2 ? '' : 'hidden'}}">
+  <view>
+   view three
+  </view>
+</scroll-view>
+
+<!--tabs end-->
+
+
+
     <view class="align-center padded">
     <text class="h1 underline">Meetings sent</text>
     <block wx:for="{{meetings}}" wx:for-item="meeting" wx:key>
