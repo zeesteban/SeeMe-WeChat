@@ -45,7 +45,8 @@
 }
 
 .pending {
-    background-color: yellow;
+  border-right: 4rpx solid yellow;
+  background-color: yellow;
 }
 
 .declined {
