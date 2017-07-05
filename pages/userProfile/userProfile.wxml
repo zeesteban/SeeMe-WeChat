@@ -2,46 +2,34 @@
 
 <view class="wrapper"></view>
 <view class="container-profile">
-
-  <block wx:for="{{users}}" wx:key="">
-    <block wx:if="{{item.id == id}}">
-
-      <image src="{{item.avatar}}" class="profile-img"></image>
-</block>
-</block>
+  <image src="{{user.avatar}}" class="profile-img"></image>
 </view>
 <view class="align-center">
-  <block wx:for="{{users}}" wx:key="">
-    <block wx:if="{{item.id == id}}">
-  <text class="h1">{{item.nickname}}</text>
-  </block>
-</block>
+  <text class="h1">{{user.nickname}}</text>
 </view>
 
 <view class="title-box">
   About:
 </view>
 <view class="box">
-  {{ bio }}
+  <block wx:if="{{ user.bio == null }}">
+    <view>{{user.nickname}} hasn't yet set a profile.</view>
+    <view>Remind them!</view>
+  </block>
+  <block wx:else>
+    <view>  {{ user.bio }}  </view>
+  </block>
 </view>
 
 <view class="title-box">
   Hobbies & Interests:
 </view>
 <view class="box">
-  <text class="tags">Reading</text>
-  <text class="tags">Photography</text>
-  <text class="tags">WXML</text>
-  <text class="tags">WXSS</text>
-  <text class="tags">Language learning</text>
-  <text class="tags">Traveling</text>
+  <block wx:for="{{user.tag_list}}" wx:for-item="tag"></block>
+  <text class="tags">{{tag}}</text>
 </view>
 
 <view class="box">
-  <block wx:for="{{users}}" wx:key="">
-    <block wx:if="{{item.id == id}}">
-  <text class="btn-green" bindtap="meetTap" id="{{id}}">Meet {{item.nickname}}</text>
-  </block>
-</block>
+  <text class="btn-green" bindtap="meetTap" id="{{user.id}}">Meet {{user.nickname}}</text>
 </view>
 
