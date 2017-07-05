@@ -2,7 +2,7 @@
   <view class="container-profile">
   <image src="{{userInfo.avatarUrl}}" class="profile-img"></image>
 </view>
-<view class="align-center">
+<view class="align-center padded">
   <text class="h1">{{userInfo.nickName}}</text>
 </view>
 
