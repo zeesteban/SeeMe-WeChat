@@ -1,7 +1,9 @@
 <!--index.wxml-->
 <view class="container">
-  <view class="h1 padded">LOGO</view>
-  <text class="underline padded tag-line">Meet people instantly</text>
+  <view class="padded">
+    <image src="../../images/seeme_logo.png" style="width: 300rpx; height: 150rpx;"></image>
+  </view>
+  <text class="underline tag-line">Meet people instantly</text>
 
   <view class="align-center">Connect with people who share the same interests and hobbies. They are closer than you think!</view>
 
@@ -25,6 +27,6 @@
         </swiper>
 
   <view class="container">
-    <button class="btn-green" bindtap="bindViewTap">Continue</button>
+    <button class="btn-green" bindtap="bindViewTap">Start exploring</button>
   </view>
 

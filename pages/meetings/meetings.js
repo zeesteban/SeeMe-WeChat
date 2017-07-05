@@ -11,7 +11,16 @@ Page({
     recipient: null,
     current_user: null,
     token: null,
+    navbar: ['Active', 'Pending', 'Declined'],
+    currentNavbar: '0',
   },
+
+  swichNav(e) {
+    this.setData({
+      currentNavbar: e.currentTarget.dataset.idx
+    })
+  },
+
 
   meetingTap: function (e) {
     console.log("Meeting data")
@@ -29,58 +38,6 @@ Page({
       url: '../meeting/meeting?id=' + e.currentTarget.id
 
     })
-  },
-
-  cancelTap: function(e) {
-    console.log(e.currentTarget.id)
-    var that = this
-    var meeting_id = e.currentTarget.id
-    wx.request({
-      url: 'https://seeme.shanghaiwogeng.com/api/v1/meetings/' + meeting_id + '/cancel',
-      method: 'patch',
-      header: {
-        'X-User-Token': that.data.token,
-      },
-      success: function (res) {
-        console.log("Success on cancelled a meeting")
-        console.log(res.data.status)
-      }
-    })
-    this.onLoad()
-  },
-
-  acceptTap: function(e) {
-    console.log(e.currentTarget.id)
-    var that = this
-    var meeting_id = e.currentTarget.id
-    wx.request({
-      url: 'https://seeme.shanghaiwogeng.com/api/v1/meetings/' + meeting_id + '/accept',
-      method: 'patch',
-      header: {
-        'X-User-Token': that.data.token,
-      },
-      success: function (res) {
-        console.log("Success on accept a meeting")
-      }
-    })
-    this.onLoad()
-  },
-
-  declineTap: function(e) {
-    console.log(e.currentTarget.id)
-    var that = this
-    var meeting_id = e.currentTarget.id
-    wx.request({
-      url: 'https://seeme.shanghaiwogeng.com/api/v1/meetings/' + meeting_id + '/decline',
-      method: 'patch',
-      header: {
-        'X-User-Token': that.data.token,
-      },
-      success: function (res) {
-        console.log("Success on declined a meeting")
-      }
-    })
-    this.onLoad()
   },
   /**
    * 生命周期函数--监听页面加载

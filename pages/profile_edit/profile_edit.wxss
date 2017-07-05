@@ -1,20 +1,38 @@
-@import "../common/lib/weui.wxss";
 
-label {
-  display: inline-block;
-  min-width: 270rpx;
-  margin-right: 20rpx;
-}
-form{
+textarea{
   width: 100%;
-}
-.picker-text {
-  margin-left: 20rpx;
-  position: relative;
+  border: 2rpx solid #d3d3d3;
 }
 
-.page-section {
-  margin-bottom: 30px;
+.profile-img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  box-shadow:1rpx 1rpx 50rpx #dde0e1;
+}
+
+.wrapper {
+  width: 100%;
+  background: linear-gradient(180deg, rgba(211, 211, 211, 1) 0%, rgba(211, 211, 211, 0) 90%);
+  height: 300rpx;
+}
+
+.container-profile {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: -250rpx;
+  box-sizing: border-box;
+}
+
+.title-box {
+  padding-left: 40rpx;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+  margin: 20rpx 0;
+  border-bottom: 2rpx solid #d3d3d3;
 }
 
 .box {
@@ -33,4 +51,30 @@ form{
   letter-spacing: 0.4px;
   padding: 15rpx 20rpx;
   margin: 10rpx;
+}
+
+.textbox {
+  width:100%;
+  margin: 0 auto 20rpx auto;
+  border: 2rpx solid lightgray;
+  padding-bottom: 8rpx;
+}
+
+/* Buttons */
+
+.btn{
+  border: 2rpx solid #4BDDB9;
+  box-shadow:0rpx 1rpx 20rpx #c7f6eb;
+  text-align: center;
+  background-color: #4BDDB9;
+  color: #FCFFFD;
+  border-radius: 10rpx;
+  letter-spacing: 0.4px;
+  margin-bottom: 40rpx;
+  line-height: 2;
+}
+
+.btn-small {
+  width: 30%;
+  text-align: center;
 }

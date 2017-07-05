@@ -1,10 +1,46 @@
 <!--pages/search/search.wxml-->
-<image src="../../images/search-top.jpg" style="width: 100%; height: 200rpx;"></image>
-<view class="h1 padded box">Today I want to meet someone who is interested in...</view>
 
-<text bindtap="showAll" class="tags" id="all">Show all</text>
-<view class="container-tags">
-  <block wx:for="{{tag_list}}" wx:for-item="tag" wx:key>
-    <text class="tags" bindtap="addTag" id="{{tag}}">{{tag}}</text>
-  </block>
+<view class="h1 padded box">Match me with someone who likes beeing...</view>
+
+<!-- NAVBAR -->
+<view class="navbar">
+  <view class="navbar-item" wx:for="{{navbar}}" wx:for-index="idx" data-idx="{{idx}}" bindtap="swichNav">
+    <text class="navbar-text {{currentNavbar==idx ? 'active' : ''}}">{{item}}</text>
+  </view>
 </view>
+
+<!-- ONE -->
+<scroll-view class="{{currentNavbar==0 ? '' : 'hidden'}}">
+  <view class="container-tags padded">
+    <block wx:for="{{tag_list_fun}}" wx:for-item="tag" wx:key>
+      <text class="tags" bindtap="addTag" id="{{tag}}">{{tag}}</text>
+    </block>
+  </view>
+</scroll-view>
+
+<!-- TWO -->
+<scroll-view class="{{currentNavbar==1 ? '' : 'hidden'}}">
+  <view class="container-tags padded">
+    <block wx:for="{{tag_list_chill}}" wx:for-item="tag" wx:key>
+      <text class="tags netflix" bindtap="addTag" id="{{tag}}">{{tag}}</text>
+    </block>
+  </view>
+</scroll-view>
+
+<!-- THREE -->
+<scroll-view class="{{currentNavbar==2 ? '' : 'hidden'}}">
+  <view class="container-tags padded">
+    <block wx:for="{{tag_list_active}}" wx:for-item="tag" wx:key>
+      <text class="tags" bindtap="addTag" id="{{tag}}">{{tag}}</text>
+    </block>
+  </view>
+</scroll-view>
+
+<!-- FOUR -->
+<scroll-view class="{{currentNavbar==3 ? '' : 'hidden'}}">
+  <view class="container-tags padded">
+    <block wx:for="{{tag_list_geeky}}" wx:for-item="tag" wx:key>
+      <text class="tags" bindtap="addTag" id="{{tag}}">{{tag}}</text>
+    </block>
+  </view>
+</scroll-view>

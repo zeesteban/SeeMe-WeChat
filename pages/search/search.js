@@ -1,13 +1,18 @@
 // pages/search/search.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-    tag_list: ["lala", "something", "something else", "tags", "hobbies"]
+    tag_list_fun: ["Stand-up Comedy", "Hot Sauce Tasting", "Taobao Shopping", "Mispronouncing Mandarin Tones"],
+    tag_list_chill: ["Netflix"],
+    tag_list_active: ["Basketball", "Subway Combat Sports", "Dancing", "Stalking", "Golf", "Beerwalking", "Running from pollution", "Swimming", "Tennis", "Finding Mobikes", "Taxi catching"],
+    tag_list_geeky: ["Ruby", "HTML", "CSS", "AR/VR", "Startups", "UX/UI", "Le Wagon", "Databases", "Star Wars", "Orbital Mechanics"],
+    navbar: ['Fun', 'Chill', 'Active', "Geeky"],
+    currentNavbar: '0'
   },
-
+  swichNav(e) {
+    this.setData({
+      currentNavbar: e.currentTarget.dataset.idx
+    })
+  },
   addTag: function (e) {
     console.log(e)
     var token = wx.getStorageSync('token')

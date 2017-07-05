@@ -117,5 +117,58 @@ Page({
           var message = null
         }
 })
-}
+},
+
+
+  cancelTap: function(e) {
+    console.log(e.currentTarget.id)
+    var that = this
+    var meeting_id = e.currentTarget.id
+    wx.request({
+      url: 'https://seeme.shanghaiwogeng.com/api/v1/meetings/' + meeting_id + '/cancel',
+      method: 'patch',
+      header: {
+        'X-User-Token': that.data.token,
+      },
+      success: function (res) {
+        console.log("Success on cancelled a meeting")
+        console.log(res.data.status)
+      }
+    })
+    this.onLoad()
+  },
+
+  acceptTap: function(e) {
+    console.log(e.currentTarget.id)
+    var that = this
+    var meeting_id = e.currentTarget.id
+    wx.request({
+      url: 'https://seeme.shanghaiwogeng.com/api/v1/meetings/' + meeting_id + '/accept',
+      method: 'patch',
+      header: {
+        'X-User-Token': that.data.token,
+      },
+      success: function (res) {
+        console.log("Success on accept a meeting")
+      }
+    })
+    this.onLoad()
+  },
+
+  declineTap: function(e) {
+    console.log(e.currentTarget.id)
+    var that = this
+    var meeting_id = e.currentTarget.id
+    wx.request({
+      url: 'https://seeme.shanghaiwogeng.com/api/v1/meetings/' + meeting_id + '/decline',
+      method: 'patch',
+      header: {
+        'X-User-Token': that.data.token,
+      },
+      success: function (res) {
+        console.log("Success on declined a meeting")
+      }
+    })
+    this.onLoad()
+  }
 })
