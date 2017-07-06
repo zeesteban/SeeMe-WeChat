@@ -24,7 +24,7 @@
  </block>
 </view>
 
-<button bindtap="profileEdit" class="btn btn-small">edit</button>
+<button bindtap="profileEdit" hover-class="btn-hover" class="btn btn-small">Edit</button>
 
 
 

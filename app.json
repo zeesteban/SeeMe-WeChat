@@ -15,7 +15,7 @@
     "navigationBarBackgroundColor": "#d3d3d3",
     "navigationBarTextStyle": "white",
     "navigationBarTitleText": "SeeMe",
-    "backgroundColor": "#5D737E",
+    "backgroundColor": "#d3d3d3",
     "backgroundTextStyle": "light",
     "enablePullDownRefresh": true
   },
