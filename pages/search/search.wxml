@@ -12,7 +12,7 @@
 <scroll-view class="{{currentNavbar==0 ? '' : 'hidden'}}">
   <view class="container-tags padded">
     <block wx:for="{{tag_list_fun}}" wx:for-item="tag" wx:key>
-      <text class="tags" bindtap="addTag" id="{{tag}}">{{tag}}</text>
+      <button hover-class="btn-hover" class="tags" bindtap="addTag" id="{{tag}}">{{tag}}</button>
     </block>
   </view>
 </scroll-view>
