@@ -11,7 +11,8 @@
 }
 
 .btn-hover {
-  background-color:#4BDDB9 !important;
+  background-color:#4BDDB9;
+  box-shadow:1rpx 1rpx 20rpx #c7f6eb;
   color:white;
 }
 
@@ -27,11 +28,18 @@ button {
   padding-left: 0;
   padding-right: 0;
   padding: 25rpx 20rpx;
+  color: #5D737E;
 }
 
 .netflix {
   border: 1rpx solid red !important;
   box-shadow:1rpx 1rpx 20rpx red !important;
+}
+
+.btn-hover-netflix {
+  box-shadow: inset 1rpx 1rpx 20rpx red;
+  background-color: red;
+  color: white;
 }
 
 .container-tags {

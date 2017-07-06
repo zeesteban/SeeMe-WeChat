@@ -21,7 +21,7 @@
 <scroll-view class="{{currentNavbar==1 ? '' : 'hidden'}}">
   <view class="container-tags padded">
     <block wx:for="{{tag_list_geeky}}" wx:for-item="tag" wx:key>
-      <text class="tags" bindtap="addTag" id="{{tag}}">{{tag}}</text>
+      <button hover-class="btn-hover" class="tags" bindtap="addTag" id="{{tag}}">{{tag}}</button>
     </block>
   </view>
 </scroll-view>
@@ -30,7 +30,7 @@
 <scroll-view class="{{currentNavbar==2 ? '' : 'hidden'}}">
   <view class="container-tags padded">
     <block wx:for="{{tag_list_active}}" wx:for-item="tag" wx:key>
-      <text class="tags" bindtap="addTag" id="{{tag}}">{{tag}}</text>
+      <button hover-class="btn-hover" class="tags" bindtap="addTag" id="{{tag}}">{{tag}}</button>
     </block>
   </view>
 </scroll-view>
@@ -39,7 +39,7 @@
 <scroll-view class="{{currentNavbar==3 ? '' : 'hidden'}}">
   <view class="container-tags padded">
     <block wx:for="{{tag_list_chill}}" wx:for-item="tag" wx:key>
-      <text class="tags netflix" bindtap="addTag" id="{{tag}}">{{tag}}</text>
+      <button hover-class="btn-hover-netflix" class="tags netflix" bindtap="addTag" id="{{tag}}">{{tag}}</button>
     </block>
   </view>
 </scroll-view>
