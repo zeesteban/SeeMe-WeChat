@@ -1,8 +1,12 @@
 <!--meetings.wxml-->
 
 <view class = "h1 padded box">
+<view class="align-center margin-bot">
+    <text class="h1 bigger-font">Meetings</text>
+</view>
 <text class="underline">Act fast</text>, you only have 24 hours to connect with your newly found friends.
 </view>
+
 
 <!--Different Tabs-->
 <view class="navbar">
@@ -54,12 +58,17 @@
 <!--For Pending Meetings Sent-->
 
   <view class="align-center padded">
-  <view wx:if="{{!meetings}}">
+  <!--<block wx:for="meetings" wx:for-item="meeting"> 
+    <block wx:if="{{meeting.id == null}}">
+    You have no meetings, go meet now!
+    </block>
+  </block>-->
+
+  <block wx:for="meetings" wx:for-item="meeting">
+  <view wx:if="{{meeting.status == 'pending'}}">
     <view class="h1 padded">You have no meetings :(</view>
   </view>
-  <view wx:else>
-    <text class="h1 underline">Meetings</text>
-  </view>
+  </block>
   <block wx:for="{{meetings}}" wx:for-item="meeting" wx:key>
     <block wx:if="{{meeting.sender.id == current_user}}">
         <block wx:if="{{meeting.status == 'pending'}}">
@@ -78,6 +87,7 @@
 <!--For Pending meeting received-->
 <!-- need to properly do this -->
       <view class="align-center padded">
+    
   <block wx:for="{{meetings}}" wx:for-item="meeting" wx:key>
 <block wx:if="{{meeting.recipient.id == current_user}}">
             <block wx:if="{{meeting.status == 'pending'}}">
@@ -126,29 +136,6 @@
 
 <!--For Meeting Received Cancel and Decline-->
 
-<block wx:for="{{meetings}}" wx:for-item="meeting" wx:key>
-  <block wx:if="{{meeting.recipient.id === current_user}}">
-
-    <block wx:if="{{meeting.status == 'declined'}}">
-      <view class="m-card-declined" bindtap="meetingTap" id="{{meeting.id}}" data-meeting="{{meeting.sender}}">
-        <image class="m-img" src="{{meeting.sender.avatar}}"></image>
-        <view class="m-text">
-          <text>{{meeting.sender.nickname}} declined.</text>
-      <!--  <text class="tiny-text">Connection made at XX</text>  -->
-          </view>
-        </view>
-      </block>
-      <block wx:if="{{meeting.status == 'cancelled'}}">
-        <view class="m-card-declined" bindtap="meetingTap" id="{{meeting.id}}" data-meeting="{{meeting.sender}}">
-          <image class="m-img" src="{{meeting.sender.avatar}}"></image>
-          <view class="m-text">
-            <text>{{meeting.sender.nickname}} cancelled.</text>
-      <!--  <text class="tiny-text">Connection made at XX</text>  -->
-          </view>
-        </view>
-        </block>
-      </block>
-    </block>
   </view>
 </scroll-view>
 

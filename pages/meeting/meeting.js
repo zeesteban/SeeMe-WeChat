@@ -156,7 +156,7 @@ Page({
             icon: 'complete',
             duration: 2000
           }),
-         wx.reLaunch({
+         wx.navigateBack({
           url: '../meetings/meetings'
           })
       }
@@ -182,7 +182,7 @@ Page({
             icon: 'complete',
             duration: 2000
           }),
-        wx.navigateTo({
+        wx.redirectTo({
           url: '../meeting/meeting?id=' + res.data.id
       })
       }
@@ -207,7 +207,7 @@ Page({
             icon: 'complete',
             duration: 2000
           }),
-        wx.reLaunch({
+        wx.navigateBack({
           url: '../meetings/meetings'
         })
       }

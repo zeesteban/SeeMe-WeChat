@@ -65,4 +65,5 @@
 .btn-small {
   width: 30%;
   text-align: center;
+  margin-bottom:10px;
 }

@@ -26,6 +26,12 @@
   margin-left:60rpx;
 }
 
+.meeting-profile3 {
+  width: 220rpx;
+  text-align: center;
+  z-index: 100;
+}
+
 .wrapper {
   display:flex;
   text-align:center;

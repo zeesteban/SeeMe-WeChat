@@ -15,13 +15,38 @@
       <view> Your meeting has been declined :( </view>
   </view>
   </block>
-  <block wx:else>
+  <block wx:elif="{{meeting.status == 'cancelled'}}">
   <view class="box">
-      <view> You got lucky!</view>
-      {{recipient.nickname}} also wants to meet up with you. Send a message now!
+      <view> Your meeting with {{recipient.nickname}} has been cancelled.</view>
   </view>
 </block>
 </view>
+<block wx:if="{{meeting.status == 'pending'}}">
+<view class="container-meeting">
+  <!--<view class="meeting-profile">
+    <image src="{{userInfo.avatarUrl}}" class="meeting-img"></image>
+    <view>{{userInfo.nickName}}</view>
+  </view>-->
+  <view class="meeting-profile3" bindtap="profileTap" id="{{meeting.recipient.id}}">
+    <image src="{{recipient.avatar}}" class="meeting-img"></image>
+    <view>{{recipient.nickname}}</view>
+  </view>
+</view>
+  <view class="box align-center">
+    Is {{recipient.nickname}} taking too long to reply?
+    <view class="padded" style="margin-bottom: 20rpx;">
+      <text class="btn btn-small" bindtap="cancelTap" data-id="{{meeting.id}}">Cancel</text>
+    </view>
+  </view>
+</block>
+<block wx:if="{{meeting.status == 'accepted'}}">
+<view class="box">
+<view class="align-center">
+<text>{{recipient.nickname}} accepted!</text>
+<view> <text>Start chatting!</text></view>
+</view>
+          <image src="../../images/success.gif" style="padding: 20rpx; width: 500rpx; height: 300rpx;"></image>
+    </view>
 <view class="container-meeting">
   <view class="meeting-profile">
     <image src="{{userInfo.avatarUrl}}" class="meeting-img"></image>
@@ -32,17 +57,6 @@
     <view>{{recipient.nickname}}</view>
   </view>
 </view>
-<block wx:if="{{meeting.status == 'pending'}}">
-
-  <view class="box align-center">
-    Is {{recipient.nickname}} taking too long to reply?
-    <view class="padded" style="margin-bottom: 20rpx;">
-      <text class="btn btn-small" bindtap="cancelTap" data-id="{{meeting.id}}">Cancel</text>
-    </view>
-  </view>
-</block>
-<block wx:if="{{meeting.status == 'accepted'}}">
-
 <view class="align-center padded"><text class="h1 messages underline">Messages</text></view>
 <view class="chat-box">
   <view wx:for="{{message}}" wx:for-item="message" wx:key>
@@ -64,7 +78,7 @@
     </view>
     </view>
     <view class="enter-message">
-      <input maxlength="120" class="textbox" confirm-type="send" bindconfirm="bindFormSubmit"placeholder="input message" id="{{meeting_id}}"/>
+      <input maxlength="120" class="textbox" confirm-type="send" bindconfirm="bindFormSubmit"placeholder="Enter a message!" id="{{meeting.id}}"/>
     </view>
 
   </view>
@@ -76,26 +90,23 @@
 <!-- For receiving -->
 
 <block wx:if="{{sender.id != current_user}}">
-  <view class="align-center meeting-title padded">
-  <text class="h1"><text class="underline">{{sender.nickname}}</text> wants to meet!</text>
-  <!--<view class="box">
-      <view> You got lucky!</view>
-      {{sender.nickname}} wants to meet up!
-  </view>-->
-</view>
-<view class="container-meeting">
-  <view class="meeting-profile">
-    <image src="{{userInfo.avatarUrl}}" class="meeting-img"></image>
-    <view>{{userInfo.nickName}}</view>
+<block wx:if="{{meeting.status == 'accepted'}}">
+<view class="align-center padded">
+  <text class="h1">Meeting with <text class="underline">{{sender.nickname}}</text></text>
+  <view class="box">
+          <image src="../../images/success.gif" style="padding: 20rpx; width: 500rpx; height: 300rpx;"></image>
+    </view>
   </view>
-  <view class="meeting-profile2" bindtap="profileTap" id="{{meeting.sender.id}}">
+ <view class="container-meeting">
+  <view class="meeting-profile" bindtap="profileTap" id="{{sender.id}}">
     <image src="{{sender.avatar}}" class="meeting-img"></image>
     <view>{{sender.nickname}}</view>
   </view>
+  <view class="meeting-profile2">
+    <image src="{{recipient.avatar}}" class="meeting-img"></image>
+    <view>{{recipient.nickname}}</view>
+  </view>
 </view>
-
-<block wx:if="{{meeting.status == 'accepted'}}">
-
 <view class="align-center padded"><text class="h1 messages">Start chatting right now!</text></view>
 <view class="chat-box">
   <view wx:for="{{message}}" wx:for-item="message" wx:key>
@@ -117,7 +128,7 @@
     </view>
     </view>
     <view class="enter-message">
-      <input maxlength="120" class="textbox" confirm-type="send" bindconfirm="bindFormSubmit" placeholder="input message" id="{{meeting_id}}"/>
+      <input maxlength="120" class="textbox" confirm-type="send" bindconfirm="bindFormSubmit" placeholder="Enter a message!" id="{{meeting.id}}"/>
     </view>
 
   </view>
@@ -127,8 +138,22 @@
     <text>You've declined this {{sender.nickname}}</text>
 </block>
 
-<block wx:else>
-  <view class="wrapper">
+<block wx:elif="{{meeting.status == 'pending'}}">
+<view class="align-center">
+<text class="h1 meeting-title padded"><text class="underline">{{sender.nickname}}</text> wants to meet!</text>
+</view>
+  <view class="container-meeting">  
+  <view class="meeting-profile" bindtap="profileTap" id="{{meeting.sender.id}}">
+    <image src="{{sender.avatar}}" class="meeting-img"></image>
+    <view>{{sender.nickname}}</view>
+  </view>
+  <view class="meeting-profile2">
+    <image src="{{recipient.avatar}}" class="meeting-img"></image>
+    <view>{{recipient.nickname}}</view>
+  </view>
+  </view>
+    <view class="wrapper">
+
   <text class="btn btn-small" bindtap="acceptTap" data-id="{{meeting.id}}">Accept</text>
   <text class="btn-red btn-small" bindtap="declineTap" data-id="{{meeting.id}}">Decline</text>
   </view>

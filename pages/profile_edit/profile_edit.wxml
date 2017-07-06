@@ -11,7 +11,7 @@
     You should meet me because...
   </view>
   <view class="box">
-  <textarea style="height: 5em" name="bio" placeholder="{{bio}}" value="{{bio}}" />
+  <textarea style="height: 5em" name="bio" placeholder="{{bio}}" value="{{bio}}" style="padding: 20rpx;" />
   </view>
 
   <view class="title-box">
@@ -24,10 +24,11 @@
   </view>
 
   <view class="title-box">
-    Phone number:
+    Receive notifications via sms
+    <view>(don't worry this won't show on your profile!):</view>
   </view>
   <view class="box">
-    <input maxlength="120" class="textbox" type="number" name="phone" placeholder="Enter your phone number to receive notifications" value="{{phone}}" />
+    <input maxlength="120" class="textbox" type="number" confirm-type="done" name="phone" placeholder="Enter a phone number" value="{{phone}}" style="text-align: center; padding-top: 10rpx;"/>
   </view>
 
   <button class="btn btn-small" formType="submit">Submit</button>

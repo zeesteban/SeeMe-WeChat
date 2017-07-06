@@ -38,7 +38,7 @@ textarea{
 .box {
   margin: 0 20rpx;
   padding: 20rpx;
-  line-height: 1.5em;
+  line-height: 1em;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

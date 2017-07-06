@@ -32,6 +32,9 @@
   margin: 0 20rpx;
 }
 
+scroll-view {
+  padding-bottom:20rpx;
+}
 
 /* NAVBAR */
 .navbar {

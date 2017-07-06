@@ -44,9 +44,29 @@
         </block>
     </view>
     <view class="align-center tiny-text">
-       {{user.distance * 1000}} m
+      <block wx:if="{{(user.distance * 1000) < 20}}">
+       within 20m
+       </block>
+      <block wx:elif="{{(user.distance * 1000) < 50 && (user.distance * 1000) > 20}}">
+       within 50m
+       </block>
+      <block wx:elif="{{(user.distance * 1000) < 100 && (user.distance * 1000) > 50}}">
+       within 100m
+       </block>
+      <block wx:elif="{{(user.distance * 1000) < 500 && (user.distance * 1000) > 100}}">
+       within 500m
+       </block>
+      <block wx:elif="{{(user.distance * 1000) < 1000 && (user.distance * 1000) > 500}}">
+       within 1000m
+       </block>
+    <block wx:elif="{{(user.distance * 1000) < 2000 && (user.distance * 1000) > 1000}}">
+       within 2000m
+       </block>
+      <block wx:elif="{{(user.distance * 1000) < 3000 && (user.distance * 1000) > 2000}}">
+       within 3000m
+       </block>
     </view>
-    <view class="btn align-center margin-top" id="{{user.id}}" catchtap="meetViewTap">Meet</view>
+    <view class="btn align-center margin-top" id="{{user.id}}" catchtap="meetViewTap" hover-class="meet-hover">Meet</view>
   </view>
   </block>
   </block>

@@ -84,7 +84,24 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    let that = this
+    var token = wx.getStorageSync('token')
+    var current_user = wx.getStorageSync('currentUserId')
+    wx.request({
+      url: 'https://seeme.shanghaiwogeng.com/api/v1/meetings/',
+      method: 'get',
+      header: {
+        'X-User-Token': token
+      },
+      success: function (res) {
+        console.log("Success on getting meetings")
+        console.log(res.data)
+        that.setData({
+          current_user: current_user,
+          meetings: res.data
+        })
+      }
+    })
   },
 
   /**

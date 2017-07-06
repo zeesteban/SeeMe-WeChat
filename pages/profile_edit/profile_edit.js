@@ -41,16 +41,21 @@ Page({
         try {
           wx.setStorageSync('bio', res.data.bio)
           wx.setStorageSync('tag_list', res.data.tag_list)
-          wx.setStorageSync('phone', res.data.phone)
+          wx.setStorageSync('phone', res.data.phone),
+            wx.showToast({
+              title: '🎉 Updated! 🎉',
+              icon: 'success',
+              duration: 3000
+            })
+            wx.reLaunch({
+              url: '../profile/profile'
+            })
           // wx.setStorageSync('token', res.data.interests)
         } catch (e) {
             console.log("Didn't set storage")
         }
 
       }
-    }),
-    wx.reLaunch({
-      url: '../profile/profile'
     })
   },
   onPullDownRefresh: function () {

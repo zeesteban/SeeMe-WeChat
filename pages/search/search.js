@@ -34,8 +34,13 @@ Page({
 
       }
     }),
-      wx.reLaunch({
-        url: '../nearby/nearby?id=' + tag
+      wx.switchTab({
+        url: '../nearby/nearby?id=' + tag,
+        success: wx.showToast({
+          icon: 'success',
+          title: 'Added to profile 😊',
+          duration: 3000
+        }) 
       })
   },
 

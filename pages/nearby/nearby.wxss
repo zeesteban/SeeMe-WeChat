@@ -2,6 +2,10 @@
   margin-top: 20rpx;
 }
 
+.meet-hover {
+  background-color: black;
+}
+
 /* nearby.wxss */
 div.wx-radio-input.wx-radio-input-checked::before {
   background-color: black !important;
@@ -47,6 +51,7 @@ radio.wx-radio-input-checked::before {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
+  padding-bottom:15rpx;
 }
 
 .card-image{
@@ -61,19 +66,21 @@ radio.wx-radio-input-checked::before {
   box-shadow:1rpx 1rpx 20rpx #dde0e1;
 }
 
-.card{
+.card {
   background-color:white;
   box-shadow:1rpx 1rpx 30rpx #dde0e1;
-  border-radius:10rpx;
-  width:45%;
+  border-radius: 10rpx;
+  width:47%;
   max-height:30%;
   display:flex;
-  padding:1%;
+  /*padding:1%;*/
   margin:1.5%;
   z-index:2;
   flex-direction:column;
   justify-content:space-between;
+
 }
+
 
 .card-name {
   text-align: center;
@@ -99,19 +106,16 @@ radio.wx-radio-input-checked::before {
 }
 
 .btn{
-  border: 2rpx solid #4BDDB9;
+  border:2rpx solid #4BDDB9;
   box-shadow:0rpx 1rpx 20rpx #c7f6eb;
-  background-color: #4BDDB9;
-  color: #FCFFFD;
-  border-radius: 10rpx;
-  letter-spacing: 0.4px;
-  padding: 10rpx 10rpx;
-  margin-left: 10rpx;
-  margin-right: 10rpx;
-  margin-bottom: 10rpx;
-  margin-top: 20rpx;
-  font-size: 1.3em;
-  z-index: 3;
+  background-color:#4BDDB9;
+  color:#FCFFFD;
+  border-radius:0 0 10rpx 10rpx;
+  letter-spacing:0.4px;
+  padding:10rpx 10rpx;
+  margin-top:20rpx;
+  font-size:1.3em;
+  z-index:3;
 }
 
 .btn-small {

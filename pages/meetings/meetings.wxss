@@ -12,6 +12,11 @@
   border-right: 4rpx solid lightgreen;
 }
 
+.bigger-font {
+  margin-bottom:50rpx;
+  font-size:70rpx;
+}
+
 .m-card-pending {
   background-color:white;
   box-shadow:1rpx 1rpx 30rpx #dde0e1;
@@ -80,14 +85,16 @@
   background-color: orangered;
 }
 
-
+.margin-bot {
+  margin-bottom: 40rpx;
+}
 
 
 .box {
-  margin-top: 20%;
+  margin-top: 5%;
   margin-left: 30rpx;
   margin-right: 30rpx;
-  margin-bottom: 80rpx;
+  margin-bottom: 30rpx;
   padding: 20rpx;
   line-height: 1.5em;
   text-align: center;
