@@ -25,6 +25,7 @@ Page({
     var userInfo = wx.getStorageSync('userInfo')
     var current_user = wx.getStorageSync('currentUserId')
     var meeting_id = e.id
+    wx.setStorageSync('meeting_id', meeting_id)
       that.setData({
         meeting_id: meeting_id,
         userInfo: userInfo,
@@ -225,6 +226,10 @@ profileTap: function (e) {
   },
 
   onPullDownRefresh: function () {
+    let that = this
+    var meeting_id = wx.getStorageSync('meeting_id')
+    console.log(meeting_id)
+    var token = wx.getStorageSync('token')
     wx.request({
       url: 'https://seeme.shanghaiwogeng.com/api/v1/meetings/' + meeting_id + '/messages',
       method: "get",

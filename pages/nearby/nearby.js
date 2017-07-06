@@ -128,7 +128,34 @@ Page({
       }
     })
     wx.stopPullDownRefresh()
-  }
+  },
+onShow: function (e) {
+  console.log(e)
+  wx.request({
+    url: 'https://seeme.shanghaiwogeng.com/api/v1/users',
+    method: 'get',
+    data: {
+      latitude: wx.getStorageSync('lat'),
+      longitude: wx.getStorageSync('lng'),
+      tag: wx.getStorageSync('tag')
+    },
+    header: {
+      'Content-Type': 'application/json',
+      'X-User-Token': token
+    },
+    success: function (res) {
+      console.log("Response from get request")
+      console.log('this is search result')
+      console.log(res.data)
+      page.setData({
+        users: res.data,
+        current_user: current_user,
+      })
+    }
+
+  })
+}
+
 
   // showInput: function () {
   //   this.setData({

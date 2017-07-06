@@ -63,7 +63,15 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    var bio = wx.getStorageSync('bio')
+    var userInfo = wx.getStorageSync('userInfo')
+    var tag_list = wx.getStorageSync('tag_list')
+    console.log(tag_list)
+    that.setData({
+      bio: bio,
+      userInfo: userInfo,
+      tag_list: tag_list
+    })
 
   },
   /**
@@ -83,9 +91,6 @@ Page({
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
-
-  },
 
   /**
    * 页面上拉触底事件的处理函数
