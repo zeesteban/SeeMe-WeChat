@@ -111,7 +111,7 @@
 
 <!--For Meeting Sent Cancel and Decline-->
 <block wx:for="{{meetings}}" wx:for-item="meeting" wx:key>
-      <block wx:if="{{meeting.sender.id == current_user}}">
+      <block wx:if="{{meeting.recipient.id == current_user}}">
 
         <block wx:if="{{meeting.status == 'declined'}}">
             <view class="m-card-declined" bindtap="meetingTap" id="{{meeting.id}}" data-meeting="{{meeting.recipient}}">

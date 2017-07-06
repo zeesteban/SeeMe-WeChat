@@ -168,6 +168,8 @@ Page({
     console.log(e.currentTarget.id)
     var that = this
     var meeting_id = e.currentTarget.dataset.id
+    console.log("this is the meeting id")
+    console.log(meeting_id)
     wx.request({
       url: 'https://seeme.shanghaiwogeng.com/api/v1/meetings/' + meeting_id + '/accept',
       method: 'put',
