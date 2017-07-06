@@ -42,9 +42,12 @@ page {
 .btn-green {
   background-color: #4BDDB9;
   color: #FCFFFD;
-  /*border-radius: 50rpx;*/
   border-radius: 10rpx;
   letter-spacing: 0.4px;
   margin: 10rpx;
   font-size: 35rpx;
+}
+
+.btn-hover {
+  box-shadow: inset 1rpx 1rpx 20rpx rgba(0, 0, 0, 0.3);
 }

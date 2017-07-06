@@ -31,5 +31,5 @@
     <input maxlength="120" class="textbox" type="number" confirm-type="done" name="phone" placeholder="Enter a phone number" value="{{phone}}" style="text-align: center; padding-top: 10rpx;"/>
   </view>
 
-  <button class="btn btn-small" formType="submit">Submit</button>
+  <button class="btn btn-small" hover-class="btn-hover" formType="submit">Submit</button>
 </form>
