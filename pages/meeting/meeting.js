@@ -222,6 +222,26 @@ profileTap: function (e) {
     wx.navigateTo({
       url: '../userProfile/userProfile?id=' + userid
     })
+  },
+
+  onPullDownRefresh: function () {
+    wx.request({
+      url: 'https://seeme.shanghaiwogeng.com/api/v1/meetings/' + meeting_id + '/messages',
+      method: "get",
+      header: {
+        'Content-Type': 'application/json',
+        'X-User-Token': token
+      },
+      success: function (res) {
+        console.log("got user meeting")
+        console.log(res.data)
+        // do a loop here to check id...not in view layer.
+        that.setData({
+          message: res.data,
+          request: true
+        })
+      }
+    })
   }
 
 })

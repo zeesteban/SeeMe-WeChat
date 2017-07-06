@@ -9,6 +9,9 @@ Page({
     phone: null,
     tag_list: []
   },
+  onPullDownRefresh: function () {
+    wx.stopPullDownRefresh()
+  },
 
   onLoad: function() {
     let that = this

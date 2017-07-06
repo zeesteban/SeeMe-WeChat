@@ -5,7 +5,7 @@ Page({
     inputShowed: false,
     inputVal: "",
     users: [],
-    current_user: null,
+    current_user: null
   },
 
   changeStatus: function () {
@@ -15,7 +15,9 @@ Page({
   },
 
   onLoad: function (e) {
-    console.log(e.id)
+    console.log("this is search")
+    var tag = wx.getStorageSync('tag')
+    console.log(tag)
     var tag = e.id
     let page = this;
     var current_user = wx.getStorageSync('currentUserId')
@@ -37,7 +39,8 @@ Page({
           method: 'get',
           data: {
             latitude: wx.getStorageSync('lat'),
-            longitude: wx.getStorageSync('lng')
+            longitude: wx.getStorageSync('lng'),
+            tag: tag
           },
           header: {
             'Content-Type': 'application/json',
@@ -45,10 +48,11 @@ Page({
           },
           success: function(res) {
             console.log("Response from get request")
+            console.log('this is search result')
             console.log(res.data)
             page.setData({
               users: res.data,
-              current_user: current_user
+              current_user: current_user,
             })
           }
 

@@ -17,16 +17,27 @@ Page({
     console.log(e)
     var token = wx.getStorageSync('token')
     var tag = e.currentTarget.id
+    wx.setStorageSync('tag', tag)
+    var latitude = wx.getStorageSync('latitude')
+    var longitude = wx.getStorageSync('longitude')
     wx.request({
       // this is the url for add hobby, we pass value through the url, so inside this request we dont need body of data.
-      url: 'https://seeme.shanghaiwogeng.com/api/v1/profile/addhobby?hobby=' + tag,
+      url: 'https://seeme.shanghaiwogeng.com/api/v1/profile',
       method: 'put',
+      data: {
+        "user": {
+          "latitude": latitude,
+          "longitude": longitude,
+          "tag": tag
+        }
+      },
       header: {
         'Content-Type': 'application/json',
         'X-User-Token': token
       },
       success: function (res) {
         try {
+          console.log(res)
           wx.setStorageSync('tag_list', res.data.tag_list)
         } catch (e) {
           console.log("Didn't set storage")

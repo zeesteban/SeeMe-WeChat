@@ -115,9 +115,9 @@
 
         <block wx:if="{{meeting.status == 'declined'}}">
             <view class="m-card-declined" bindtap="meetingTap" id="{{meeting.id}}" data-meeting="{{meeting.recipient}}">
-              <image class="m-img" src="{{meeting.recipient.avatar}}"></image>
+              <image class="m-img" src="{{meeting.sender.avatar}}"></image>
               <view class="m-text">
-              <text>Meeting with {{meeting.recipient.nickname}}</text>
+              <text>Meeting with {{meeting.sender.nickname}}</text>
           <!--  <text class="tiny-text">Connection made at XX</text>  -->
               </view>
             </view>
