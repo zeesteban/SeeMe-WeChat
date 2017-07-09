@@ -130,6 +130,10 @@ Page({
     wx.stopPullDownRefresh()
   },
 onShow: function (e) {
+  var tag = wx.getStorageSync('tag')
+ var token = wx.getStorageSync('token')
+ let page = this
+ var current_user = wx.getStorageSync('currentUserId')
   console.log(e)
   wx.request({
     url: 'https://seeme.shanghaiwogeng.com/api/v1/users',

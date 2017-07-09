@@ -51,3 +51,7 @@ page {
 .btn-hover {
   box-shadow: inset 1rpx 1rpx 20rpx rgba(0, 0, 0, 0.3);
 }
+
+button::after {
+  border: 0px !important;
+}

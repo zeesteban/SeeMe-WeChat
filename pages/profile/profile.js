@@ -63,6 +63,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    let that = this
     var bio = wx.getStorageSync('bio')
     var userInfo = wx.getStorageSync('userInfo')
     var tag_list = wx.getStorageSync('tag_list')

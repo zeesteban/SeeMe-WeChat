@@ -240,6 +240,7 @@ profileTap: function (e) {
       success: function (res) {
         console.log("got user meeting")
         console.log(res.data)
+        wx.stopPullDownRefresh()
         // do a loop here to check id...not in view layer.
         that.setData({
           message: res.data,
