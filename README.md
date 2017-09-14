@@ -11,7 +11,7 @@
   
 ## Example
 <p align="center">
-  <img src="https://github.com/zeesteban/SeeMe-WeChat/blob/master/WechatIMG4.jpeg?raw=true" width="22%"><img src="https://github.com/zeesteban/SeeMe-WeChat/blob/master/WechatIMG9.jpeg?raw=true" width="22%"><img src="https://github.com/zeesteban/SeeMe-WeChat/blob/master/WechatIMG7.jpeg?raw=true" width="22%"><img src="https://github.com/zeesteban/SeeMe-WeChat/blob/master/WechatIMG8.jpeg?raw=true" width="22%">
+  <img src="https://github.com/zeesteban/SeeMe-WeChat/blob/master/WechatIMG4.jpeg?raw=true" width="22%" padding-right="10px"><img src="https://github.com/zeesteban/SeeMe-WeChat/blob/master/WechatIMG9.jpeg?raw=true" width="22%" padding-right="10px"><img src="https://github.com/zeesteban/SeeMe-WeChat/blob/master/WechatIMG7.jpeg?raw=true" width="22%" padding-right="10px"><img src="https://github.com/zeesteban/SeeMe-WeChat/blob/master/WechatIMG8.jpeg?raw=true" width="22%">
 </p>
   
 ## Try it now
@@ -21,7 +21,7 @@
   </p>
   
 ## Links
-  - [Ruby on Rails API](https://github.com/kwnath/seeme)
+  - [SeeMe API](https://github.com/kwnath/seeme)
   - [English documentation for MiniProgram development](https://github.com/kwnath/wechat-miniprogram-wiki)
   
 ## Contributors 
